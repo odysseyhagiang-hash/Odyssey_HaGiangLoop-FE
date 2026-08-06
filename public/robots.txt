@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ha-giang-loop-chi.vercel.app/sitemap.xml
