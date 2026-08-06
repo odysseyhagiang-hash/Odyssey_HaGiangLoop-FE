@@ -1,17 +1,66 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../components/ui/Button';
+import { apiLogin } from '../lib/api';
+
+const REMEMBERED_USER_KEY = 'remembered_user';
+const REMEMBER_ME_KEY = 'remember_me_checked';
 
 export function Login() {
   const navigate = useNavigate();
-  const [username, setUsername] = useState('admin');
-  const [password, setPassword] = useState('admin123');
 
-  const handleLogin = (e: React.FormEvent) => {
+  // Load remembered username & rememberMe state from localStorage on mount
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [rememberMe, setRememberMe] = useState(false);
+  const [error, setError] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    const savedUser = localStorage.getItem(REMEMBERED_USER_KEY);
+    const savedRemember = localStorage.getItem(REMEMBER_ME_KEY);
+    if (savedUser) {
+      setUsername(savedUser);
+    }
+    if (savedRemember === 'true') {
+      setRememberMe(true);
+    }
+  }, []);
+
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Bypassed login logic - just click login to authenticate!
-    sessionStorage.setItem('admin_authenticated', 'true');
-    navigate('/admin');
+    setError('');
+
+    if (!username.trim() || !password.trim()) {
+      setError('Please enter both username and password');
+      return;
+    }
+
+    setIsLoading(true);
+
+    try {
+      const result = await apiLogin(username.trim(), password, rememberMe);
+
+      if (result.success) {
+        // Lưu hoặc xóa remembered username dựa trên checkbox
+        if (rememberMe) {
+          localStorage.setItem(REMEMBERED_USER_KEY, username.trim());
+          localStorage.setItem(REMEMBER_ME_KEY, 'true');
+        } else {
+          localStorage.removeItem(REMEMBERED_USER_KEY);
+          localStorage.removeItem(REMEMBER_ME_KEY);
+        }
+
+        sessionStorage.setItem('admin_authenticated', 'true');
+        navigate('/admin');
+      } else {
+        setError(result.message || 'Login failed. Please check your credentials.');
+      }
+    } catch (err) {
+      setError('Unable to connect to server. Please try again later.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -37,13 +86,27 @@ export function Login() {
         </div>
 
         <form onSubmit={handleLogin} className="mt-8 space-y-5">
+          {/* Error Message */}
+          {error && (
+            <div className="rounded-2xl border border-red-400/20 bg-red-500/10 px-4 py-3 text-sm text-red-300 backdrop-blur-sm animate-[fadeIn_0.3s_ease-out]">
+              <p className="flex items-center gap-2">
+                <svg className="h-4 w-4 shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+                </svg>
+                {error}
+              </p>
+            </div>
+          )}
+
           <div>
             <label className="block text-[11px] uppercase tracking-widest text-white/60 mb-2">Username</label>
             <input
+              id="login-username"
               type="text"
               value={username}
-              onChange={e => setUsername(e.target.value)}
-              placeholder="admin"
+              onChange={e => { setUsername(e.target.value); setError(''); }}
+              placeholder="Enter your username"
+              autoComplete="username"
               className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/20 outline-none transition focus:border-gold-300/40 focus:ring-1 focus:ring-gold-300/40"
             />
           </div>
@@ -51,16 +114,64 @@ export function Login() {
           <div>
             <label className="block text-[11px] uppercase tracking-widest text-white/60 mb-2">Password</label>
             <input
+              id="login-password"
               type="password"
               value={password}
-              onChange={e => setPassword(e.target.value)}
+              onChange={e => { setPassword(e.target.value); setError(''); }}
               placeholder="••••••••"
+              autoComplete="current-password"
               className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/20 outline-none transition focus:border-gold-300/40 focus:ring-1 focus:ring-gold-300/40"
             />
           </div>
 
-          <Button type="submit" variant="gold" className="w-full mt-4 py-3">
-            Login
+          {/* Remember Me Checkbox */}
+          <div className="flex items-center gap-3">
+            <button
+              type="button"
+              role="checkbox"
+              aria-checked={rememberMe}
+              id="remember-me"
+              onClick={() => setRememberMe(!rememberMe)}
+              className={`
+                relative flex h-5 w-5 shrink-0 items-center justify-center rounded-md border transition-all duration-200
+                ${rememberMe
+                  ? 'border-gold-300/60 bg-gold-300/20'
+                  : 'border-white/20 bg-white/5 hover:border-white/30'
+                }
+              `}
+            >
+              {rememberMe && (
+                <svg className="h-3 w-3 text-gold-300" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                </svg>
+              )}
+            </button>
+            <label
+              htmlFor="remember-me"
+              onClick={() => setRememberMe(!rememberMe)}
+              className="cursor-pointer select-none text-xs text-white/50 hover:text-white/70 transition-colors"
+            >
+              Remember me
+            </label>
+          </div>
+
+          <Button
+            type="submit"
+            variant="gold"
+            className="w-full mt-4 py-3"
+            disabled={isLoading}
+          >
+            {isLoading ? (
+              <span className="flex items-center justify-center gap-2">
+                <svg className="h-4 w-4 animate-spin" viewBox="0 0 24 24" fill="none">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                </svg>
+                Signing in...
+              </span>
+            ) : (
+              'Login'
+            )}
           </Button>
         </form>
       </div>

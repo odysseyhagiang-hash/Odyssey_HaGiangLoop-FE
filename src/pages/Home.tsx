@@ -26,9 +26,9 @@ export function Home() {
           "@context": "https://schema.org",
           "@type": "TravelAgency",
           "name": "Odyssey Ha Giang",
-          "image": "https://ha-giang-loop-chi.vercel.app/logo/logo.png",
-          "@id": "https://ha-giang-loop-chi.vercel.app/#agency",
-          "url": "https://ha-giang-loop-chi.vercel.app/",
+          "image": "https://www.odysseyhagiangloop.com/logo/logo.webp",
+          "@id": "https://www.odysseyhagiangloop.com/#agency",
+          "url": "https://www.odysseyhagiangloop.com/",
           "telephone": "+84357292323",
           "priceRange": "$$",
           "address": {

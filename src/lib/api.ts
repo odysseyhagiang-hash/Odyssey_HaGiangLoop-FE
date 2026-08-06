@@ -5,6 +5,47 @@ const getApiBase = () => {
   return import.meta.env.VITE_API_URL ?? `${window.location.protocol}//${window.location.hostname}:5000/api`;
 };
 
+// ─── Auth API ─────────────────────────────────────────────────────────────────
+
+export async function apiLogin(
+  username: string,
+  password: string,
+  rememberMe: boolean
+): Promise<{ success: boolean; message: string }> {
+  const res = await fetch(`${getApiBase()}/auth/login`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    credentials: 'include',
+    body: JSON.stringify({ username, password, rememberMe }),
+  });
+  const json = await res.json();
+  return { success: json.success, message: json.message };
+}
+
+export async function apiLogout(): Promise<void> {
+  try {
+    await fetch(`${getApiBase()}/auth/logout`, {
+      method: 'POST',
+      credentials: 'include',
+    });
+  } catch (err) {
+    console.warn('[API] Logout request failed', err);
+  }
+}
+
+export async function apiVerifyAuth(): Promise<boolean> {
+  try {
+    const res = await fetch(`${getApiBase()}/auth/verify`, {
+      credentials: 'include',
+    });
+    if (!res.ok) return false;
+    const json = await res.json();
+    return json.success === true;
+  } catch {
+    return false;
+  }
+}
+
 // Map backend blog model to frontend BlogPost!
 const mapBackendToFrontend = (item: any): BlogPost => {
   const body = item.content ? item.content.split('\n\n').filter(Boolean) : [];
@@ -81,6 +122,7 @@ export async function apiSavePost(
     const res = await fetch(url, {
       method: isEdit ? 'PUT' : 'POST',
       body: formData,
+      credentials: 'include',
     });
 
     if (!res.ok) {
@@ -114,7 +156,7 @@ export async function apiDeletePost(idOrSlug: string, slug: string): Promise<boo
     : `${getApiBase()}/blogs/${slug}`; // Fallback
 
   try {
-    const res = await fetch(url, { method: 'DELETE' });
+    const res = await fetch(url, { method: 'DELETE', credentials: 'include' });
     if (!res.ok) throw new Error('API server returned error during delete');
     const json = await res.json();
     if (json.success) {
@@ -175,7 +217,7 @@ export async function apiSaveContact(
 
 export async function apiGetContacts(): Promise<ContactSubmission[]> {
   try {
-    const res = await fetch(`${getApiBase()}/contacts?limit=200&sort=date&order=desc`);
+    const res = await fetch(`${getApiBase()}/contacts?limit=200&sort=date&order=desc`, { credentials: 'include' });
     if (!res.ok) throw new Error(`Server ${res.status}`);
     const json = await res.json();
     if (json.success && json.data?.contacts) {
@@ -199,6 +241,7 @@ export async function apiUpdateContactStatus(
     const res = await fetch(`${getApiBase()}/contacts/${id}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
       body: JSON.stringify(body),
     });
     if (!res.ok) throw new Error(`Server ${res.status}`);
@@ -210,7 +253,7 @@ export async function apiUpdateContactStatus(
 
 export async function apiDeleteContact(id: string): Promise<void> {
   try {
-    const res = await fetch(`${getApiBase()}/contacts/${id}`, { method: 'DELETE' });
+    const res = await fetch(`${getApiBase()}/contacts/${id}`, { method: 'DELETE', credentials: 'include' });
     if (!res.ok) throw new Error(`Server ${res.status}`);
   } catch (err) {
     console.warn('[API] Failed to delete contact, using localStorage fallback', err);
@@ -247,7 +290,7 @@ export async function apiAddSubscriber(email: string): Promise<void> {
 
 export async function apiGetSubscribers(): Promise<Subscriber[]> {
   try {
-    const res = await fetch(`${getApiBase()}/subscribers?limit=500`);
+    const res = await fetch(`${getApiBase()}/subscribers?limit=500`, { credentials: 'include' });
     if (!res.ok) throw new Error(`Server ${res.status}`);
     const json = await res.json();
     if (json.success && json.data?.subscribers) {
@@ -267,6 +310,7 @@ export async function apiDeleteSubscriber(email: string): Promise<void> {
   try {
     const res = await fetch(`${getApiBase()}/subscribers/${encodeURIComponent(email)}`, {
       method: 'DELETE',
+      credentials: 'include',
     });
     if (!res.ok) throw new Error(`Server ${res.status}`);
   } catch (err) {

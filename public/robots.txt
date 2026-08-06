@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ha-giang-loop-chi.vercel.app/sitemap.xml
+Sitemap: https://www.odysseyhagiangloop.com/sitemap.xml

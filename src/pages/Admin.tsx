@@ -29,6 +29,7 @@ import {
   apiGetPosts, apiSavePost, apiDeletePost,
   apiGetContacts, apiUpdateContactStatus, apiDeleteContact,
   apiGetSubscribers, apiDeleteSubscriber,
+  apiVerifyAuth, apiLogout,
 } from '../lib/api';
 import { BlogPost } from '../lib/types';
 import { cn } from '../lib/utils';
@@ -142,18 +143,27 @@ interface ConfirmDialogState {
 
 export function Admin() {
   const navigate = useNavigate();
-  const authenticated = sessionStorage.getItem('admin_authenticated') === 'true';
+  const [authenticated, setAuthenticated] = useState(() => sessionStorage.getItem('admin_authenticated') === 'true');
+  const [authChecked, setAuthChecked] = useState(false);
 
   const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
 
 
-  // Guard clause: Redirect to login if not authenticated
+  // Verify token with backend on mount
   useEffect(() => {
-    if (!authenticated) {
-      navigate('/login');
-    }
-  }, [authenticated, navigate]);
+    apiVerifyAuth().then((valid) => {
+      if (!valid) {
+        sessionStorage.removeItem('admin_authenticated');
+        setAuthenticated(false);
+        navigate('/login');
+      } else {
+        sessionStorage.setItem('admin_authenticated', 'true');
+        setAuthenticated(true);
+      }
+      setAuthChecked(true);
+    });
+  }, [navigate]);
 
   // App data state
   const [postsList, setPostsList] = useState<BlogPost[]>([]);
@@ -256,7 +266,8 @@ export function Admin() {
     };
   }, [authenticated]);
 
-  const handleLogout = () => {
+  const handleLogout = async () => {
+    await apiLogout();
     sessionStorage.removeItem('admin_authenticated');
     navigate('/login');
   };
@@ -653,7 +664,7 @@ export function Admin() {
     subscriberPage * SUBSCRIBERS_PER_PAGE
   );
 
-  if (!authenticated) {
+  if (!authenticated || !authChecked) {
     return null;
   }
 
