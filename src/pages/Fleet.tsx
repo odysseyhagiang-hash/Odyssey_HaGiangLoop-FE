@@ -72,6 +72,14 @@ function VehicleImage({ vehicle }: { vehicle: Vehicle }) {
 }
 
 export function Fleet() {
+  const [activeSlide, setActiveSlide] = React.useState(0);
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveSlide((prev) => (prev === 0 ? 1 : 0));
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
+
   useSeo({
     title: 'Rental Bikes',
     description:
@@ -132,19 +140,30 @@ export function Fleet() {
       <Section tone="parchment">
         <Container>
           <div className="grid gap-14 lg:grid-cols-[1fr_1fr] lg:gap-20">
-            <Reveal className="overflow-hidden rounded-5xl">
+            <Reveal className="overflow-hidden rounded-5xl relative w-full aspect-[4/3] lg:aspect-auto lg:h-full">
               <motion.div
                 initial={{ scale: 1.15 }}
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true, margin: '-80px' }}
-                transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}>
-
-                <LazyImage
-                  src={images.workshop}
-                  alt="A mechanic servicing a motorbike in a tidy workshop with tools on the wall"
-                  wrapperClassName="block aspect-[3/2] w-full"
-                  sizes="(min-width: 1024px) 45vw, 100vw" />
-
+                transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
+                className="relative h-full w-full"
+              >
+                <div className="absolute inset-0 transition-opacity duration-1000" style={{ opacity: activeSlide === 0 ? 1 : 0 }}>
+                  <LazyImage
+                    src="/xe1.webp"
+                    alt="Odyssey motorbike fleet - Black bikes"
+                    wrapperClassName="w-full h-full"
+                    className="w-full h-full object-cover"
+                    sizes="(min-width: 1024px) 45vw, 100vw" />
+                </div>
+                <div className="absolute inset-0 transition-opacity duration-1000" style={{ opacity: activeSlide === 1 ? 1 : 0 }}>
+                  <LazyImage
+                    src="/xe2.webp"
+                    alt="Odyssey motorbike fleet - Red bikes"
+                    wrapperClassName="w-full h-full"
+                    className="w-full h-full object-cover"
+                    sizes="(min-width: 1024px) 45vw, 100vw" />
+                </div>
               </motion.div>
             </Reveal>
 

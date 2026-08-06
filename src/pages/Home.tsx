@@ -14,7 +14,7 @@ export function Home() {
   useSeo({
     title: 'Odyssey Ha Giang | Small Group & Private Ha Giang Loop Tours',
     description:
-      'Small group and private guided journeys across the Ha Giang plateau — eight travellers maximum, local guides, curated stays and time to actually stop.',
+      'Small group and private guided journeys across the Ha Giang plateau — Eleven travellers maximum, local guides, curated stays and time to actually stop.',
     image: images.hero,
     disableSuffix: true
   });

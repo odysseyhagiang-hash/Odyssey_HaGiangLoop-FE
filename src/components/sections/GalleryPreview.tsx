@@ -12,7 +12,7 @@ const spans: Record<string, string> = {
 };
 
 export function GalleryPreview() {
-  const preview = gallery.slice(0, 6);
+  const preview = gallery.slice(0, 8);
 
   return (
     <Section
@@ -42,25 +42,32 @@ export function GalleryPreview() {
           } />
 
 
-        <Stagger className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-3 sm:auto-rows-[minmax(0,1fr)]">
-          {preview.map((item) =>
-            <motion.figure
-              key={item.id}
-              variants={staggerItem}
-              className={`group relative overflow-hidden rounded-4xl ${spans[item.span]}`}>
+        <Stagger className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-3">
+          {preview.map((item, index) => {
+            let gridClass = '';
+            if (index === 0) gridClass = 'sm:col-start-1 sm:row-start-1';
+            else if (index === 1) gridClass = 'sm:col-start-3 sm:row-start-1';
+            else if (index === 2) gridClass = 'sm:col-start-1 sm:row-start-2';
+            else if (index === 3) gridClass = 'sm:col-start-2 sm:row-start-2';
+            else if (index === 4) gridClass = 'sm:col-start-1 sm:row-start-3';
+            else if (index === 5) gridClass = 'sm:col-start-2 sm:row-start-3';
+            else if (index === 6) gridClass = 'sm:col-start-1 sm:row-start-4';
+            else if (index === 7) gridClass = 'sm:col-start-2 sm:row-start-4';
+            return (
+              <motion.figure
+                key={item.id}
+                variants={staggerItem}
+                className={`group relative overflow-hidden rounded-4xl ${spans[item.span]} ${gridClass}`}>
 
-              <LazyImage
-                src={item.src}
-                alt={item.alt}
-                wrapperClassName="h-full w-full"
-                className="transition-transform duration-[1600ms] ease-editorial group-hover:scale-105"
-                sizes="(min-width: 640px) 33vw, 100vw" />
-
-              <figcaption className="absolute inset-x-0 bottom-0 translate-y-3 bg-gradient-to-t from-forest-900/85 to-transparent p-5 text-sm text-white opacity-0 transition-all duration-500 ease-editorial group-hover:translate-y-0 group-hover:opacity-100">
-                {item.caption}
-              </figcaption>
-            </motion.figure>
-          )}
+                <LazyImage
+                  src={item.src}
+                  alt={item.alt}
+                  wrapperClassName="h-full w-full"
+                  className="transition-transform duration-[1600ms] ease-editorial group-hover:scale-105"
+                  sizes="(min-width: 640px) 33vw, 100vw" />
+              </motion.figure>
+            );
+          })}
         </Stagger>
       </Container>
     </Section>);

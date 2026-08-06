@@ -416,7 +416,7 @@ export function Booking() {
   useSeo({
     title: 'Booking Bus & Room',
     description:
-      'Daily limousine schedules, VIP cabin coach details, and pricing for room accommodations at Odyssey Hostels in Ha Giang City.',
+      'Daily a bus schedules, VIP cabin coach details, and pricing for room accommodations at Odyssey Hostels in Ha Giang City.',
     image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80'
   });
 
@@ -588,7 +588,7 @@ export function Booking() {
       <PageHero
         eyebrow="Transport & Stays"
         title="Bus schedules & Room rates"
-        description="Daily limousine schedules and detailed room rates at Odyssey Hostels in Ha Giang City."
+        description="Daily a bus schedules and detailed room rates at Odyssey Hostels in Ha Giang City."
         image="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1600&q=80"
         imageAlt="Premium coach bus traveling on scenic mountain road in Ha Giang"
       />

@@ -185,7 +185,7 @@ export function Hero() {
               "
             >
               Guided journeys across the Ha Giang plateau for travellers who
-              would rather arrive well than arrive first. Eight people, four
+              would rather arrive well than arrive first. Small group, four
               days, and time to actually stop.
             </motion.p>
 

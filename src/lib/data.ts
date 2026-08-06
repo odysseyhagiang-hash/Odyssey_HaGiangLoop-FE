@@ -688,7 +688,7 @@ export const features: Feature[] = [
     id: 'small',
     title: 'Small by design',
     description:
-      'Eight travellers maximum on group departures. Small enough to fit around one dinner table and one village courtyard.',
+      'Eleven travellers maximum on group departures. Small enough to fit around one dinner table and one village courtyard.',
     icon: 'users'
   },
   {
@@ -1021,7 +1021,7 @@ export const faqs: FaqItem[] = [
 export const gallery: GalleryItem[] = [
   {
     id: 'g1',
-    src: images.hero,
+    src: '/backgrounds_section/1786031375182_3683928261827800120_g7095732901554789214_f395c91b72fb670cd763fb2be231904a.webp',
     alt: 'Aerial view of a winding mountain road between limestone karst peaks at golden hour',
     caption: 'The plateau road at first light',
     category: 'Landscape',
@@ -1029,7 +1029,7 @@ export const gallery: GalleryItem[] = [
   },
   {
     id: 'g2',
-    src: images.canyon,
+    src: '/backgrounds_section/1786031376046_3683928261827800120_g7095732901554789214_de2fd83acbc6e164476a5f4abec6c93a.webp',
     alt: 'Emerald river canyon between vertical limestone cliffs',
     caption: 'Nho Que, from the water',
     category: 'Landscape',
@@ -1037,7 +1037,7 @@ export const gallery: GalleryItem[] = [
   },
   {
     id: 'g3',
-    src: "/1785766225036_7647185241213986356_7647185241213986356_2c5ef16bfc0db67306a888e11cb98583.webp",
+    src: '/backgrounds_section/1786031377076_3683928261827800120_g7095732901554789214_ff8a793b2403510e63665af108617ad8.webp',
     alt: 'Highland market stalls with indigo textiles and woven baskets',
     caption: 'Sunday trade, Dong Van',
     category: 'Culture',
@@ -1045,7 +1045,7 @@ export const gallery: GalleryItem[] = [
   },
   {
     id: 'g4',
-    src: images.terraces,
+    src: '/backgrounds_section/1786031380209_3683928261827800120_g7095732901554789214_21ef10f256b1c0543eaa88f23666734c.webp',
     alt: 'Golden terraced rice fields cascading down misty mountainsides',
     caption: 'Harvest in the west',
     category: 'Landscape',
@@ -1053,23 +1053,23 @@ export const gallery: GalleryItem[] = [
   },
   {
     id: 'g5',
-    src: images.experience,
+    src: '/backgrounds_section/1786031378763_3683928261827800120_g7095732901554789214_1af8b0f2be71818da340cb52212fd586.webp',
     alt: 'Candlelit dinner table on a wooden balcony overlooking misty mountains',
     caption: 'Supper above the valley',
     category: 'Stays',
-    span: 'tall'
+    span: 'square'
   },
   {
     id: 'g6',
-    src: images.pass,
+    src: '/backgrounds_section/1786031381056_3683928261827800120_g7095732901554789214_548b8a3e2377a7956d7dbb21f530681d.webp',
     alt: 'Sea of clouds rolling over a mountain pass at sunrise',
     caption: 'Cloud sea, Ma Pi Leng',
     category: 'Road',
-    span: 'wide'
+    span: 'square'
   },
   {
     id: 'g7',
-    src: images.village,
+    src: '/backgrounds_section/1786031382416_3683928261827800120_g7095732901554789214_35f96fa2e1495fe8138fad51e73d9e26.webp',
     alt: 'Stone-walled village houses with clay tile roofs on a highland plateau',
     caption: 'Stone houses, Lung Cam',
     category: 'Culture',
@@ -1077,7 +1077,7 @@ export const gallery: GalleryItem[] = [
   },
   {
     id: 'g8',
-    src: "/1785766209135_7647185241213986356_7647185241213986356_0d50e4860e58636b30ad3b2bf5db108b.webp",
+    src: '/backgrounds_section/1786031383635_3683928261827800120_g7095732901554789214_de29055a252644393976cb9541a279bd.webp',
     alt: 'Boutique mountain lodge terrace overlooking rice terraces at sunrise',
     caption: 'The lodge, before anyone wakes',
     category: 'Stays',
@@ -1085,7 +1085,7 @@ export const gallery: GalleryItem[] = [
   },
   {
     id: 'g9',
-    src: "/1785766265624_7647185241213986356_7647185241213986356_5e8ce7ed3e2a9b31e1cdeda2da9909e4.webp",
+    src: '/backgrounds_section/1786031384462_3683928261827800120_g7095732901554789214_fb24fcc10d6f54aa24b70bf35cee28e8.webp',
     alt: 'A rider on a narrow cliffside road above a river canyon',
     caption: 'The cliff road',
     category: 'Road',
@@ -1093,7 +1093,7 @@ export const gallery: GalleryItem[] = [
   },
   {
     id: 'g10',
-    src: 'https://res.cloudinary.com/bs1csiim/image/upload/v1785990610/1785766385695_7647185241213986356_7647185241213986356_23eb27041d30d4aa9ac8f8a8c90770d5_csmhfr.jpg',
+    src: '/backgrounds_section/1786031386537_3683928261827800120_g7095732901554789214_1584bf56f3d416001e6863108dfdc331.webp',
     alt: 'Traveler photographing the panoramic mountains of the Ha Giang Loop',
     caption: 'Capturing the endless green ridges of Ha Giang',
     category: 'Landscape',
@@ -1101,7 +1101,7 @@ export const gallery: GalleryItem[] = [
   },
   {
     id: 'g11',
-    src: 'https://res.cloudinary.com/bs1csiim/image/upload/v1785990613/1785766385751_7647185241213986356_7647185241213986356_b04b7caa9b71d7146b8b098e81923d71_pfuije.jpg',
+    src: '/backgrounds_section/1786031387725_3683928261827800120_g7095732901554789214_2de7506e566d4b09507838ada4267cb0.webp',
     alt: 'Mountain village nestled among limestone peaks in Ha Giang Loop, Vietnam',
     caption: 'A peaceful village hidden beneath the misty mountains',
     category: 'Culture',
@@ -1109,7 +1109,7 @@ export const gallery: GalleryItem[] = [
   },
   {
     id: 'g12',
-    src: "/1785766224985_7647185241213986356_7647185241213986356_30203b1a484d3f6ecde23b932e4e9d42.webp",
+    src: '/backgrounds_section/1786031389395_3683928261827800120_g7095732901554789214_b455bad3d0e01e3e42101a1a2b70e3a9.webp',
     alt: 'Photographer standing on a rocky overlook above a river gorge',
     caption: 'Waiting for the gap in the cloud',
     category: 'Road',

@@ -55,7 +55,7 @@ export function Footer() {
             </h2>
             <p className="mt-4 max-w-md text-sm leading-relaxed text-white/65">
               Route notes, weather windows and the two or three departures we think are worth
-              rearranging a calendar for. Never more than four a year.
+              rearranging a calendar for.
             </p>
 
             <form
