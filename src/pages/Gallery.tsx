@@ -98,7 +98,7 @@ export function Gallery() {
                   type="button"
                   onClick={() => setActive(item)}
                   className="block h-full w-full text-left"
-                  aria-label={`Open photograph: ${item.caption}`}>
+                  aria-label={`Open photograph`}>
 
                   <LazyImage
                     src={item.src}
@@ -106,10 +106,6 @@ export function Gallery() {
                     wrapperClassName="h-full w-full"
                     className="transition-transform duration-[1600ms] ease-editorial group-hover:scale-105"
                     sizes="(min-width: 640px) 33vw, 100vw" />
-
-                  <figcaption className="absolute inset-x-0 bottom-0 translate-y-3 bg-gradient-to-t from-forest-900/85 to-transparent p-5 text-sm text-white opacity-0 transition-all duration-500 ease-editorial group-hover:translate-y-0 group-hover:opacity-100">
-                    {item.caption}
-                  </figcaption>
                 </button>
               </motion.figure>
             )}
@@ -150,10 +146,6 @@ export function Gallery() {
                 src={active.src}
                 alt={active.alt}
                 className="max-h-[78vh] w-full rounded-4xl object-contain" />
-
-              <figcaption className="mt-5 text-center text-sm text-white/70">
-                {active.caption} · {active.category}
-              </figcaption>
             </motion.figure>
           </motion.div>
         }
