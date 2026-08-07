@@ -11,7 +11,7 @@ interface State {
   message?: string;
 }
 
-/** Route-level error UI: catches render failures and offers a recovery path. */
+/** Route-level error UI: catches render failures and offers a recovery path*/
 export class ErrorBoundary extends React.Component<Props, State> {
   state: State = { hasError: false };
 
@@ -37,7 +37,7 @@ export class ErrorBoundary extends React.Component<Props, State> {
             again, our team would like to hear about it.
           </p>
           {this.state.message &&
-          <p className="mt-5 rounded-2xl bg-parchment px-4 py-3 text-left font-mono text-xs text-ink-muted">
+            <p className="mt-5 rounded-2xl bg-parchment px-4 py-3 text-left font-mono text-xs text-ink-muted">
               {this.state.message}
             </p>
           }
