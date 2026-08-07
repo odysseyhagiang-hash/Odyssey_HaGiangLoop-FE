@@ -508,7 +508,7 @@ export const destinations: Destination[] = [
     slug: 'lung-tam-weaving-village',
     name: 'Lung Tam Weaving Village',
     region: 'Quan Ba',
-    image: 'https://res.cloudinary.com/bs1csiim/image/upload/v1785913298/lung_tam_weaving_village_hfrmwa.png',
+    image: '/1785766225036_7647185241213986356_7647185241213986356_2c5ef16bfc0db67306a888e11cb98583.webp',
     elevation: '900 m',
     bestSeason: 'All year',
     blurb: "A vibrant tapestry of traditional H'Mong handwoven linen craftsmanship.",
@@ -1021,7 +1021,7 @@ export const faqs: FaqItem[] = [
 export const gallery: GalleryItem[] = [
   {
     id: 'g1',
-    src: '/backgrounds_section/1786031375182_3683928261827800120_g7095732901554789214_f395c91b72fb670cd763fb2be231904a.webp',
+    src: '/1786081365510_7647185241213986356_7647185241213986356_793ba57b0031eea7bd5bfb6ffaf3dac7.webp',
     alt: 'Aerial view of a winding mountain road between limestone karst peaks at golden hour',
     caption: 'The plateau road at first light',
     category: 'Landscape',
@@ -1029,15 +1029,15 @@ export const gallery: GalleryItem[] = [
   },
   {
     id: 'g2',
-    src: '/backgrounds_section/1786031376046_3683928261827800120_g7095732901554789214_de2fd83acbc6e164476a5f4abec6c93a.webp',
-    alt: 'Emerald river canyon between vertical limestone cliffs',
-    caption: 'Nho Que, from the water',
+    src: '/1786081365559_7647185241213986356_7647185241213986356_79c94ab2fecf3b3389f0c2f4db873e78.webp',
+    alt: 'Golden terraced rice fields cascading down misty mountainsides',
+    caption: 'Harvest in the west',
     category: 'Landscape',
     span: 'tall'
   },
   {
     id: 'g3',
-    src: '/backgrounds_section/1786031377076_3683928261827800120_g7095732901554789214_ff8a793b2403510e63665af108617ad8.webp',
+    src: '/1786081365546_7647185241213986356_7647185241213986356_c02371daf6f0cf8a4c2ee54f8e86c8c6.webp',
     alt: 'Highland market stalls with indigo textiles and woven baskets',
     caption: 'Sunday trade, Dong Van',
     category: 'Culture',
@@ -1045,15 +1045,15 @@ export const gallery: GalleryItem[] = [
   },
   {
     id: 'g4',
-    src: '/backgrounds_section/1786031380209_3683928261827800120_g7095732901554789214_21ef10f256b1c0543eaa88f23666734c.webp',
-    alt: 'Golden terraced rice fields cascading down misty mountainsides',
-    caption: 'Harvest in the west',
+    src: '/1786081365530_7647185241213986356_7647185241213986356_943711ffa4b87e1fe40cd185435faaf6.webp',
+    alt: 'Emerald river canyon between vertical limestone cliffs',
+    caption: 'Nho Que, from the water',
     category: 'Landscape',
     span: 'square'
   },
   {
     id: 'g5',
-    src: '/backgrounds_section/1786031378763_3683928261827800120_g7095732901554789214_1af8b0f2be71818da340cb52212fd586.webp',
+    src: '/1786081365570_7647185241213986356_7647185241213986356_eac56c2cdfa8cc27c1471c2c7fc2a22f.webp',
     alt: 'Candlelit dinner table on a wooden balcony overlooking misty mountains',
     caption: 'Supper above the valley',
     category: 'Stays',
@@ -1061,7 +1061,7 @@ export const gallery: GalleryItem[] = [
   },
   {
     id: 'g6',
-    src: '/backgrounds_section/1786031381056_3683928261827800120_g7095732901554789214_548b8a3e2377a7956d7dbb21f530681d.webp',
+    src: '/1786081365578_7647185241213986356_7647185241213986356_e873d37dca3e490927f2025986689364.webp',
     alt: 'Sea of clouds rolling over a mountain pass at sunrise',
     caption: 'Cloud sea, Ma Pi Leng',
     category: 'Road',
@@ -1069,7 +1069,7 @@ export const gallery: GalleryItem[] = [
   },
   {
     id: 'g7',
-    src: '/backgrounds_section/1786031382416_3683928261827800120_g7095732901554789214_35f96fa2e1495fe8138fad51e73d9e26.webp',
+    src: '/1786081365586_7647185241213986356_7647185241213986356_db31cc9bd7b4d09ab107265c0460c013.webp',
     alt: 'Stone-walled village houses with clay tile roofs on a highland plateau',
     caption: 'Stone houses, Lung Cam',
     category: 'Culture',
@@ -1077,7 +1077,7 @@ export const gallery: GalleryItem[] = [
   },
   {
     id: 'g8',
-    src: '/backgrounds_section/1786031383635_3683928261827800120_g7095732901554789214_de29055a252644393976cb9541a279bd.webp',
+    src: '/1786081365597_7647185241213986356_7647185241213986356_4283b807d628d6d6e40b5c7de0a585c1.webp',
     alt: 'Boutique mountain lodge terrace overlooking rice terraces at sunrise',
     caption: 'The lodge, before anyone wakes',
     category: 'Stays',
