@@ -1022,97 +1022,97 @@ export const gallery: GalleryItem[] = [
   {
     id: 'g1',
     src: '/1786081365510_7647185241213986356_7647185241213986356_793ba57b0031eea7bd5bfb6ffaf3dac7.webp',
-    alt: 'Aerial view of a winding mountain road between limestone karst peaks at golden hour',
-    caption: 'The plateau road at first light',
-    category: 'Landscape',
+    alt: 'A traveler in a motorcycle helmet making peace signs on a mountain overlook',
+    caption: 'Rider at the mountain peak',
+    category: 'Road',
     span: 'wide'
   },
   {
     id: 'g2',
     src: '/1786081365559_7647185241213986356_7647185241213986356_79c94ab2fecf3b3389f0c2f4db873e78.webp',
-    alt: 'Golden terraced rice fields cascading down misty mountainsides',
-    caption: 'Harvest in the west',
-    category: 'Landscape',
+    alt: 'A scenic winding road snaking down a green mountain valley under white clouds',
+    caption: 'Winding valley path',
+    category: 'Road',
     span: 'tall'
   },
   {
     id: 'g3',
     src: '/1786081365546_7647185241213986356_7647185241213986356_c02371daf6f0cf8a4c2ee54f8e86c8c6.webp',
-    alt: 'Highland market stalls with indigo textiles and woven baskets',
-    caption: 'Sunday trade, Dong Van',
-    category: 'Culture',
+    alt: 'Emerald waters of Nho Que River winding through deep green mountain canyons',
+    caption: 'Nho Que River from above',
+    category: 'Landscape',
     span: 'square'
   },
   {
     id: 'g4',
     src: '/1786081365530_7647185241213986356_7647185241213986356_943711ffa4b87e1fe40cd185435faaf6.webp',
-    alt: 'Emerald river canyon between vertical limestone cliffs',
-    caption: 'Nho Que, from the water',
-    category: 'Landscape',
+    alt: 'A traveler sitting on a chair under an umbrella overlooking the majestic mountain valley',
+    caption: 'Rest stop above the clouds',
+    category: 'Stays',
     span: 'square'
   },
   {
     id: 'g5',
     src: '/1786081365570_7647185241213986356_7647185241213986356_eac56c2cdfa8cc27c1471c2c7fc2a22f.webp',
-    alt: 'Candlelit dinner table on a wooden balcony overlooking misty mountains',
-    caption: 'Supper above the valley',
-    category: 'Stays',
+    alt: 'A powerful jungle waterfall pouring into a clear turquoise pool with sun rays',
+    caption: 'Hidden jungle waterfall',
+    category: 'Landscape',
     span: 'square'
   },
   {
     id: 'g6',
     src: '/1786081365578_7647185241213986356_7647185241213986356_e873d37dca3e490927f2025986689364.webp',
-    alt: 'Sea of clouds rolling over a mountain pass at sunrise',
-    caption: 'Cloud sea, Ma Pi Leng',
-    category: 'Road',
+    alt: 'Travelers on a bamboo raft on a calm green river with Odyssey Hostel sign',
+    caption: 'River rafting excursion',
+    category: 'Stays',
     span: 'square'
   },
   {
     id: 'g7',
     src: '/1786081365586_7647185241213986356_7647185241213986356_db31cc9bd7b4d09ab107265c0460c013.webp',
-    alt: 'Stone-walled village houses with clay tile roofs on a highland plateau',
-    caption: 'Stone houses, Lung Cam',
-    category: 'Culture',
+    alt: 'Boats sailing between the towering limestone cliffs of Tu San Canyon',
+    caption: 'Tu San Canyon boating',
+    category: 'Landscape',
     span: 'square'
   },
   {
     id: 'g8',
     src: '/1786081365597_7647185241213986356_7647185241213986356_4283b807d628d6d6e40b5c7de0a585c1.webp',
-    alt: 'Boutique mountain lodge terrace overlooking rice terraces at sunrise',
-    caption: 'The lodge, before anyone wakes',
-    category: 'Stays',
+    alt: 'Motorcycle riders on a curved mountain highway lined with green slopes',
+    caption: 'Cruising the loop road',
+    category: 'Road',
     span: 'square'
   },
   {
     id: 'g9',
     src: '/backgrounds_section/1786031384462_3683928261827800120_g7095732901554789214_fb24fcc10d6f54aa24b70bf35cee28e8.webp',
-    alt: 'A rider on a narrow cliffside road above a river canyon',
-    caption: 'The cliff road',
-    category: 'Road',
+    alt: 'A group of diverse travelers and local guides enjoying a dinner table full of food at a homestay',
+    caption: 'Homestay dinner gathering',
+    category: 'Culture',
     span: 'square'
   },
   {
     id: 'g10',
     src: '/backgrounds_section/1786031386537_3683928261827800120_g7095732901554789214_1584bf56f3d416001e6863108dfdc331.webp',
-    alt: 'Traveler photographing the panoramic mountains of the Ha Giang Loop',
-    caption: 'Capturing the endless green ridges of Ha Giang',
-    category: 'Landscape',
+    alt: 'Two riders on a red Honda XR motorcycle looking out over the winding river canyon',
+    caption: 'Overlooking the canyon ride',
+    category: 'Road',
     span: 'square'
   },
   {
     id: 'g11',
     src: '/backgrounds_section/1786031387725_3683928261827800120_g7095732901554789214_2de7506e566d4b09507838ada4267cb0.webp',
-    alt: 'Mountain village nestled among limestone peaks in Ha Giang Loop, Vietnam',
-    caption: 'A peaceful village hidden beneath the misty mountains',
+    alt: 'A group of happy travelers posing under a flying Vietnamese flag in front of green karst peaks',
+    caption: 'Viewpoint group moment',
     category: 'Culture',
     span: 'tall'
   },
   {
     id: 'g12',
     src: '/backgrounds_section/1786031389395_3683928261827800120_g7095732901554789214_b455bad3d0e01e3e42101a1a2b70e3a9.webp',
-    alt: 'Photographer standing on a rocky overlook above a river gorge',
-    caption: 'Waiting for the gap in the cloud',
-    category: 'Road',
+    alt: 'A group of travelers jumping in the air on a mountaintop overlook with panoramic valley views',
+    caption: 'Summit jump celebration',
+    category: 'Landscape',
     span: 'wide'
   }
 ];
