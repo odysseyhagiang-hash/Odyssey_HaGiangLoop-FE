@@ -21,7 +21,7 @@ const care = [
   {
     icon: GaugeIcon,
     title: 'Retired early, on purpose',
-    text: 'Bikes leave the fleet at 20,000 km, roughly half the local average. Nothing you ride will be older than two seasons.'
+    text: 'We refresh our vehicles every two years on a regular basis. Nothing you ride will be older than two seasons.'
   },
   {
     icon: ShieldCheckIcon,

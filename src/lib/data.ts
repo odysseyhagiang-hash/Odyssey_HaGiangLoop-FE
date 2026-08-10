@@ -457,6 +457,18 @@ export const tours: Tour[] = [
 
 export const destinations: Destination[] = [
   {
+    slug: 'khau-lan-waterfall',
+    name: 'Khau Lan Waterfall',
+    region: 'Quan Ba',
+    image: 'https://res.cloudinary.com/bs1csiim/image/upload/v1786356707/KhauLan_j2xnqd.png',
+    elevation: '1,100 m',
+    bestSeason: 'May – October',
+    blurb: 'A spectacular multi-tiered waterfall hidden in the heart of Quan Ba valley.',
+    description:
+      'Khau Lan Waterfall is one of the most breathtaking natural wonders in Quan Ba district. This impressive cascade tumbles down multiple tiers through lush jungle vegetation, creating a series of pristine pools perfect for swimming during the wet season. The waterfall is located in a remote area, surrounded by traditional H\'Mong villages and terraced rice fields. The 30-minute trek to reach the falls takes you through stunning mountain scenery and offers glimpses into local highland life. During peak flow season (May-October), the waterfall becomes a thundering display of nature\'s power, while the dry season (November-April) reveals a gentler, more intimate cascade ideal for photography and peaceful contemplation.',
+    experiences: ['Waterfall swim', 'Village trek', 'Local lunch with villagers']
+  },
+  {
     slug: 'nho-que-canyon',
     name: 'Nho Que River',
     region: 'Meo Vac',
