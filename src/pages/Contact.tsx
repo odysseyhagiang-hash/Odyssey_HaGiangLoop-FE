@@ -363,6 +363,17 @@ export function Contact() {
               </div>
             </Reveal>
           </div>
+
+          {/* License Information */}
+          <Reveal delay={0.2}>
+            <div className="mt-16 border-t border-ink/10 pt-8 text-center">
+              <p className="text-xs leading-relaxed text-ink-muted">
+                <span className="block font-medium text-forest-700">KINH DOANH DỊCH VỤ LỮ HÀNH QUỐC TẾ</span>
+                <span className="block mt-1 text-[11px] uppercase tracking-wider">INTERNATIONAL TOUR OPERATOR LICENCE</span>
+                <span className="block mt-2 font-mono text-ink-soft">Số GP/No. : 08-0034/2026 /CDLQGVN-GP LHQT</span>
+              </p>
+            </div>
+          </Reveal>
         </Container>
       </Section>
     </main>);
