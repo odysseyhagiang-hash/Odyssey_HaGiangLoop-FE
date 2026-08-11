@@ -24,7 +24,7 @@ export function Section({ children, className, id, tone = 'canvas', style, ...re
       id={id}
       style={style}
       className={cn(
-        'relative w-full py-20 md:py-28 lg:py-36',
+        'relative w-full py-10 md:py-14 lg:py-18',
         tones[tone],
         className
       )}

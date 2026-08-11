@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { XIcon } from 'lucide-react';
+import { ChevronLeftIcon, ChevronRightIcon, XIcon } from 'lucide-react';
 import { useSeo } from '../hooks/useSeo';
 import { gallery, images } from '../lib/data';
 import type { GalleryItem } from '../lib/types';
@@ -35,10 +35,46 @@ export function Gallery() {
     [category]
   );
 
+  const activeIndex = visible.findIndex((item) => item.id === active?.id);
+
+  const handlePrev = (e?: React.MouseEvent) => {
+    if (e) e.stopPropagation();
+    if (activeIndex > 0) {
+      setActive(visible[activeIndex - 1]);
+    } else {
+      setActive(visible[visible.length - 1]);
+    }
+  };
+
+  const handleNext = (e?: React.MouseEvent) => {
+    if (e) e.stopPropagation();
+    if (activeIndex < visible.length - 1) {
+      setActive(visible[activeIndex + 1]);
+    } else {
+      setActive(visible[0]);
+    }
+  };
+
   useEffect(() => {
     if (!active) return;
     const onKey = (event: KeyboardEvent) => {
       if (event.key === 'Escape') setActive(null);
+      if (event.key === 'ArrowLeft') {
+        const idx = visible.findIndex((item) => item.id === active.id);
+        if (idx > 0) {
+          setActive(visible[idx - 1]);
+        } else {
+          setActive(visible[visible.length - 1]);
+        }
+      }
+      if (event.key === 'ArrowRight') {
+        const idx = visible.findIndex((item) => item.id === active.id);
+        if (idx < visible.length - 1) {
+          setActive(visible[idx + 1]);
+        } else {
+          setActive(visible[0]);
+        }
+      }
     };
     document.addEventListener('keydown', onKey);
     document.body.style.overflow = 'hidden';
@@ -46,7 +82,7 @@ export function Gallery() {
       document.removeEventListener('keydown', onKey);
       document.body.style.overflow = '';
     };
-  }, [active]);
+  }, [active, visible]);
 
   return (
     <main id="main" className="w-full bg-canvas">
@@ -118,7 +154,7 @@ export function Gallery() {
           <motion.div
             role="dialog"
             aria-modal="true"
-            aria-label={active.caption}
+            aria-label={active.caption || active.alt}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -126,26 +162,49 @@ export function Gallery() {
             className="fixed inset-0 z-[60] flex items-center justify-center bg-forest-900/95 p-5 sm:p-10"
             onClick={() => setActive(null)}>
 
+            {/* Close Button */}
             <button
               type="button"
               onClick={() => setActive(null)}
               aria-label="Close photograph"
-              className="absolute right-5 top-5 grid h-12 w-12 place-items-center rounded-full border border-white/25 text-white transition-colors hover:border-gold-300 hover:text-gold-300">
+              className="absolute right-5 top-5 z-[70] grid h-12 w-12 place-items-center rounded-full border border-white/25 text-white transition-colors hover:border-gold-300 hover:text-gold-300">
 
               <XIcon className="h-5 w-5" />
             </button>
+
+            {/* Prev Button */}
+            <button
+              type="button"
+              onClick={handlePrev}
+              aria-label="Previous photograph"
+              className="absolute left-4 sm:left-10 z-[70] grid h-12 w-12 place-items-center rounded-full border border-white/20 bg-white/5 backdrop-blur-sm text-white transition-all hover:bg-white/10 hover:border-white/40 hover:scale-105 active:scale-95">
+
+              <ChevronLeftIcon className="h-6 w-6" />
+            </button>
+
+            {/* Next Button */}
+            <button
+              type="button"
+              onClick={handleNext}
+              aria-label="Next photograph"
+              className="absolute right-4 sm:right-10 z-[70] grid h-12 w-12 place-items-center rounded-full border border-white/20 bg-white/5 backdrop-blur-sm text-white transition-all hover:bg-white/10 hover:border-white/40 hover:scale-105 active:scale-95">
+
+              <ChevronRightIcon className="h-6 w-6" />
+            </button>
+
             <motion.figure
+              key={active.id}
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.98 }}
               transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-              className="max-h-full w-full max-w-4xl"
+              className="max-h-full w-full max-w-4xl px-12"
               onClick={(event) => event.stopPropagation()}>
 
               <img
                 src={active.src}
                 alt={active.alt}
-                className="max-h-[78vh] w-full rounded-4xl object-contain" />
+                className="max-h-[78vh] w-full rounded-4xl object-contain mx-auto" />
             </motion.figure>
           </motion.div>
         }

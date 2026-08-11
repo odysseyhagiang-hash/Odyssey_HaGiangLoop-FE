@@ -46,7 +46,7 @@ export function Footer() {
 
   return (
     <footer className="w-full bg-ink text-white" style={{ borderTop: '3px solid #B99450' }}>
-      <div className="mx-auto w-full max-w-[1240px] px-5 py-20 sm:px-8 lg:px-10 lg:py-24">
+      <div className="mx-auto w-full max-w-[1240px] px-5 pt-16 pb-8 sm:px-8 lg:px-10 lg:pt-20 lg:pb-10">
         <div className="grid gap-14 lg:grid-cols-[1.15fr_1fr]">
           <div>
             <p className="text-[11px] uppercase tracking-widest2 text-gold-300">Letters from the north</p>
@@ -151,7 +151,20 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col items-start justify-between gap-6 border-t border-white/10 pt-8 sm:flex-row sm:items-center">
+        {/* International Tour Operator License */}
+        <div className="mt-5">
+          <p className="text-[11px] font-semibold uppercase tracking-wider text-emerald-400 sm:text-xs">
+            KINH DOANH DỊCH VỤ LỮ HÀNH QUỐC TẾ
+          </p>
+          <p className="mt-0.5 text-[10px] font-medium uppercase tracking-widest text-white/50 sm:text-[11px]">
+            INTERNATIONAL TOUR OPERATOR LICENCE
+          </p>
+          <p className="mt-1 text-[11px] text-white/65 sm:text-xs">
+            Số <strong className="font-bold text-white/90">GP</strong>/No. : <strong className="font-bold text-white/90">08-0034/2026</strong> /CDLQGVN-GP LHQT
+          </p>
+        </div>
+
+        <div className="mt-6 flex flex-col items-start justify-between gap-6 border-t border-white/10 pt-6 sm:flex-row sm:items-center">
           <p className="text-xs text-white/40">
             © {new Date().getFullYear()} {brand.name}. Licensed inbound operator, Ha Giang province.
           </p>

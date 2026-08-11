@@ -10,6 +10,7 @@ import {
   Edit2Icon,
   FileTextIcon,
   InboxIcon,
+  Loader2Icon,
   LogOutIcon,
   MailIcon,
   PhoneIcon,
@@ -177,6 +178,7 @@ export function Admin() {
 
   // Blog Editor state
   const [isBlogModalOpen, setIsBlogModalOpen] = useState(false);
+  const [isSavingBlog, setIsSavingBlog] = useState(false);
   const [editingPost, setEditingPost] = useState<BlogPost | null>(null);
   const [blogForm, setBlogForm] = useState({
     title: '',
@@ -202,11 +204,12 @@ export function Admin() {
   const [newsletterSuccessMsg, setNewsletterSuccessMsg] = useState('');
 
   // Custom Confirmation Dialog state
+  const [confirmDialogIsSubmitting, setConfirmDialogIsSubmitting] = useState(false);
   const [confirmDialog, setConfirmDialog] = useState<ConfirmDialogState>({
     isOpen: false,
     title: '',
     message: '',
-    onConfirm: () => {},
+    onConfirm: () => { },
   });
 
   const showConfirm = (options: Omit<ConfirmDialogState, 'isOpen'>) => {
@@ -287,6 +290,8 @@ export function Admin() {
     setBlogErrors((prev) => ({ ...prev, [key]: '' }));
   };
 
+
+
   const openBlogEditor = (post: BlogPost | null) => {
     setSelectedFile(null);
     if (post) {
@@ -295,7 +300,7 @@ export function Admin() {
         title: post.title,
         slug: post.slug,
         excerpt: post.excerpt,
-        body: post.body.join('\n\n'),
+        body: post.body.filter(p => p.trim().length > 0).join('\n\n'),
         cover: post.cover,
         readingTime: post.readingTime,
         category: post.category,
@@ -342,12 +347,13 @@ export function Admin() {
       slug: blogForm.slug,
       title: blogForm.title,
       excerpt: blogForm.excerpt,
-      body: blogForm.body.split('\n\n').filter(p => p.trim().length > 0),
+      body: blogForm.body.split(/\n\s*\n/).map(p => p.trim()).filter(Boolean),
       date: editingPost ? editingPost.date : new Date().toISOString().split('T')[0],
       readingTime: blogForm.readingTime || '5 min read',
       category: blogForm.category,
     };
 
+    setIsSavingBlog(true);
     try {
       await apiSavePost(postData, selectedFile, blogForm.cover);
       const updated = await apiGetPosts();
@@ -358,6 +364,8 @@ export function Admin() {
       console.error('Failed to save blog post to backend', err);
       errors.title = 'Failed to save to backend server';
       setBlogErrors(errors);
+    } finally {
+      setIsSavingBlog(false);
     }
   };
 
@@ -996,7 +1004,7 @@ export function Admin() {
                         </div>
                       </div>
 
-                      <p className="mt-2 text-xs leading-relaxed text-ink-soft whitespace-pre-line bg-canvas/30 rounded-xl p-3 border border-ink/[0.04] line-clamp-3">
+                      <p className="mt-2 text-xs leading-relaxed text-ink-soft whitespace-pre-line bg-canvas/30 rounded-xl p-3 border border-ink/[0.04]">
                         {c.message}
                       </p>
 
@@ -1005,7 +1013,7 @@ export function Admin() {
                           <p className="text-[8px] uppercase tracking-widest text-gold-700 font-bold mb-1 flex items-center gap-1">
                             <CheckCircle2Icon className="h-3 w-3 text-gold-600" /> Replied {new Date(c.repliedAt!).toLocaleDateString()}
                           </p>
-                          <p className="text-[11px] italic text-ink-soft whitespace-pre-line leading-relaxed line-clamp-2">
+                          <p className="text-[11px] italic text-ink-soft whitespace-pre-line leading-relaxed">
                             {c.replyContent}
                           </p>
                         </div>
@@ -1215,16 +1223,18 @@ export function Admin() {
                   onChange={e => handleBlogFormChange('excerpt', e.target.value)}
                 />
 
-                <TextAreaField
-                  label="Content (Markdown)"
-                  required
-                  value={blogForm.body}
-                  error={blogErrors.body}
-                  rows={10}
-                  placeholder="## Heading 2&#10;&#10;Use standard markdown syntax. Leave double empty lines between paragraphs."
-                  onChange={e => handleBlogFormChange('body', e.target.value)}
-                  hint="Press double enter between sections to create separate paragraphs."
-                />
+                <div>
+                  <TextAreaField
+                    label="Article Content"
+                    required
+                    value={blogForm.body}
+                    error={blogErrors.body}
+                    rows={12}
+                    placeholder="Type or paste your article content here..."
+                    onChange={e => handleBlogFormChange('body', e.target.value)}
+                    hint="Tip: Use ##Title for Headings, ###Subtitle for Subheadings, **bold** for Bold, and - Item for Bullet Lists."
+                  />
+                </div>
 
               </form>
             </div>
@@ -1233,12 +1243,20 @@ export function Admin() {
               <Button
                 type="button"
                 variant="outline"
+                disabled={isSavingBlog}
                 onClick={() => setIsBlogModalOpen(false)}
               >
                 Cancel
               </Button>
-              <Button type="submit" form="blog-form" variant="gold">
-                {editingPost ? 'Save Changes' : 'Publish Article'}
+              <Button type="submit" form="blog-form" variant="gold" disabled={isSavingBlog}>
+                {isSavingBlog ? (
+                  <span className="flex items-center gap-2">
+                    <Loader2Icon className="h-4 w-4 animate-spin" />
+                    {editingPost ? 'Saving...' : 'Publishing...'}
+                  </span>
+                ) : (
+                  editingPost ? 'Save Changes' : 'Publish Article'
+                )}
               </Button>
             </div>
           </div>
@@ -1454,13 +1472,14 @@ export function Admin() {
                 {confirmDialog.title}
               </h3>
               <button
+                disabled={confirmDialogIsSubmitting}
                 onClick={() => setConfirmDialog(prev => ({ ...prev, isOpen: false }))}
-                className="flex h-8 w-8 items-center justify-center rounded-full border border-ink/10 hover:bg-ink/5"
+                className="flex h-8 w-8 items-center justify-center rounded-full border border-ink/10 hover:bg-ink/5 disabled:opacity-50"
               >
                 <XIcon className="h-4 w-4" />
               </button>
             </header>
-            
+
             <div className="mt-6 text-sm text-ink-soft leading-relaxed">
               {confirmDialog.message}
             </div>
@@ -1470,6 +1489,7 @@ export function Admin() {
                 type="button"
                 variant="outline"
                 size="sm"
+                disabled={confirmDialogIsSubmitting}
                 onClick={() => setConfirmDialog(prev => ({ ...prev, isOpen: false }))}
               >
                 Cancel
@@ -1477,17 +1497,32 @@ export function Admin() {
               <Button
                 type="button"
                 size="sm"
+                disabled={confirmDialogIsSubmitting}
                 className={cn(
                   confirmDialog.confirmVariant === 'danger'
                     ? 'bg-red-600 hover:bg-red-500 text-white border-none shadow-none'
                     : 'bg-forest-500 text-white hover:bg-forest-600'
                 )}
                 onClick={async () => {
-                  setConfirmDialog(prev => ({ ...prev, isOpen: false }));
-                  await confirmDialog.onConfirm();
+                  setConfirmDialogIsSubmitting(true);
+                  try {
+                    await confirmDialog.onConfirm();
+                  } catch (err) {
+                    console.error('Action failed:', err);
+                  } finally {
+                    setConfirmDialogIsSubmitting(false);
+                    setConfirmDialog(prev => ({ ...prev, isOpen: false }));
+                  }
                 }}
               >
-                {confirmDialog.confirmText || 'Confirm'}
+                {confirmDialogIsSubmitting ? (
+                  <span className="flex items-center gap-2">
+                    <Loader2Icon className="h-3.5 w-3.5 animate-spin" />
+                    Processing...
+                  </span>
+                ) : (
+                  confirmDialog.confirmText || 'Confirm'
+                )}
               </Button>
             </div>
           </div>
