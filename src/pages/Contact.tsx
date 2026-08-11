@@ -32,8 +32,21 @@ const topics = [
   { value: 'book-bus', label: 'Book Bus' },
 ];
 
+const formatDateForInput = (d: Date) => {
+  const year = d.getFullYear();
+  const month = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+};
+
 
 export function Contact() {
+  const todayDate = new Date();
+  const maxAllowedDate = new Date();
+  maxAllowedDate.setFullYear(todayDate.getFullYear() + 1);
+
+  const minArrivalDate = formatDateForInput(todayDate);
+  const maxArrivalDate = formatDateForInput(maxAllowedDate);
   useSeo({
     title: 'Contact',
     description:
@@ -115,9 +128,17 @@ export function Contact() {
     } else {
       const today = new Date();
       today.setHours(0, 0, 0, 0);
+      const maxDate = new Date();
+      maxDate.setFullYear(today.getFullYear() + 1);
+      maxDate.setHours(23, 59, 59, 999);
+
       const chosen = new Date(form.arrivalDate);
-      if (chosen < today) {
+      if (isNaN(chosen.getTime())) {
+        nextErrors.arrivalDate = 'Please enter a valid arrival date.';
+      } else if (chosen < today) {
         nextErrors.arrivalDate = 'Arrival date cannot be in the past.';
+      } else if (chosen > maxDate) {
+        nextErrors.arrivalDate = 'Arrival date cannot be more than 1 year in advance.';
       }
     }
 
@@ -257,6 +278,8 @@ export function Contact() {
                       label="Day arrival"
                       type="date"
                       required
+                      min={minArrivalDate}
+                      max={maxArrivalDate}
                       value={form.arrivalDate}
                       error={errors.arrivalDate}
                       onChange={(event) => update('arrivalDate', event.target.value)}
@@ -363,17 +386,6 @@ export function Contact() {
               </div>
             </Reveal>
           </div>
-
-          {/* License Information */}
-          <Reveal delay={0.2}>
-            <div className="mt-16 border-t border-ink/10 pt-8 text-center">
-              <p className="text-xs leading-relaxed text-ink-muted">
-                <span className="block font-medium text-forest-700">KINH DOANH DỊCH VỤ LỮ HÀNH QUỐC TẾ</span>
-                <span className="block mt-1 text-[11px] uppercase tracking-wider">INTERNATIONAL TOUR OPERATOR LICENCE</span>
-                <span className="block mt-2 font-mono text-ink-soft">Số GP/No. : 08-0034/2026 /CDLQGVN-GP LHQT</span>
-              </p>
-            </div>
-          </Reveal>
         </Container>
       </Section>
     </main>);
