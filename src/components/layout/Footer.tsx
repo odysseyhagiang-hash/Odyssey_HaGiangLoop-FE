@@ -89,7 +89,7 @@ export function Footer() {
             }
           </div>
 
-          <div className="grid gap-10 sm:grid-cols-3">
+          <div className="hidden sm:grid gap-10 sm:grid-cols-3">
             {columns.map((column) =>
               <nav key={column.title} aria-label={column.title}>
                 <h3 className="text-[11px] uppercase tracking-widest2 text-white/40">{column.title}</h3>
