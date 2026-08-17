@@ -68,7 +68,7 @@ export default async function handler(req, res) {
       if (response.ok) {
         const xml = await response.text();
         res.setHeader('Content-Type', 'application/xml; charset=utf-8');
-        res.setHeader('Cache-Control', 'public, s-maxage=3600, stale-while-revalidate=86400');
+        res.setHeader('Cache-Control', 'public, max-age=0, s-maxage=60, stale-while-revalidate=120');
         return res.status(200).send(xml);
       }
       console.warn(`[Vercel Sitemap] Backend returned status ${response.status}`);
