@@ -99,8 +99,8 @@ export function CreatorPopup() {
         className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300"
       />
 
-      {/* Modal Container */}
-      <div className="relative z-10 flex w-full max-w-[880px] h-[85vh] max-h-[660px] min-h-[480px] sm:min-h-[580px] flex-col overflow-hidden rounded-3xl bg-[#f4f6f8] shadow-2xl border border-black/5">
+      {/* Modal Container: Compact height on mobile */}
+      <div className="relative z-10 flex w-full max-w-[880px] h-[58vh] xs:h-[62vh] sm:h-[82vh] max-h-[420px] xs:max-h-[460px] sm:max-h-[640px] min-h-[350px] xs:min-h-[380px] sm:min-h-[560px] flex-col overflow-hidden rounded-3xl bg-[#f4f6f8] shadow-2xl border border-black/5">
         {/* Right Photo Container: Shifted rightwards so image watermark is fully visible */}
         <div
           onMouseEnter={() => setIsPaused(true)}
