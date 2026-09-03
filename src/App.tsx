@@ -6,6 +6,7 @@ import { ScrollToTop } from './components/layout/ScrollToTop';
 import { FloatingActions } from './components/layout/FloatingActions';
 import { ErrorBoundary } from './components/layout/ErrorBoundary';
 import { RouteLoader } from './components/layout/RouteLoader';
+import { CreatorPopup } from './components/ui/CreatorPopup';
 
 const Home = lazy(() => import('./pages/Home').then((m) => ({ default: m.Home })));
 const Tours = lazy(() => import('./pages/Tours').then((m) => ({ default: m.Tours })));
@@ -68,6 +69,7 @@ function AppContent() {
       </ErrorBoundary>
       {!isAdmin && <Footer />}
       {!isAdmin && <FloatingActions />}
+      {!isAdmin && <CreatorPopup />}
     </div>
   );
 }
