@@ -1,5 +1,5 @@
 import { useEffect, useState, useCallback } from 'react';
-import { X, Compass, Camera, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import { X } from 'lucide-react';
 import { cn } from '../../lib/utils';
 
 const POPUP_IMAGES = [
@@ -17,7 +17,7 @@ const POPUP_IMAGES = [
 
 const WHATSAPP_NUMBER = '84357292323';
 const WHATSAPP_TEXT = encodeURIComponent(
-  'Xin chào Odyssey Hà Giang! Tôi là người sáng tạo nội dung và muốn hợp tác cùng bạn.'
+  'Hello Odyssey Ha Giang! I am a content creator and would love to collaborate with you.'
 );
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_TEXT}`;
 
@@ -35,16 +35,12 @@ function WhatsAppIcon({ className }: { className?: string }) {
   );
 }
 
-/* ============================================================================
-   ACTIVE VARIANT 1: APPROVED 2-COLUMN SIDE-BY-SIDE LAYOUT
-   ============================================================================ */
 export function CreatorPopup() {
   const [isOpen, setIsOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
-    // Show popup immediately on site visit, once per session
     const hasDismissed = sessionStorage.getItem('odyssey_creator_popup_dismissed');
     if (!hasDismissed) {
       setIsOpen(true);
@@ -52,7 +48,6 @@ export function CreatorPopup() {
   }, []);
 
   useEffect(() => {
-    // Listen for custom manual open event
     const handleManualOpen = () => setIsOpen(true);
     window.addEventListener('open-creator-popup', handleManualOpen);
     return () => window.removeEventListener('open-creator-popup', handleManualOpen);
@@ -63,8 +58,6 @@ export function CreatorPopup() {
       document.body.style.overflow = 'hidden';
       const handleKeyDown = (e: KeyboardEvent) => {
         if (e.key === 'Escape') handleClose();
-        if (e.key === 'ArrowRight') nextSlide();
-        if (e.key === 'ArrowLeft') prevSlide();
       };
       window.addEventListener('keydown', handleKeyDown);
       return () => {
@@ -72,22 +65,17 @@ export function CreatorPopup() {
         window.removeEventListener('keydown', handleKeyDown);
       };
     }
-  }, [isOpen, currentIndex]);
+  }, [isOpen]);
 
   const nextSlide = useCallback(() => {
     setCurrentIndex((prev) => (prev + 1) % POPUP_IMAGES.length);
   }, []);
 
-  const prevSlide = useCallback(() => {
-    setCurrentIndex((prev) => (prev - 1 + POPUP_IMAGES.length) % POPUP_IMAGES.length);
-  }, []);
-
-  // Auto-slide every 2 seconds unless hovered
   useEffect(() => {
     if (!isOpen || isPaused) return;
     const interval = setInterval(() => {
       nextSlide();
-    }, 2000);
+    }, 2800);
     return () => clearInterval(interval);
   }, [isOpen, isPaused, nextSlide]);
 
@@ -100,144 +88,109 @@ export function CreatorPopup() {
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 md:p-8"
+      className="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-5 md:p-6"
       role="dialog"
       aria-modal="true"
       aria-labelledby="creator-popup-title"
     >
-      {/* Backdrop Blur Overlay */}
+      {/* Backdrop Overlay */}
       <div
         onClick={handleClose}
-        className="absolute inset-0 bg-ink/75 backdrop-blur-md transition-opacity duration-300"
+        className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300"
       />
 
-      {/* Modal Container: Approved 2-Column Side-by-Side Layout */}
-      <div className="relative z-10 flex w-full max-w-[1080px] max-h-[92vh] flex-col overflow-hidden rounded-3xl sm:rounded-[2.5rem] border border-white/30 bg-white shadow-lift md:flex-row">
-        {/* Close Button */}
-        <button
-          type="button"
-          onClick={handleClose}
-          aria-label="Đóng popup"
-          className="absolute right-4 top-4 z-30 grid h-10 w-10 place-items-center rounded-full bg-white/80 text-ink-soft backdrop-blur-md border border-ink/10 shadow-sm transition-all duration-200 hover:bg-forest-500 hover:text-white hover:border-forest-500 hover:scale-105 focus:outline-none"
-        >
-          <X className="h-5 w-5" />
-        </button>
-
-        {/* Left Column: Interactive Image Carousel / Slideshow */}
+      {/* Modal Container */}
+      <div className="relative z-10 flex w-full max-w-[880px] h-[85vh] max-h-[660px] min-h-[480px] sm:min-h-[580px] flex-col overflow-hidden rounded-3xl bg-[#f4f6f8] shadow-2xl border border-black/5">
+        {/* Right Photo Container: Shifted rightwards so image watermark is fully visible */}
         <div
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
-          className="relative w-full overflow-hidden bg-forest-950 md:w-1/2 flex flex-col justify-between h-[280px] xs:h-[340px] sm:h-[400px] md:h-auto md:min-h-[480px] lg:min-h-[520px]"
+          className="absolute inset-y-0 right-0 w-[60%] sm:w-[64%] h-full overflow-hidden pointer-events-none"
+          style={{
+            WebkitMaskImage: 'radial-gradient(ellipse 95% 100% at 100% 50%, #000 45%, rgba(0, 0, 0, 0.6) 70%, transparent 98%)',
+            maskImage: 'radial-gradient(ellipse 95% 100% at 100% 50%, #000 45%, rgba(0, 0, 0, 0.6) 70%, transparent 98%)',
+          }}
         >
-          {/* Main Slide Image Stack (Pure CSS Cross-Fade) */}
-          <div className="relative h-full w-full overflow-hidden">
-            {POPUP_IMAGES.map((imgUrl, idx) => (
-              <img
-                key={idx}
-                src={imgUrl}
-                alt={`Odyssey Ha Giang Creator Slide ${idx + 1}`}
-                className={cn(
-                  'absolute inset-0 h-full w-full object-cover object-center transition-opacity duration-300 ease-in-out',
-                  idx === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
-                )}
-                loading="eager"
-              />
-            ))}
+          {POPUP_IMAGES.map((imgUrl, idx) => (
+            <img
+              key={idx}
+              src={imgUrl}
+              alt={`Odyssey Ha Giang Slide ${idx + 1}`}
+              className={cn(
+                'absolute inset-0 h-full w-full object-cover object-[52%_top] sm:object-[55%_center] transition-opacity duration-700 ease-in-out',
+                idx === currentIndex ? 'opacity-100' : 'opacity-0'
+              )}
+              loading="eager"
+            />
+          ))}
+        </div>
 
-            {/* Gradient Overlays for contrast & legibility */}
-            <div className="absolute inset-0 bg-gradient-to-t from-forest-950/85 via-transparent to-forest-950/20 pointer-events-none" />
-
-            {/* Top Badge: Photo Tag */}
-            <div className="absolute top-4 left-4 z-20 flex items-center gap-2 rounded-full bg-black/40 backdrop-blur-md px-3.5 py-1.5 border border-white/20 text-white text-xs font-semibold">
-              <Camera className="h-3.5 w-3.5 text-gold-300" />
-              <span>Odyssey Experience</span>
+        {/* Top Header Row: Official Logo */}
+        <div className="relative z-30 flex items-center justify-between p-3.5 xs:p-4 sm:p-7">
+          {/* Official Odyssey Logo */}
+          <div className="flex items-center gap-1.5 sm:gap-2.5">
+            <img
+              src="/logo/logo.webp"
+              alt="Odyssey Logo"
+              className="h-7 w-7 sm:h-10 sm:w-10 rounded-full object-cover shadow-sm border border-forest-900/10"
+            />
+            <div className="flex flex-col">
+              <span className="font-display text-xs sm:text-lg font-extrabold tracking-tight text-[#1b432a] leading-none">
+                Odyssey
+              </span>
+              <span className="font-mono text-[7px] sm:text-[8.5px] uppercase tracking-widest text-forest-800/80 mt-0.5">
+                Ha Giang
+              </span>
             </div>
-
-            {/* Navigation Arrows */}
-            <button
-              type="button"
-              onClick={prevSlide}
-              aria-label="Ảnh trước"
-              className="absolute left-3 top-1/2 -translate-y-1/2 z-20 grid h-10 w-10 place-items-center rounded-full bg-black/30 backdrop-blur-md text-white border border-white/20 transition-all duration-200 hover:bg-forest-600 hover:border-forest-400 hover:scale-110 focus:outline-none"
-            >
-              <ChevronLeft className="h-5 w-5" />
-            </button>
-
-            <button
-              type="button"
-              onClick={nextSlide}
-              aria-label="Ảnh tiếp theo"
-              className="absolute right-3 top-1/2 -translate-y-1/2 z-20 grid h-10 w-10 place-items-center rounded-full bg-black/30 backdrop-blur-md text-white border border-white/20 transition-all duration-200 hover:bg-forest-600 hover:border-forest-400 hover:scale-110 focus:outline-none"
-            >
-              <ChevronRight className="h-5 w-5" />
-            </button>
-          </div>
-
-          {/* Bottom Dot Indicators Row */}
-          <div className="absolute bottom-4 inset-x-0 z-20 flex items-center justify-center gap-1.5 px-4 pointer-events-none">
-            {POPUP_IMAGES.map((_, idx) => (
-              <button
-                key={idx}
-                type="button"
-                onClick={() => setCurrentIndex(idx)}
-                aria-label={`Chuyển đến ảnh ${idx + 1}`}
-                className={cn(
-                  'pointer-events-auto h-2 rounded-full transition-all duration-300',
-                  idx === currentIndex
-                    ? 'w-7 bg-gold-300 shadow-sm'
-                    : 'w-2 bg-white/40 hover:bg-white/70'
-                )}
-              />
-            ))}
           </div>
         </div>
 
-        {/* Right Column: Editorial Content Panel */}
-        <div className="relative flex w-full md:w-1/2 flex-col justify-center gap-6 sm:gap-8 bg-gradient-to-br from-parchment/90 via-white to-forest-50/40 p-7 sm:p-9 md:p-11 overflow-hidden text-left">
-          {/* Header Row: Compass Icon Box + Pill Badge */}
-          <div className="flex items-center gap-3">
-            <div className="grid h-13 w-13 sm:h-15 sm:w-15 shrink-0 place-items-center rounded-2xl bg-forest-950 text-white shadow-md shadow-forest-950/20">
-              <Compass className="h-6.5 w-6.5 sm:h-7 sm:w-7 stroke-[2] text-gold-300" />
-            </div>
+        {/* Close Button: Positioned absolute top-right */}
+        <button
+          type="button"
+          onClick={handleClose}
+          aria-label="Close popup"
+          className="absolute top-3.5 right-3.5 sm:top-5 sm:right-5 z-40 grid h-9.5 w-9.5 sm:h-10.5 sm:w-10.5 place-items-center rounded-full bg-white/85 text-gray-900 shadow-md backdrop-blur-md border border-white/60 transition-all duration-200 hover:bg-white hover:scale-110 active:scale-95 focus:outline-none"
+        >
+          <X className="h-5 w-5 sm:h-5.5 sm:w-5.5" />
+        </button>
 
-            <div className="inline-flex items-center gap-1.5 rounded-full bg-forest-50 border border-forest-200/70 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-forest-800">
-              <span className="h-1.5 w-1.5 rounded-full bg-forest-600" />
-              <span>CREATOR PROGRAM</span>
-            </div>
-          </div>
-
-          {/* Title */}
+        {/* Content Area */}
+        <div className="relative z-30 flex flex-1 flex-col justify-center px-3.5 pb-4 sm:px-8 sm:pb-10 max-w-[145px] xs:max-w-[165px] sm:max-w-[330px]">
+          {/* Headline */}
           <h2
             id="creator-popup-title"
-            className="font-display text-xl sm:text-2xl lg:text-[28px] xl:text-[32px] font-extrabold text-ink leading-snug tracking-tight"
+            className="font-sans text-[1.2rem] xs:text-[1.38rem] sm:text-[2.6rem] leading-[1.04] font-light tracking-wide text-gray-900 uppercase"
           >
-            Bạn có phải là{' '}
-            <span className="text-forest-600 font-black">
-              người sáng tạo nội dung
-            </span>{' '}
-            không?
+            CREATOR<br />
+            PROGRAM
           </h2>
 
-          {/* Description */}
-          <p className="text-sm sm:text-base leading-relaxed text-ink-soft font-normal">
-            Kết nối với chúng tôi để cùng hợp tác và tạo ra những nội dung đặc biệt!
+          {/* Primary Subtext */}
+          <p className="mt-3 sm:mt-6 font-sans text-[11px] xs:text-xs sm:text-base text-gray-900 font-normal leading-snug break-words">
+            Are you a{' '}
+            <span className="text-[#1b432a] font-bold">content creator</span>?
           </p>
 
-          {/* Action WhatsApp CTA Button (Tightly Grouped & Centered) */}
-          <div className="flex justify-center w-full pt-1">
+          {/* Secondary Subtext */}
+          <p className="mt-2 sm:mt-2.5 font-sans text-[10px] xs:text-[11px] sm:text-sm text-gray-600 leading-relaxed break-words">
+            Partner with us to create extraordinary content and unique stories in Ha Giang!
+          </p>
+
+          {/* CTA Button */}
+          <div className="mt-3.5 sm:mt-7">
             <a
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex w-full items-center justify-center gap-3 rounded-2xl bg-[#25D366] px-6 py-3.5 sm:py-4 text-sm sm:text-base font-semibold text-white shadow-lg shadow-emerald-500/25 transition-all duration-300 hover:bg-[#1ebe5d] hover:shadow-xl hover:shadow-emerald-500/35 hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-[#25D366]"
+              className="group inline-flex items-center gap-1.5 sm:gap-2.5 rounded-full bg-[#1b432a] px-3 py-2 xs:px-3.5 xs:py-2.5 sm:px-6 sm:py-3.5 text-white shadow-md shadow-[#1b432a]/20 transition-all duration-300 hover:bg-[#143420] hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] focus:outline-none"
             >
-              <WhatsAppIcon className="h-6 w-6 shrink-0 transition-transform duration-300 group-hover:scale-110" />
+              <WhatsAppIcon className="h-4 w-4 sm:h-5 sm:w-5 fill-current text-white shrink-0" />
 
-              <span className="font-semibold tracking-wide whitespace-nowrap">
-                Liên hệ qua WhatsApp
+              <span className="font-sans font-medium text-[10px] xs:text-[11px] sm:text-sm tracking-wide leading-none whitespace-nowrap">
+                <span className="sm:hidden">WhatsApp</span>
+                <span className="hidden sm:inline">Chat with us on WhatsApp</span>
               </span>
-
-              <ArrowRight className="h-5 w-5 shrink-0 opacity-80 transition-transform duration-300 group-hover:translate-x-1" />
             </a>
           </div>
         </div>
