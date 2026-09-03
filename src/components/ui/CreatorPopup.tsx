@@ -174,7 +174,7 @@ export function CreatorPopup() {
 
           {/* Secondary Subtext */}
           <p className="mt-2 sm:mt-2.5 font-sans text-[10px] xs:text-[11px] sm:text-sm text-gray-600 leading-relaxed break-words">
-            Partner with us to create extraordinary content and unique stories in Ha Giang!
+            Please get in touch with us!
           </p>
 
           {/* CTA Button */}
