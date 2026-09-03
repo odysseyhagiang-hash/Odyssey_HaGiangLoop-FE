@@ -128,17 +128,17 @@ export function CreatorPopup() {
         {/* Top Header Row: Official Logo */}
         <div className="relative z-30 flex items-center justify-between p-3.5 xs:p-4 sm:p-7">
           {/* Official Odyssey Logo */}
-          <div className="flex items-center gap-1.5 sm:gap-2.5">
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
             <img
               src="/logo/logo.webp"
               alt="Odyssey Logo"
-              className="h-7 w-7 sm:h-10 sm:w-10 rounded-full object-cover shadow-sm border border-forest-900/10"
+              className="h-8 w-8 sm:h-12 sm:w-12 rounded-full object-cover shrink-0 shadow-sm border border-forest-900/10"
             />
             <div className="flex flex-col">
-              <span className="font-display text-xs sm:text-lg font-extrabold tracking-tight text-[#1b432a] leading-none">
+              <span className="font-display text-sm sm:text-xl font-extrabold tracking-tight text-[#1b432a] leading-none">
                 Odyssey
               </span>
-              <span className="font-mono text-[7px] sm:text-[8.5px] uppercase tracking-widest text-forest-800/80 mt-0.5">
+              <span className="font-mono text-[8px] sm:text-[9.5px] uppercase tracking-widest text-forest-800/80 mt-0.5 sm:mt-1">
                 Ha Giang
               </span>
             </div>
