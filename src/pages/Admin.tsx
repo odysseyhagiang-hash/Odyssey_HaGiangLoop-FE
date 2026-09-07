@@ -1,20 +1,28 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import ReactMarkdown from 'react-markdown';
 
 import {
   ArchiveIcon,
+  BoldIcon,
   BookOpenIcon,
   CalendarIcon,
   CheckCircle2Icon,
   DownloadIcon,
   Edit2Icon,
+  EyeIcon,
   FileTextIcon,
+  ImageIcon,
   InboxIcon,
+  ItalicIcon,
+  LinkIcon,
+  ListIcon,
   Loader2Icon,
   LogOutIcon,
   MailIcon,
   PhoneIcon,
   PlusIcon,
+  QuoteIcon,
   ReplyIcon,
   SearchIcon,
   Trash2Icon,
@@ -27,7 +35,7 @@ import {
   Subscriber
 } from '../lib/storage';
 import {
-  apiGetPosts, apiSavePost, apiDeletePost,
+  apiGetPosts, apiSavePost, apiDeletePost, apiUploadBlogImage,
   apiGetContacts, apiUpdateContactStatus, apiDeleteContact,
   apiGetSubscribers, apiDeleteSubscriber,
   apiVerifyAuth, apiLogout,
@@ -36,6 +44,7 @@ import { BlogPost } from '../lib/types';
 import { cn } from '../lib/utils';
 import { Button } from '../components/ui/Button';
 import { TextField, TextAreaField, SelectField } from '../components/ui/Field';
+
 
 type Tab = 'blog' | 'contacts' | 'subscribers';
 
@@ -193,6 +202,96 @@ export function Admin() {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [previewUrl, setPreviewUrl] = useState<string>('');
 
+  // Blog Content Editor Toolbar State
+  const [bodyTab, setBodyTab] = useState<'write' | 'preview'>('write');
+  const [isUploadingImage, setIsUploadingImage] = useState(false);
+  const [uploadError, setUploadError] = useState<string | null>(null);
+  const textareaRef = useRef<HTMLTextAreaElement | null>(null);
+
+  // Image Link Modal State
+  const [imageModalState, setImageModalState] = useState<{
+    isOpen: boolean;
+    url: string;
+    alt: string;
+    error?: string;
+  }>({
+    isOpen: false,
+    url: '',
+    alt: '',
+  });
+
+  const insertTextAtCursor = (prefix: string, suffix: string = '', defaultText: string = '') => {
+    const textarea = textareaRef.current;
+    const bodyText = blogForm.body;
+
+    if (!textarea) {
+      const newText = bodyText + (bodyText ? '\n\n' : '') + prefix + defaultText + suffix;
+      handleBlogFormChange('body', newText);
+      return;
+    }
+
+    const start = textarea.selectionStart;
+    const end = textarea.selectionEnd;
+    const scrollTop = textarea.scrollTop;
+    const selectedText = bodyText.substring(start, end) || defaultText;
+    const replacement = prefix + selectedText + suffix;
+
+    const newBody = bodyText.substring(0, start) + replacement + bodyText.substring(end);
+    handleBlogFormChange('body', newBody);
+
+    const selectionStart = start + prefix.length;
+    const selectionEnd = start + prefix.length + selectedText.length;
+
+    setTimeout(() => {
+      if (textareaRef.current) {
+        textareaRef.current.focus({ preventScroll: true });
+        textareaRef.current.setSelectionRange(selectionStart, selectionEnd);
+        textareaRef.current.scrollTop = scrollTop;
+      }
+    }, 30);
+  };
+
+  const handleUploadInlineImage = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    setIsUploadingImage(true);
+    setUploadError(null);
+    try {
+      const res = await apiUploadBlogImage(file);
+      const altName = file.name.replace(/\.[^/.]+$/, '').replace(/[-_]/g, ' ');
+      const markdownImg = `![${altName}](${res.url})`;
+      insertTextAtCursor(markdownImg + '\n');
+    } catch (err: any) {
+      console.error('Image upload failed', err);
+      setUploadError(err.message || 'Failed to upload image to Cloudinary');
+    } finally {
+      setIsUploadingImage(false);
+      e.target.value = '';
+    }
+  };
+
+  const handleOpenImageModal = () => {
+    setImageModalState({
+      isOpen: true,
+      url: '',
+      alt: 'Blog Image',
+      error: '',
+    });
+  };
+
+  const handleConfirmInsertImage = (e?: React.FormEvent) => {
+    if (e) e.preventDefault();
+    if (!imageModalState.url.trim()) {
+      setImageModalState(prev => ({ ...prev, error: 'Please enter an image URL' }));
+      return;
+    }
+    const altText = imageModalState.alt.trim() || 'Blog Image';
+    const markdownImg = `![${altText}](${imageModalState.url.trim()})`;
+    insertTextAtCursor(markdownImg + '\n');
+    setImageModalState({ isOpen: false, url: '', alt: '' });
+  };
+
   // Contact Reply state
   const [replyingContact, setReplyingContact] = useState<ContactSubmission | null>(null);
   const [replyText, setReplyText] = useState('');
@@ -294,6 +393,10 @@ export function Admin() {
 
   const openBlogEditor = (post: BlogPost | null) => {
     setSelectedFile(null);
+    setBodyTab('write');
+    setUploadError(null);
+    setIsUploadingImage(false);
+
     if (post) {
       setEditingPost(post);
       setBlogForm({
@@ -1224,17 +1327,191 @@ export function Admin() {
                 />
 
                 <div>
-                  <TextAreaField
-                    label="Article Content"
-                    required
-                    value={blogForm.body}
-                    error={blogErrors.body}
-                    rows={12}
-                    placeholder="Type or paste your article content here..."
-                    onChange={e => handleBlogFormChange('body', e.target.value)}
-                    hint="Tip: Use ##Title for Headings, ###Subtitle for Subheadings, **bold** for Bold, and - Item for Bullet Lists."
-                  />
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+                    <label className="block text-[10px] uppercase tracking-widest text-ink-muted font-bold">
+                      Article Content
+                    </label>
+                    <div className="flex items-center gap-1 bg-ink/5 p-1 rounded-xl self-start sm:self-auto">
+                      <button
+                        type="button"
+                        onClick={() => setBodyTab('write')}
+                        className={cn(
+                          "px-3 py-1 text-xs font-semibold rounded-lg transition-all",
+                          bodyTab === 'write' ? "bg-white text-forest-900 shadow-sm" : "text-ink-muted hover:text-ink"
+                        )}
+                      >
+                        Write (Markdown)
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setBodyTab('preview')}
+                        className={cn(
+                          "flex items-center gap-1 px-3 py-1 text-xs font-semibold rounded-lg transition-all",
+                          bodyTab === 'preview' ? "bg-white text-forest-900 shadow-sm" : "text-ink-muted hover:text-ink"
+                        )}
+                      >
+                        <EyeIcon className="h-3.5 w-3.5" /> Preview
+                      </button>
+                    </div>
+                  </div>
+
+                  {bodyTab === 'write' ? (
+                    <div>
+                      {/* Editor Toolbar */}
+                      <div className="flex flex-wrap items-center gap-1.5 p-2 bg-canvas/80 rounded-t-2xl border border-ink/10 border-b-0">
+                        {/* Upload Image to Cloudinary Button */}
+                        <label
+                          htmlFor="inline-image-upload"
+                          className={cn(
+                            "flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold rounded-xl transition cursor-pointer select-none",
+                            isUploadingImage
+                              ? "bg-gold-300/30 text-gold-900 border border-gold-400"
+                              : "bg-forest-900 text-white hover:bg-forest-800 shadow-sm"
+                          )}
+                          title="Upload image directly to Cloudinary (blog/)"
+                        >
+                          {isUploadingImage ? (
+                            <>
+                              <Loader2Icon className="h-3.5 w-3.5 animate-spin" />
+                              <span>Uploading...</span>
+                            </>
+                          ) : (
+                            <>
+                              <ImageIcon className="h-3.5 w-3.5 text-gold-300" />
+                              <span>Upload to Cloudinary</span>
+                            </>
+                          )}
+                        </label>
+                        <input
+                          type="file"
+                          accept="image/*"
+                          id="inline-image-upload"
+                          disabled={isUploadingImage}
+                          className="hidden"
+                          onChange={handleUploadInlineImage}
+                        />
+
+                        {/* Insert Image URL Button */}
+                        <button
+                          type="button"
+                          onClick={handleOpenImageModal}
+                          onMouseDown={(e) => e.preventDefault()}
+                          className="flex items-center gap-1 px-2.5 py-1.5 text-xs font-semibold rounded-xl bg-white border border-ink/10 text-ink hover:bg-ink/5 transition"
+                          title="Insert external image link"
+                        >
+                          <LinkIcon className="h-3.5 w-3.5 text-ink-muted" />
+                          <span>Image Link</span>
+                        </button>
+
+                        <div className="h-4 w-px bg-ink/10 mx-1" />
+
+                        {/* Quick Formatting Helpers */}
+                        <button
+                          type="button"
+                          onClick={() => insertTextAtCursor('## ', '', 'Heading 2')}
+                          onMouseDown={(e) => e.preventDefault()}
+                          className="px-2.5 py-1.5 text-xs font-bold rounded-xl bg-white border border-ink/10 hover:bg-ink/5"
+                          title="Heading 2"
+                        >
+                          H2
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => insertTextAtCursor('### ', '', 'Heading 3')}
+                          onMouseDown={(e) => e.preventDefault()}
+                          className="px-2.5 py-1.5 text-xs font-bold rounded-xl bg-white border border-ink/10 hover:bg-ink/5"
+                          title="Heading 3"
+                        >
+                          H3
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => insertTextAtCursor('**', '**', 'Bold text')}
+                          onMouseDown={(e) => e.preventDefault()}
+                          className="p-1.5 rounded-xl bg-white border border-ink/10 hover:bg-ink/5"
+                          title="Bold"
+                        >
+                          <BoldIcon className="h-3.5 w-3.5" />
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => insertTextAtCursor('*', '*', 'Italic text')}
+                          onMouseDown={(e) => e.preventDefault()}
+                          className="p-1.5 rounded-xl bg-white border border-ink/10 hover:bg-ink/5"
+                          title="Italic"
+                        >
+                          <ItalicIcon className="h-3.5 w-3.5" />
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => insertTextAtCursor('- ', '', 'List item')}
+                          onMouseDown={(e) => e.preventDefault()}
+                          className="p-1.5 rounded-xl bg-white border border-ink/10 hover:bg-ink/5"
+                          title="Bullet list"
+                        >
+                          <ListIcon className="h-3.5 w-3.5" />
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => insertTextAtCursor('> ', '', 'Quote text')}
+                          onMouseDown={(e) => e.preventDefault()}
+                          className="p-1.5 rounded-xl bg-white border border-ink/10 hover:bg-ink/5"
+                          title="Quote"
+                        >
+                          <QuoteIcon className="h-3.5 w-3.5" />
+                        </button>
+                      </div>
+
+                      {uploadError && (
+                        <div className="bg-red-50 text-red-600 text-xs font-medium p-2 px-3 border border-red-200 border-t-0">
+                          {uploadError}
+                        </div>
+                      )}
+
+                      {/* Textarea Area */}
+                      <textarea
+                        ref={textareaRef}
+                        rows={12}
+                        required
+                        value={blogForm.body}
+                        placeholder="Type or paste your article content here... Use Upload to Cloudinary to upload image files."
+                        onChange={e => handleBlogFormChange('body', e.target.value)}
+                        className="w-full rounded-b-2xl border border-ink/10 p-4 text-xs font-mono outline-none transition focus:border-forest-500 bg-white"
+                      />
+                      {blogErrors.body && (
+                        <p className="mt-1 text-xs text-red-600 font-semibold">{blogErrors.body}</p>
+                      )}
+                      <p className="mt-1 text-[10px] text-ink-muted">
+                        Tip: Upload images to Cloudinary (stored in <code>blog/</code>) using the button above or insert image links.
+                      </p>
+                    </div>
+                  ) : (
+                    /* Live Preview Tab */
+                    <div className="rounded-2xl border border-ink/10 bg-white p-6 max-h-[450px] overflow-y-auto">
+                      <ReactMarkdown
+                        components={{
+                          h2: ({ children }) => <h2 className="mt-6 mb-2 font-display text-xl font-bold text-ink">{children}</h2>,
+                          h3: ({ children }) => <h3 className="mt-4 mb-2 font-display text-lg font-bold text-ink">{children}</h3>,
+                          p: ({ children }) => <p className="mb-4 text-xs text-ink-soft leading-relaxed whitespace-pre-line">{children}</p>,
+                          strong: ({ children }) => <strong className="font-bold text-ink">{children}</strong>,
+                          ul: ({ children }) => <ul className="mb-4 space-y-1 pl-5 list-disc text-xs text-forest-600">{children}</ul>,
+                          ol: ({ children }) => <ol className="mb-4 space-y-1 pl-5 list-decimal text-xs text-forest-600">{children}</ol>,
+                          li: ({ children }) => <li className="text-xs text-ink-soft">{children}</li>,
+                          blockquote: ({ children }) => <blockquote className="my-4 border-l-2 border-gold-300 pl-4 italic text-ink/80 text-xs">{children}</blockquote>,
+                          img: ({ src, alt }) => (
+                            <figure className="my-4 overflow-hidden rounded-2xl border border-ink/10 bg-canvas shadow-sm">
+                              <img src={src} alt={alt || ''} className="w-full h-auto max-h-[350px] object-cover" />
+                              {alt && <figcaption className="p-2 text-center text-[10px] text-ink-muted italic bg-white/50">{alt}</figcaption>}
+                            </figure>
+                          ),
+                        }}
+                      >
+                        {blogForm.body}
+                      </ReactMarkdown>
+                    </div>
+                  )}
                 </div>
+
 
               </form>
             </div>
@@ -1459,6 +1736,62 @@ export function Admin() {
                 </div>
               </div>
             )}
+          </div>
+        </div>
+      )}
+
+      {/* Insert Image Link Popup Modal */}
+      {imageModalState.isOpen && (
+        <div className="fixed inset-0 z-[60] flex items-center justify-center bg-forest-900/60 p-4 backdrop-blur-sm">
+          <div className="w-full max-w-md rounded-4xl border border-ink/10 bg-white p-6 shadow-2xl animate-in fade-in zoom-in-95 duration-200">
+            <div className="flex items-center justify-between border-b border-ink/5 pb-4 mb-4">
+              <div className="flex items-center gap-2 font-display text-lg text-forest-900 font-semibold">
+                <ImageIcon className="h-5 w-5 text-gold-500" />
+                <span>Chèn Link Ảnh Vào Bài Viết</span>
+              </div>
+              <button
+                type="button"
+                onClick={() => setImageModalState(prev => ({ ...prev, isOpen: false }))}
+                className="flex h-7 w-7 items-center justify-center rounded-full border border-ink/10 text-ink-muted hover:bg-ink/5 transition-colors"
+              >
+                <XIcon className="h-4 w-4" />
+              </button>
+            </div>
+
+            <form onSubmit={handleConfirmInsertImage} className="space-y-4">
+              <TextField
+                label="Đường dẫn ảnh (URL)"
+                required
+                value={imageModalState.url}
+                placeholder="https://images.unsplash.com/photo-..."
+                error={imageModalState.error}
+                onChange={e => setImageModalState(prev => ({ ...prev, url: e.target.value, error: '' }))}
+              />
+              <TextField
+                label="Mô tả ảnh / Alt text"
+                value={imageModalState.alt}
+                placeholder="Ha Giang Loop Tour from Hanoi"
+                onChange={e => setImageModalState(prev => ({ ...prev, alt: e.target.value }))}
+              />
+
+              <div className="flex items-center justify-end gap-2 pt-4 border-t border-ink/5">
+                <Button
+                  type="button"
+                  variant="outline"
+                  onClick={() => setImageModalState(prev => ({ ...prev, isOpen: false }))}
+                  className="rounded-full text-xs py-2 px-4"
+                >
+                  Hủy
+                </Button>
+                <Button
+                  type="submit"
+                  variant="primary"
+                  className="rounded-full text-xs py-2 px-5 bg-forest-900 text-white hover:bg-forest-800"
+                >
+                  Chèn Ảnh
+                </Button>
+              </div>
+            </form>
           </div>
         </div>
       )}

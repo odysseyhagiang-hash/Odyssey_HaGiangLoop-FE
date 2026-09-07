@@ -93,6 +93,28 @@ export async function apiGetPostBySlug(slug: string): Promise<BlogPost | undefin
   }
 }
 
+export async function apiUploadBlogImage(file: File): Promise<{ url: string; publicId?: string }> {
+  const formData = new FormData();
+  formData.append('image', file);
+
+  const res = await fetch(`${getApiBase()}/blogs/upload-image`, {
+    method: 'POST',
+    body: formData,
+    credentials: 'include',
+  });
+
+  if (!res.ok) {
+    const errorText = await res.text();
+    throw new Error(`Upload failed (${res.status}): ${errorText}`);
+  }
+
+  const json = await res.json();
+  if (json.success && json.data?.url) {
+    return json.data;
+  }
+  throw new Error(json.message || 'Upload image failed');
+}
+
 export async function apiSavePost(
   postData: Omit<BlogPost, 'cover'>,
   file: File | null,
