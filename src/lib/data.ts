@@ -37,7 +37,7 @@ export const images = {
 /** Home hero background film. Swap this URL for your own MP4 — the hero falls back
  *  to the poster image automatically if the file is unavailable. */
 export const heroVideo =
-  'https://res.cloudinary.com/dvmuk0u4e/video/upload/v1785467471/175358-853243447_szxv6i.mp4';
+  'https://res.cloudinary.com/bs1csiim/video/upload/v1788774857/175358-853243447_medium_amtad4.mp4';
 
 export const brand = {
   name: 'Odyssey Ha Giang Loop',
