@@ -131,10 +131,10 @@ export function JournalPost() {
                   </a>
                 ),
                 img: ({ src, alt }) => (
-                  <figure className="my-8 overflow-hidden rounded-3xl border border-ink/10 bg-canvas shadow-md">
+                  <figure className="my-8">
                     <img src={src} alt={alt || ''} className="w-full h-auto max-h-[550px] object-cover" />
                     {alt && (
-                      <figcaption className="p-3 text-center text-xs text-ink-muted italic border-t border-ink/5 bg-white/50">
+                      <figcaption className="mt-2.5 text-center text-xs text-ink-muted italic">
                         {alt}
                       </figcaption>
                     )}

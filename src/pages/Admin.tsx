@@ -1499,9 +1499,9 @@ export function Admin() {
                           li: ({ children }) => <li className="text-xs text-ink-soft">{children}</li>,
                           blockquote: ({ children }) => <blockquote className="my-4 border-l-2 border-gold-300 pl-4 italic text-ink/80 text-xs">{children}</blockquote>,
                           img: ({ src, alt }) => (
-                            <figure className="my-4 overflow-hidden rounded-2xl border border-ink/10 bg-canvas shadow-sm">
+                            <figure className="my-4">
                               <img src={src} alt={alt || ''} className="w-full h-auto max-h-[350px] object-cover" />
-                              {alt && <figcaption className="p-2 text-center text-[10px] text-ink-muted italic bg-white/50">{alt}</figcaption>}
+                              {alt && <figcaption className="mt-2 text-center text-[10px] text-ink-muted italic">{alt}</figcaption>}
                             </figure>
                           ),
                         }}
