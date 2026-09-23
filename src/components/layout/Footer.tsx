@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpRightIcon, MailIcon, MapPinIcon, PhoneIcon } from 'lucide-react';
+import { ArrowUpRightIcon, ExternalLinkIcon, MailIcon, MapPinIcon, PhoneIcon } from 'lucide-react';
 import { brand } from '../../lib/data';
 import { Button } from '../ui/Button';
 import { TextField } from '../ui/Field';
@@ -111,14 +111,21 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 grid gap-10 border-t border-white/10 pt-10 md:grid-cols-2">
+        <div className="mt-16 grid gap-10 border-t border-white/10 pt-10 md:grid-cols-2 lg:grid-cols-3 items-start">
           {/* Hostel 1 */}
           <div className="space-y-4">
             <h4 className="font-display text-base text-gold-300">ODYSSEY HOSTEL, TOURS & MOTORBIKES RENTAL</h4>
             <div className="space-y-2 text-sm">
               <p className="flex items-start gap-3 text-white/65">
                 <MapPinIcon aria-hidden="true" className="mt-[3px] h-4 w-4 shrink-0 text-gold-300" />
-                <span>No 11, Lane 29, Group 18, Nguyen Trai Ward, Ha Giang City</span>
+                <a
+                  href="https://maps.app.goo.gl/GDU5xR3x6rBp1RSP6?g_st=ic"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-gold-300 transition-colors inline-flex items-center gap-1 group">
+                  <span>No 11, Lane 29, Group 18, Nguyen Trai Ward, Ha Giang City</span>
+                  <ExternalLinkIcon className="h-3.5 w-3.5 opacity-70 group-hover:opacity-100 shrink-0" />
+                </a>
               </p>
               <p className="flex items-start gap-3">
                 <PhoneIcon aria-hidden="true" className="mt-[3px] h-4 w-4 shrink-0 text-gold-300" />
@@ -147,6 +154,37 @@ export function Footer() {
                 <MailIcon aria-hidden="true" className="mt-[3px] h-4 w-4 shrink-0 text-gold-300" />
                 <a href="mailto:odysseyhotel2.hagiang@gmail.com" className="text-white/65 hover:text-white transition-colors">Email: odysseyhotel2.hagiang@gmail.com</a>
               </p>
+            </div>
+          </div>
+
+          {/* Map Location */}
+          <div className="space-y-3 md:col-span-2 lg:col-span-1">
+            <div className="flex items-center justify-between">
+              <h4 className="font-display text-base text-gold-300 flex items-center gap-2">
+                <MapPinIcon className="h-4 w-4" />
+                LOCATION MAP
+              </h4>
+              <a
+                href="https://maps.app.goo.gl/GDU5xR3x6rBp1RSP6?g_st=ic"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-gold-300/80 hover:text-gold-300 transition-colors inline-flex items-center gap-1 font-medium">
+                <span>View on Google Maps</span>
+                <ExternalLinkIcon className="h-3 w-3" />
+              </a>
+            </div>
+            <div className="relative overflow-hidden rounded-xl border border-white/15 bg-white/5 h-[160px] w-full group shadow-md">
+              <iframe
+                title="Odyssey Ha Giang Location Map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3688.0837583768464!2d104.9749557!3d22.8184645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x36cc79e737b9cf5f%3A0x7a88a0de402c48b0!2sHa%20Giang%20Odyssey%20Hostel%2C%20Tours%20%26%20Motorbikes%20Rental!5e0!3m2!1sen!2svn!4v1710000000000!5m2!1sen!2svn"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={false}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-full grayscale-[0.2] contrast-[1.05] group-hover:grayscale-0 transition-all duration-300"
+              />
             </div>
           </div>
         </div>
