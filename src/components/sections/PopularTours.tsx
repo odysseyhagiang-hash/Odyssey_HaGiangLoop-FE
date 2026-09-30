@@ -34,13 +34,13 @@ export function PopularTours() {
           eyebrow="Our tours"
           title={
             <>
-              Three ways to explore the{" "}
+              Curated ways to explore the{" "}
               <span className="italic text-forest-500">
-                Ha Giang Loop
+                Ha Giang Loop & Northern Highlands
               </span>
             </>
           }
-          description="Whether you prefer a private guide, a group adventure, or a comfortable car — there's a perfect journey for every traveller."
+          description="Whether you prefer a private guide, a group adventure, an open-top Jeep, a comfortable car, or an extended grand loop to Cao Bang — there's a perfect journey for every traveller."
           action={
             <Button to="/journeys" variant="outline">
               All journeys

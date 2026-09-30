@@ -9,13 +9,13 @@ import { CtaBanner } from '../components/sections/CtaBanner';
 import { Stagger } from '../components/ui/Reveal';
 import { Container, Section } from '../components/ui/Section';
 
-const styles: (Tour['style'] | 'All')[] = ['All', 'Private', 'Group', 'Car'];
+const styles: (Tour['style'] | 'All')[] = ['All', 'Private', 'Group', 'Car', 'Jeep', 'Expedition'];
 
 export function Tours() {
   useSeo({
     title: 'Journeys',
     description:
-      'Four guided tour types across the Ha Giang Loop: Private Tour, Group Tour, and Car Tour.',
+      'Guided tour types across the Ha Giang Loop: Private Tour, Group Tour, Car Tour, Jeep Tour, and Ha Giang — Cao Bang Expedition.',
     image: images.tourClassic
   });
 
@@ -29,8 +29,8 @@ export function Tours() {
     <main id="main" className="w-full bg-canvas">
       <PageHero
         eyebrow="Our journeys"
-        title="Three ways to cross the plateau"
-        description="Every itinerary shares the same guides, the same fleet and the same refusal to hurry. What changes is the pace, the privacy and the rooms you sleep in."
+        title="Curated ways to cross the northern highlands"
+        description="Every itinerary shares the same expert guides, top-tier fleet and dedicated local hospitality. What changes is the pace, the privacy and the vehicles you ride."
         image={images.tourClassic}
         imageAlt="A rider on a narrow cliffside road above a river canyon in northern Vietnam" />
 

@@ -12,7 +12,7 @@ export function FeaturedDestinations() {
       tone="canvas"
       aria-labelledby="destinations-title"
       style={{
-        backgroundImage: "url('/backgrounds_section/background-FeaturedDestinations.webp')",
+        backgroundImage: "url('/backgrounds_section/87892495-47db-4d2c-aa37-03b9c37e975c.webp')",
         backgroundSize: '100% auto',
         backgroundPosition: 'center top',
         backgroundRepeat: 'no-repeat',

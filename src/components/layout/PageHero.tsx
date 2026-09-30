@@ -12,6 +12,7 @@ interface PageHeroProps {
   imageAlt: string;
   children?: React.ReactNode;
   className?: string;
+  titleClassName?: string;
 }
 
 /** Compact editorial hero used on every interior page. */
@@ -22,7 +23,8 @@ export function PageHero({
   image,
   imageAlt,
   children,
-  className
+  className,
+  titleClassName
 }: PageHeroProps) {
   const reduceMotion = useReducedMotion();
   const { scrollY } = useScroll();
@@ -51,7 +53,10 @@ export function PageHero({
           initial={{ opacity: 0, y: 26 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-5 max-w-3xl font-display text-[2.4rem] leading-[1.05] text-white sm:text-[3.4rem] lg:text-[4.2rem]">
+          className={cn(
+            'mt-5 max-w-4xl font-display text-[2.2rem] leading-[1.05] text-white sm:text-[3.2rem] lg:text-[4rem]',
+            titleClassName
+          )}>
           
           {title}
         </motion.h1>

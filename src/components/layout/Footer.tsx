@@ -17,6 +17,8 @@ const columns = [
       { to: '/journeys/private-tour', label: 'Private tour' },
       { to: '/journeys/group-tour', label: 'Group tour' },
       { to: '/journeys/car-tour', label: 'Car tour' },
+      { to: '/journeys/jeep-tour', label: 'Jeep tour' },
+      { to: '/journeys/ha-giang-cao-bang', label: 'Ha Giang — Cao Bang' },
       { to: '/rentalbikes', label: 'Rental bikes' }
     ]
   },
@@ -35,8 +37,9 @@ const columns = [
       { to: '/about', label: 'Our story' },
       { to: '/about#impact', label: 'Impact' },
       { to: '/contact', label: 'Contact' },
-      { to: '/booking', label: 'Booking Bus & Room' }]
-
+      { to: '/booking', label: 'Booking Bus & Room' },
+      { to: '/terms', label: 'Terms & Conditions' }
+    ]
   }];
 
 
@@ -203,9 +206,13 @@ export function Footer() {
         </div>
 
         <div className="mt-6 flex flex-col items-start justify-between gap-6 border-t border-white/10 pt-6 sm:flex-row sm:items-center">
-          <p className="text-xs text-white/40">
-            © {new Date().getFullYear()} {brand.name}. Licensed inbound operator, Ha Giang province.
-          </p>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-white/40">
+            <p>© {new Date().getFullYear()} {brand.name}. Licensed inbound operator, Ha Giang province.</p>
+            <span className="hidden sm:inline">•</span>
+            <Link to="/terms" className="text-white/60 hover:text-gold-300 transition-colors">
+              Terms & Conditions
+            </Link>
+          </div>
           <div className="flex items-center gap-5 sm:gap-6">
             <a
               href="https://www.airbnb.com.vn/rooms/1270105021365508062?search_mode=regular_search&adults=1&check_in=2026-08-06&check_out=2026-08-11&children=0&infants=0&pets=0&source_impression_id=p3_1785751016_P3P-uC-LF5e_L0Yl&previous_page_section_name=1000&federated_search_id=7874c54e-cb6f-41ac-a9b4-1514f13228b7"

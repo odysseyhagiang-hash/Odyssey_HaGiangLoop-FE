@@ -8,13 +8,13 @@ export interface ItineraryDay {
 
 /** Giá theo riding style cho một duration */
 export interface TourPricing {
-  duration: '2D1N' | '3D2N' | '4D3N';
+  duration: '2D1N' | '3D2N' | '4D3N' | '5D4N' | '6D5N' | string;
   behindEasyrider?: number;   // VND
   selfDrive?: number;          // VND
   behindPartner?: number;      // VND
   /** Giá theo số người */
   perPerson?: { persons: number; price: number }[];
-  /** Dùng cho Car tour: giá per người (áp dụng từ 2 người trở lên) */
+  /** Dùng cho Car tour / Jeep tour: giá per người (áp dụng từ 2 người trở lên) */
   perPersonPrice?: number;
   /** Dùng cho Car tour legacy: giá cố định cả xe */
   flatPrice?: number;
@@ -36,7 +36,7 @@ export interface Tour {
   price: number;
   rating: number;
   reviews: number;
-  style: 'Private' | 'Group' | 'Car';
+  style: 'Private' | 'Group' | 'Car' | 'Jeep' | 'Expedition' | string;
   summary: string;
   highlights: string[];
   inclusions: string[];

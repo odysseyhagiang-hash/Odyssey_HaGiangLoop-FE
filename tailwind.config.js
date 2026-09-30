@@ -42,8 +42,8 @@ export default {
         parchment: '#F7F5F2',
       },
       fontFamily: {
-        display: ['"Playfair Display"', 'Georgia', 'serif'],
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['"Playfair Display"', '"Literata"', 'Georgia', 'serif'],
+        sans: ['Outfit', 'Inter', 'system-ui', 'sans-serif'],
       },
       borderRadius: {
         '4xl': '2rem',

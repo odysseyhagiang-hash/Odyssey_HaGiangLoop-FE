@@ -27,6 +27,7 @@ const About = lazy(() => import('./pages/About').then((m) => ({ default: m.About
 const Faq = lazy(() => import('./pages/Faq').then((m) => ({ default: m.Faq })));
 const Contact = lazy(() => import('./pages/Contact').then((m) => ({ default: m.Contact })));
 const Booking = lazy(() => import('./pages/Booking').then((m) => ({ default: m.Booking })));
+const Terms = lazy(() => import('./pages/Terms').then((m) => ({ default: m.Terms })));
 const Admin = lazy(() => import('./pages/Admin').then((m) => ({ default: m.Admin })));
 const Login = lazy(() => import('./pages/Login').then((m) => ({ default: m.Login })));
 const NotFound = lazy(() => import('./pages/NotFound').then((m) => ({ default: m.NotFound })));
@@ -61,6 +62,7 @@ function AppContent() {
             <Route path="/faq" element={<Faq />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/booking" element={<Booking />} />
+            <Route path="/terms" element={<Terms />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="/login" element={<Login />} />
             <Route path="*" element={<NotFound />} />

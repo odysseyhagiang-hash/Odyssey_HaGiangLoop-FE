@@ -14,22 +14,28 @@ import { NotFound } from './NotFound';
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
-const TOPIC: Record<Tour['style'], string> = {
+const TOPIC: Record<string, string> = {
   Private: 'book-private-tour',
-  Group:   'book-group-tour',
-  Car:     'book-car-tour',
+  Group: 'book-group-tour',
+  Car: 'book-car-tour',
+  Jeep: 'book-jeep-tour',
+  Expedition: 'book-hagiang-caobang-tour',
 };
 
-const STYLE_COLOR: Record<Tour['style'], string> = {
+const STYLE_COLOR: Record<string, string> = {
   Private: 'bg-forest-500',
-  Group:   'bg-blue-600',
-  Car:     'bg-slate-600',
+  Group: 'bg-blue-600',
+  Car: 'bg-slate-600',
+  Jeep: 'bg-amber-600',
+  Expedition: 'bg-emerald-600',
 };
 
-const ACTIVE_TAB: Record<Tour['style'], string> = {
+const ACTIVE_TAB: Record<string, string> = {
   Private: 'bg-forest-600 text-white',
-  Group:   'bg-blue-600 text-white',
-  Car:     'bg-slate-600 text-white',
+  Group: 'bg-blue-600 text-white',
+  Car: 'bg-slate-600 text-white',
+  Jeep: 'bg-amber-600 text-white',
+  Expedition: 'bg-emerald-600 text-white',
 };
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
@@ -39,13 +45,20 @@ function formatVND(amount: number): string {
 }
 
 function getMinPrice(tour: Tour): number {
+  let min = tour.price || Infinity;
   for (const p of tour.pricing) {
-    if (p.behindPartner !== undefined) return p.behindPartner;
-    if (p.perPerson !== undefined && p.perPerson.length > 0) return p.perPerson[0].price;
-    if (p.perPersonPrice !== undefined) return p.perPersonPrice;
-    if (p.flatPrice !== undefined) return p.flatPrice;
+    if (p.behindPartner !== undefined) min = Math.min(min, p.behindPartner);
+    if (p.selfDrive !== undefined) min = Math.min(min, p.selfDrive);
+    if (p.behindEasyrider !== undefined) min = Math.min(min, p.behindEasyrider);
+    if (p.perPersonPrice !== undefined) min = Math.min(min, p.perPersonPrice);
+    if (p.flatPrice !== undefined) min = Math.min(min, p.flatPrice);
+    if (p.perPerson) {
+      for (const item of p.perPerson) {
+        min = Math.min(min, item.price);
+      }
+    }
   }
-  return tour.price;
+  return min === Infinity ? tour.price : min;
 }
 
 // ─── Pricing Tables ───────────────────────────────────────────────────────────
@@ -55,17 +68,19 @@ function RidingPricingTable({
   style,
   activeIdx,
   onChangeIdx,
+  hideTabs = false,
 }: {
   pricing: TourPricing[];
   style: Tour['style'];
   activeIdx: number;
   onChangeIdx: (i: number) => void;
+  hideTabs?: boolean;
 }) {
   const row = pricing[activeIdx];
 
   return (
     <div>
-      {pricing.length > 1 && (
+      {!hideTabs && pricing.length > 1 && (
         <div className="flex gap-1.5 mb-4">
           {pricing.map((p, i) => (
             <button
@@ -119,41 +134,53 @@ function RidingPricingTable({
   );
 }
 
+const PRICE_COLOR: Record<string, string> = {
+  Private: 'text-forest-700',
+  Group: 'text-blue-700',
+  Car: 'text-slate-700',
+  Jeep: 'text-amber-600',
+  Expedition: 'text-emerald-700',
+};
+
 function PerPersonPricingTable({
   pricing,
   style,
   activeIdx,
   onChangeIdx,
+  hideTabs = false,
 }: {
   pricing: TourPricing[];
   style: Tour['style'];
   activeIdx: number;
   onChangeIdx: (i: number) => void;
+  hideTabs?: boolean;
 }) {
   const row = pricing[activeIdx];
 
   return (
     <div>
-      <div className="flex gap-1.5 mb-4">
-        {pricing.map((p, i) => (
-          <button
-            key={p.duration}
-            type="button"
-            onClick={() => onChangeIdx(i)}
-            className={cn(
-              'rounded-full px-4 py-1.5 text-[12px] font-semibold uppercase tracking-wide transition-colors duration-200',
-              i === activeIdx ? ACTIVE_TAB[style] : 'bg-ink/8 text-ink-soft hover:bg-ink/15'
-            )}
-          >
-            {p.duration}
-          </button>
-        ))}
-      </div>
+      {!hideTabs && pricing.length > 1 && (
+        <div className="flex gap-1.5 mb-4">
+          {pricing.map((p, i) => (
+            <button
+              key={p.duration}
+              type="button"
+              onClick={() => onChangeIdx(i)}
+              className={cn(
+                'rounded-full px-4 py-1.5 text-[12px] font-semibold uppercase tracking-wide transition-colors duration-200',
+                i === activeIdx ? ACTIVE_TAB[style] : 'bg-ink/8 text-ink-soft hover:bg-ink/15'
+              )}
+            >
+              {p.duration}
+            </button>
+          ))}
+        </div>
+      )}
       <div className="rounded-2xl overflow-hidden border border-ink/[0.08] divide-y divide-ink/[0.06]">
         {(row.perPerson ?? []).map(({ persons, price }) => (
           <div key={persons} className="flex items-center justify-between bg-white px-5 py-3 text-sm">
             <span className="text-ink-soft">{persons} {persons === 1 ? 'person' : 'persons'}</span>
-            <span className="font-semibold text-amber-600">{formatVND(price)}</span>
+            <span className={cn('font-semibold', PRICE_COLOR[style] ?? 'text-forest-700')}>{formatVND(price)}</span>
           </div>
         ))}
       </div>
@@ -229,9 +256,9 @@ export function TourDetail() {
   if (!tour) return <NotFound />;
 
   const minPrice = getMinPrice(tour);
-  const hasRiding    = tour.pricing[0]?.behindEasyrider !== undefined;
+  const hasRiding = tour.pricing[0]?.behindEasyrider !== undefined;
   const hasPerPerson = tour.pricing[0]?.perPerson !== undefined;
-  const hasFlat      = tour.pricing[0]?.flatPrice !== undefined || tour.pricing[0]?.perPersonPrice !== undefined;
+  const hasFlat = tour.pricing[0]?.flatPrice !== undefined || tour.pricing[0]?.perPersonPrice !== undefined;
 
   const activeItinerary = tour.pricing[activeDurationIdx]?.itinerary ?? tour.itinerary;
 
@@ -242,6 +269,7 @@ export function TourDetail() {
       <PageHero
         eyebrow={`${tour.style} tour`}
         title={tour.name}
+        titleClassName="max-w-5xl sm:whitespace-nowrap sm:text-[3rem] lg:text-[3.6rem]"
         description={tour.tagline}
         image={tour.image}
         imageAlt={`${tour.name} — ${tour.tagline}`}
@@ -299,22 +327,59 @@ export function TourDetail() {
                   Pricing
                 </h2>
                 <div className="mt-6">
-                  {hasRiding    && (
-                    <RidingPricingTable
-                      pricing={tour.pricing}
-                      style={tour.style}
-                      activeIdx={activeDurationIdx}
-                      onChangeIdx={setActiveDurationIdx}
-                    />
+                  {/* Shared duration tabs when multiple table types exist */}
+                  {(hasRiding && hasPerPerson) && tour.pricing.length > 1 && (
+                    <div className="flex gap-1.5 mb-6">
+                      {tour.pricing.map((p, i) => (
+                        <button
+                          key={p.duration}
+                          type="button"
+                          onClick={() => setActiveDurationIdx(i)}
+                          className={cn(
+                            'rounded-full px-4 py-1.5 text-[12px] font-semibold uppercase tracking-wide transition-colors duration-200',
+                            i === activeDurationIdx ? ACTIVE_TAB[tour.style] : 'bg-ink/8 text-ink-soft hover:bg-ink/15'
+                          )}
+                        >
+                          {p.duration}
+                        </button>
+                      ))}
+                    </div>
                   )}
+
+                  {hasRiding && (
+                    <div className={cn(hasPerPerson && 'mb-6')}>
+                      {hasPerPerson && (
+                        <h4 className="text-xs font-semibold uppercase tracking-wider text-ink-soft mb-2.5 flex items-center gap-1.5">
+                          <span>🏍️</span> Motorbike Tour (per person)
+                        </h4>
+                      )}
+                      <RidingPricingTable
+                        pricing={tour.pricing}
+                        style={tour.style}
+                        activeIdx={activeDurationIdx}
+                        onChangeIdx={setActiveDurationIdx}
+                        hideTabs={hasPerPerson}
+                      />
+                    </div>
+                  )}
+
                   {hasPerPerson && (
-                    <PerPersonPricingTable
-                      pricing={tour.pricing}
-                      style={tour.style}
-                      activeIdx={activeDurationIdx}
-                      onChangeIdx={setActiveDurationIdx}
-                    />
+                    <div>
+                      {hasRiding && (
+                        <h4 className="text-xs font-semibold uppercase tracking-wider text-ink-soft mb-2.5 flex items-center gap-1.5">
+                          <span>🚗</span> Private Car Tour
+                        </h4>
+                      )}
+                      <PerPersonPricingTable
+                        pricing={tour.pricing}
+                        style={tour.style}
+                        activeIdx={activeDurationIdx}
+                        onChangeIdx={setActiveDurationIdx}
+                        hideTabs={hasRiding}
+                      />
+                    </div>
                   )}
+
                   {hasFlat && (
                     <FlatPricingTable
                       pricing={tour.pricing}
@@ -325,7 +390,7 @@ export function TourDetail() {
                   )}
                 </div>
                 {tour.priceNote && (
-                  <div className="mt-3 flex items-center gap-2 rounded-2xl bg-forest-50 border border-forest-500/15 px-4 py-3">
+                  <div className="mt-4 flex items-center gap-2 rounded-2xl bg-forest-50 border border-forest-500/15 px-4 py-3">
                     <span aria-hidden="true" className="shrink-0">ℹ️</span>
                     <ul className="space-y-1">
                       {tour.priceNote.map((note, i) => (

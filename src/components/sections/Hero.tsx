@@ -69,8 +69,8 @@ export function Hero() {
   }, [reduceMotion]);
 
   return (
-    <section className="relative isolate z-10 flex h-[100svh] min-h-0 w-full flex-col">
-      <div style={{ bottom: '-120px' }} className="absolute inset-x-0 top-0 -z-20 overflow-hidden">
+    <section className="relative isolate z-10 flex min-h-[100svh] w-full flex-col justify-between overflow-hidden">
+      <div className="absolute inset-0 -z-20 overflow-hidden">
         <motion.div className="h-full w-full scale-105">
           <VideoBackground
             src={heroVideo}
@@ -84,7 +84,7 @@ export function Hero() {
       <motion.div
         aria-hidden="true"
         style={{ opacity: overlayOpacity }}
-        className="absolute inset-x-0 top-0 bottom-[-120px] -z-10 bg-gradient-to-t from-forest-900 via-forest-900/50 to-forest-900/30"
+        className="absolute inset-0 -z-10 bg-gradient-to-t from-forest-900 via-forest-900/50 to-forest-900/30"
       />
 
       {/* Stamp toạ độ — góc trên phải, chỉ desktop */}
@@ -98,7 +98,7 @@ export function Hero() {
         <span className="font-mono text-[11px] tracking-wider">ĐÈO MÃ PÍ LÈNG · 1.500M</span>
       </motion.div>
 
-      <div className="relative z-20 flex flex-1 flex-col justify-center pt-24 pb-10 sm:pt-28 sm:pb-12">
+      <div className="relative z-20 flex flex-1 flex-col justify-center pt-28 pb-32 sm:pt-32 sm:pb-36 lg:pt-36 lg:pb-40">
         <motion.div>
           <Container className="text-center lg:text-left">
 
@@ -212,7 +212,7 @@ export function Hero() {
           </Container>
         </motion.div>
       </div>
-      <SectionDivider variant="mist" toColor="#FAFAF8" className="!bottom-[-150px]" />
+      <SectionDivider variant="mist" toColor="#FAFAF8" />
     </section>
   );
 }

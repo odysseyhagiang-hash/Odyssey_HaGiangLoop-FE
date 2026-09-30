@@ -13,26 +13,37 @@ function formatVND(amount: number): string {
   return amount.toLocaleString('vi-VN') + ' VND';
 }
 
-const STYLE_BADGE: Record<Tour['style'], string> = {
+const STYLE_BADGE: Record<string, string> = {
   Private: 'bg-forest-500 text-white',
   Group:   'bg-blue-600 text-white',
   Car:     'bg-slate-600 text-white',
+  Jeep:    'bg-amber-600 text-white',
+  Expedition: 'bg-emerald-600 text-white',
 };
 
-const TOPIC: Record<Tour['style'], string> = {
+const TOPIC: Record<string, string> = {
   Private: 'book-private-tour',
   Group:   'book-group-tour',
   Car:     'book-car-tour',
+  Jeep:    'book-jeep-tour',
+  Expedition: 'book-hagiang-caobang-tour',
 };
 
 function getMinPrice(tour: Tour): number {
+  let min = tour.price || Infinity;
   for (const p of tour.pricing) {
-    if (p.behindPartner !== undefined) return p.behindPartner;
-    if (p.perPerson !== undefined && p.perPerson.length > 0) return p.perPerson[0].price;
-    if (p.perPersonPrice !== undefined) return p.perPersonPrice;
-    if (p.flatPrice !== undefined) return p.flatPrice;
+    if (p.behindPartner !== undefined) min = Math.min(min, p.behindPartner);
+    if (p.selfDrive !== undefined) min = Math.min(min, p.selfDrive);
+    if (p.behindEasyrider !== undefined) min = Math.min(min, p.behindEasyrider);
+    if (p.perPersonPrice !== undefined) min = Math.min(min, p.perPersonPrice);
+    if (p.flatPrice !== undefined) min = Math.min(min, p.flatPrice);
+    if (p.perPerson) {
+      for (const item of p.perPerson) {
+        min = Math.min(min, item.price);
+      }
+    }
   }
-  return tour.price;
+  return min === Infinity ? tour.price : min;
 }
 
 export function TourCard({ tour }: TourCardProps) {
