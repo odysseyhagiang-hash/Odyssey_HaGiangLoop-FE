@@ -15,6 +15,8 @@ const STATIC_ROUTES = [
   { path: '/journeys/private-tour', priority: '0.8', changefreq: 'weekly' },
   { path: '/journeys/group-tour', priority: '0.8', changefreq: 'weekly' },
   { path: '/journeys/car-tour', priority: '0.8', changefreq: 'weekly' },
+  { path: '/journeys/jeep-tour', priority: '0.8', changefreq: 'weekly' },
+  { path: '/journeys/ha-giang-cao-bang', priority: '0.8', changefreq: 'weekly' },
   { path: '/destinations', priority: '0.9', changefreq: 'weekly' },
   { path: '/destinations/nho-que-canyon', priority: '0.7', changefreq: 'monthly' },
   { path: '/destinations/ma-pi-leng-pass', priority: '0.7', changefreq: 'monthly' },
@@ -85,8 +87,18 @@ async function fetchDynamicBlogs() {
   }
 }
 
+const FALLBACK_BLOGS = [
+  { slug: 'first-timers-guide-ha-giang-loop', updatedAt: '2026-09-07' },
+  { slug: 'packing-for-ha-giang-what-to-bring', updatedAt: '2026-09-07' },
+  { slug: 'the-case-for-staying-an-extra-night', updatedAt: '2026-09-07' },
+  { slug: 'ma-pi-leng-pass-complete-guide', updatedAt: '2026-09-07' },
+  { slug: 'dong-van-sunday-market-guide', updatedAt: '2026-09-07' },
+  { slug: 'hoang-su-phi-terraces-harvest-season', updatedAt: '2026-09-07' },
+];
+
 async function generateSitemap() {
-  const blogs = await fetchDynamicBlogs();
+  const fetchedBlogs = await fetchDynamicBlogs();
+  const blogs = fetchedBlogs.length > 0 ? fetchedBlogs : FALLBACK_BLOGS;
   const today = new Date().toISOString().split('T')[0];
 
   let xml = `<?xml version="1.0" encoding="UTF-8"?>\n`;

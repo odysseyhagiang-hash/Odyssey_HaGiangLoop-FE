@@ -34,7 +34,8 @@ export function JournalPost() {
     title: post ? post.title : 'Article not found',
     description: post ? post.excerpt : 'This article could not be found.',
     image: post?.cover,
-    type: 'article'
+    type: 'article',
+    canonical: slug ? `https://www.odysseyhagiangloop.com/blog/${slug}` : undefined,
   });
 
   if (loading) {

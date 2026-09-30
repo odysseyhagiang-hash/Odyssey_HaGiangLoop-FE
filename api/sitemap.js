@@ -7,6 +7,8 @@ const STATIC_ROUTES = [
   { path: '/journeys/private-tour', priority: '0.8', changefreq: 'weekly' },
   { path: '/journeys/group-tour', priority: '0.8', changefreq: 'weekly' },
   { path: '/journeys/car-tour', priority: '0.8', changefreq: 'weekly' },
+  { path: '/journeys/jeep-tour', priority: '0.8', changefreq: 'weekly' },
+  { path: '/journeys/ha-giang-cao-bang', priority: '0.8', changefreq: 'weekly' },
   { path: '/destinations', priority: '0.9', changefreq: 'weekly' },
   { path: '/destinations/nho-que-canyon', priority: '0.7', changefreq: 'monthly' },
   { path: '/destinations/ma-pi-leng-pass', priority: '0.7', changefreq: 'monthly' },
@@ -31,6 +33,15 @@ const STATIC_ROUTES = [
   { path: '/booking', priority: '0.9', changefreq: 'weekly' },
 ];
 
+const FALLBACK_BLOGS = [
+  'first-timers-guide-ha-giang-loop',
+  'packing-for-ha-giang-what-to-bring',
+  'the-case-for-staying-an-extra-night',
+  'ma-pi-leng-pass-complete-guide',
+  'dong-van-sunday-market-guide',
+  'hoang-su-phi-terraces-harvest-season',
+];
+
 function generateFallbackSitemap() {
   const today = new Date().toISOString().split('T')[0];
   let xml = `<?xml version="1.0" encoding="UTF-8"?>\n`;
@@ -41,6 +52,14 @@ function generateFallbackSitemap() {
     xml += `    <lastmod>${today}</lastmod>\n`;
     xml += `    <changefreq>${route.changefreq}</changefreq>\n`;
     xml += `    <priority>${route.priority}</priority>\n`;
+    xml += `  </url>\n`;
+  }
+  for (const slug of FALLBACK_BLOGS) {
+    xml += `  <url>\n`;
+    xml += `    <loc>${SITE_URL}/blog/${slug}</loc>\n`;
+    xml += `    <lastmod>${today}</lastmod>\n`;
+    xml += `    <changefreq>weekly</changefreq>\n`;
+    xml += `    <priority>0.7</priority>\n`;
     xml += `  </url>\n`;
   }
   xml += `</urlset>\n`;
