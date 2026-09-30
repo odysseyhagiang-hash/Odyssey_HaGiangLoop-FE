@@ -19,6 +19,7 @@ export function GalleryPreview() {
       tone="transparent"
       aria-labelledby="gallery-title"
       style={{
+        backgroundColor: '#fefdf7',
         backgroundImage: "url('/backgrounds_section/background-GalleryPreview.webp')",
         backgroundSize: 'auto 100%',
         backgroundPosition: 'center top',

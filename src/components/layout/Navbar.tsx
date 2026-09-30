@@ -14,6 +14,7 @@ const links = [
   { to: '/rentalbikes', label: 'Rental Bikes' },
   { to: '/blog', label: 'Blog' },
   { to: '/faq', label: 'FAQ' },
+  { to: '/terms', label: 'Terms & Conditions' },
   { to: '/contact', label: 'Contact' },
 ];
 
@@ -46,9 +47,9 @@ export function Navbar() {
       >
         <nav
           aria-label="Primary"
-          className="mx-auto flex w-full max-w-[1240px] items-center justify-between gap-6 px-5 sm:px-8 lg:px-10"
+          className="mx-auto flex w-full max-w-[1240px] items-center justify-between gap-4 px-5 sm:px-8 lg:px-10"
         >
-          <Link to="/" className="flex items-center gap-3" aria-label="Odyssey — home">
+          <Link to="/" className="flex items-center gap-3 shrink-0" aria-label="Odyssey — home">
             {/* Solid navbar → coloured logo (logo.webp) cropped to circle
                 Transparent navbar (dark hero) → no-background logo with thin circular border */}
             {solid ? (
@@ -93,7 +94,7 @@ export function Navbar() {
                   to={link.to}
                   className={({ isActive }) =>
                     cn(
-                      'relative rounded-full px-3.5 py-2 text-[14px] font-medium tracking-wide transition-colors duration-300',
+                      'relative rounded-full px-2.5 2xl:px-3.5 py-2 text-[13px] 2xl:text-[14px] font-medium tracking-wide transition-colors duration-300',
                       solid
                         ? isActive
                           ? 'text-forest-500'
@@ -111,7 +112,7 @@ export function Navbar() {
                         <motion.span
                           layoutId="nav-active"
                           className={cn(
-                            'absolute inset-x-3.5 -bottom-0.5 h-px',
+                            'absolute inset-x-2.5 2xl:inset-x-3.5 -bottom-0.5 h-px',
                             solid ? 'bg-forest-500' : 'bg-gold-300'
                           )}
                           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}

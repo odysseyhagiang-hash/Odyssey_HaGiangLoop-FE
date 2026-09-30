@@ -439,7 +439,7 @@ export function TourDetail() {
                         <span className="sm:hidden font-display text-3xl text-gold-400 leading-none block mb-3">
                           {String(day.day).padStart(2, '0')}
                         </span>
-                        <h3 className="font-display text-lg leading-snug text-ink sm:text-xl">
+                        <h3 className="font-display text-lg leading-snug text-ink sm:text-xl whitespace-pre-line">
                           {day.title}
                         </h3>
                         {day.distance && (
