@@ -94,13 +94,13 @@ export const tours: Tour[] = [
           {
             day: 1,
             title: 'Ha Giang → Quan Ba Heaven\'s Gate → Tham Ma Pass → H\'Mong King Palace → Dong Van Ancient Town',
-            summary: '09:00: Start from Ha Giang City\n10:30: Visit Quan Ba Heaven\'s Gate\n11:30: Have lunch in Yen Minh, take rest\n14:00: Visit Tham Ma Pass\n15:30: Visit H\'Mong King Palace\n17:00: Go to Dong Van center town, check in & have dinner at homestay',
+            summary: '- Start from Ha Giang City\n- Visit Quan Ba Heaven\'s Gate\n- Have lunch in Yen Minh, take rest\n- Visit Tham Ma Pass\n- Visit H\'Mong King Palace\n- Go to Dong Van center town, check in & have dinner at homestay',
             highlights: ['Quan Ba Heaven\'s Gate', 'Tham Ma Pass', 'H\'Mong King Palace', 'Dong Van Ancient Town'],
           },
           {
             day: 2,
             title: 'Dong Van Ancient Town → Ma Pi Leng Pass → Nho Que River → Ha Giang City',
-            summary: '07:30: Have breakfast at homestay\n08:00: Go to Ma Pi Leng Pass\n09:30: Go on boat trip on Nho Que River\n12:00: Have lunch at Meo Vac\n13:00: Start go back to Ha Giang city\n16:00: In Ha Giang city, take rest. End of the tour.',
+            summary: '- Have breakfast at homestay\n- Go to Ma Pi Leng Pass\n- Go on boat trip on Nho Que River\n- Have lunch at Meo Vac\n- Start go back to Ha Giang city\n- In Ha Giang city, take rest. End of the tour.',
             highlights: ['Ma Pi Leng Pass', 'Nho Que River', 'Meo Vac'],
           },
         ],
@@ -361,13 +361,13 @@ export const tours: Tour[] = [
           {
             day: 1,
             title: 'Ha Giang → Quan Ba Heaven\'s Gate → Tham Ma Pass → H\'Mong King Palace → Dong Van Ancient Town',
-            summary: '09:00: Start from Ha Giang City\n10:30: Visit Quan Ba Heaven\'s Gate\n11:30: Have lunch in Yen Minh, take rest\n14:00: Visit Tham Ma Pass\n15:30: Visit H\'Mong King Palace\n17:00: Go to Dong Van center town, check in & have dinner at homestay',
+            summary: '- Start from Ha Giang City\n- Visit Quan Ba Heaven\'s Gate\n- Have lunch in Yen Minh, take rest\n- Visit Tham Ma Pass\n- Visit H\'Mong King Palace\n- Go to Dong Van center town, check in & have dinner at homestay',
             highlights: ['Quan Ba Heaven\'s Gate', 'Tham Ma Pass', 'H\'Mong King Palace', 'Dong Van Ancient Town'],
           },
           {
             day: 2,
             title: 'Dong Van Ancient Town → Ma Pi Leng Pass → Nho Que River → Ha Giang City',
-            summary: '07:30: Have breakfast at homestay\n08:00: Go to Ma Pi Leng Pass\n09:30: Go on boat trip on Nho Que River\n12:00: Have lunch at Meo Vac\n13:00: Start go back to Ha Giang city\n16:00: In Ha Giang city, take rest. End of the tour.',
+            summary: '- Have breakfast at homestay\n- Go to Ma Pi Leng Pass\n- Go on boat trip on Nho Que River\n- Have lunch at Meo Vac\n- Start go back to Ha Giang city\n- In Ha Giang city, take rest. End of the tour.',
             highlights: ['Ma Pi Leng Pass', 'Nho Que River', 'Meo Vac'],
           },
         ],
