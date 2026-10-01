@@ -76,20 +76,20 @@ export function TourCard({ tour }: TourCardProps) {
           <div
             key={h}
             className={cn(
-              'flex items-start px-4 py-3 text-[11px] leading-snug text-ink-soft min-h-[68px]',
+              'flex items-start px-4 py-3 text-[11px] leading-snug text-ink-soft min-h-[68px] text-justify',
               i % 2 === 0 ? 'border-r border-ink/[0.06]' : '',
               i >= 2 ? 'border-t border-ink/[0.06]' : ''
             )}
           >
             <span className="mt-0.5 mr-2 h-1 w-1 rounded-full bg-ink/25 flex-shrink-0" />
-            {h}
+            <span>{h}</span>
           </div>
         ))}
       </div>
 
       {/* ── Body ── */}
       <div className="flex flex-1 flex-col p-6 sm:p-7">
-        <p className="text-sm leading-relaxed text-ink-soft">{tour.tagline}</p>
+        <p className="text-sm leading-relaxed text-ink-soft text-justify">{tour.tagline}</p>
 
         <div className="mt-4">
           <p className="text-[10px] uppercase tracking-widest text-ink-muted">From</p>
