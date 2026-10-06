@@ -209,7 +209,7 @@ export const tours: Tour[] = [
       'The most cost-efficient option — share the loop with travellers from around the world, enjoy lively evenings and make friends that last long after the ride.',
     highlights: [
       'The cost is optimized and saved the most',
-      'Many interesting night activities (party, karaoke, happy water)',
+      'Many interesting night activities ',
       'Connect more companions with new passions',
       'Have the opportunity to exchange culture with many tourists from different countries',
     ],
@@ -336,7 +336,7 @@ export const tours: Tour[] = [
       'See every highlight of the Ha Giang Loop from a private, air-conditioned car with a professional guide. Perfect for families, seniors, or anyone who prefers four wheels.',
     highlights: [
       'The cost is optimized and saved the most',
-      'Many interesting night activities (party, karaoke, happy water)',
+      'Many interesting night activities',
       'Connect more companions with new passions',
       'Have the opportunity to exchange culture with many tourists from different countries',
     ],
@@ -598,7 +598,7 @@ export const tours: Tour[] = [
       'Comprehensive grand loop: Ha Giang Karst Plateau + Cao Bang UNESCO Geopark',
       'Visit Ban Gioc Waterfall — Southeast Asia\'s largest trans-border waterfall',
       'Explore Ma Pi Leng Pass, Tu San Canyon, Nguom Ngao Cave & Pac Bo historical site',
-      'Flexible options: Motorbike (Easy Rider / Self-Drive) or Private Car with 100% private rooms',
+      'Flexible options: Motorbike or Private Car with 100% private rooms',
     ],
     inclusions: [
       'Motorbike with Easy Rider or private car transport & all fuel',
