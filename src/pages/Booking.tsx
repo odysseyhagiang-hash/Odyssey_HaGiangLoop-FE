@@ -133,7 +133,7 @@ const HOSTELS: Hostel[] = [
     address: 'No 11, Lane 29, Group 18, Nguyen Trai Ward, Ha Giang City',
     images: [
       '/Popup/C%C6%A1%20s%E1%BB%9F%201.jpg',
-      'https://res.cloudinary.com/bs1csiim/image/upload/v1785983596/C%C6%A1_s%E1%BB%9F_1_opgg9m.jpg',
+      '/Popup/c%C6%A1%20s%E1%BB%9F%201,2.jpg',
     ],
     overview: {
       tagline: 'A UNIQUE RELAXATION SPACE AT ODYSSEY GUEST HOUSE',
