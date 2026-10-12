@@ -783,7 +783,7 @@ export const destinations: Destination[] = [
     slug: 'quan-ba-heavens-gate',
     name: "Quan Ba Heaven's Gate",
     region: 'Quan Ba',
-    image: 'https://res.cloudinary.com/bs1csiim/image/upload/v1785913301/quan_ba_heaven_s_gate_cig6wo.png',
+    image: '/Popup/QuanBa.jpg',
     elevation: '1,500 m',
     bestSeason: 'All year',
     blurb: 'A tranquil mountain pass blending folklore legends with Twin Mountains views.',
