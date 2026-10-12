@@ -126,25 +126,25 @@ export function Hero() {
                   text-center lg:text-left
                 "
               >
-                {["A slower way", "through the"].map((line, index) => (
-                  <motion.span
-                    key={line}
-                    className="block pb-[0.12em]"
-                    initial={{ opacity: 0, y: 44 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1, delay: 0.1 + index * 0.1, ease }}
-                  >
-                    {line}{" "}
-                  </motion.span>
-                ))}
                 <motion.span
-                  className="block italic text-gold-300"
+                  className="block pb-[0.12em]"
                   initial={{ opacity: 0, y: 44 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1, delay: 0.3, ease }}
+                  transition={{ duration: 1, delay: 0.1, ease }}
                 >
-                  limestone sky
+                  ODYSSEY HA GIANG
                 </motion.span>
+                {["Stay for the night.", "Leave with a story"].map((line, index) => (
+                  <motion.span
+                    key={line}
+                    className="block italic text-gold-300"
+                    initial={{ opacity: 0, y: 44 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1, delay: 0.2 + index * 0.1, ease }}
+                  >
+                    {line}
+                  </motion.span>
+                ))}
               </h1>
 
               {/* SVG w-full → khớp đúng chiều rộng wrapper = heading */}
@@ -184,9 +184,9 @@ export function Hero() {
                 text-sm sm:text-base leading-relaxed text-white/75
               "
             >
-              Guided journeys across the Ha Giang plateau for travellers who
-              would rather arrive well than arrive first. Small group, four
-              days, and time to actually stop.
+              More than just a place to stop, Odyssey is where your journey
+              begins — where unforgettable experiences unfold and the pristine
+              beauty of Ha Giang becomes a lifelong memory.
             </motion.p>
 
             <motion.div
