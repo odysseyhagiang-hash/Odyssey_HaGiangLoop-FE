@@ -86,19 +86,19 @@ interface BusTypeShowcase {
 const BUS_TYPES: BusTypeShowcase[] = [
   {
     name: 'LIMOUSINE',
-    image: '/Popup/Limousine.jpg'
+    image: '/Popup/Limousine.webp'
   },
   {
     name: 'REGULAR SLEEPING BUS',
-    image: '/Popup/regular.jpg'
+    image: '/Popup/regular.webp'
   },
   {
     name: 'ROYAL CABIN BUS (CABIN 24)',
-    image: '/Popup/Royal%20cabin%20bus.jpg'
+    image: '/Popup/Royal%20cabin%20bus.webp'
   },
   {
     name: 'HOTEL SLEEPING BUS (CABIN 34)',
-    image: '/Popup/Hotel%20sleeping%20bus.jpg'
+    image: '/Popup/Hotel%20sleeping%20bus.webp'
   }
 ];
 
@@ -132,8 +132,8 @@ const HOSTELS: Hostel[] = [
     label: 'Odyssey Hostel',
     address: 'No 11, Lane 29, Group 18, Nguyen Trai Ward, Ha Giang City',
     images: [
-      '/Popup/C%C6%A1%20s%E1%BB%9F%201.jpg',
-      '/Popup/c%C6%A1%20s%E1%BB%9F%201,2.jpg',
+      '/Popup/C%C6%A1%20s%E1%BB%9F%201.webp',
+      '/Popup/c%C6%A1%20s%E1%BB%9F%201,2.webp',
     ],
     overview: {
       tagline: 'A UNIQUE RELAXATION SPACE AT ODYSSEY GUEST HOUSE',
@@ -167,11 +167,11 @@ const HOSTELS: Hostel[] = [
         name: 'Bungalow Sky View',
         price: '950000',
         priceSub: 'per room / night',
-        image: '/Popup/1785939100853_7647185241213986356_7647185241213986356_b6701b175904630fdbfa9cbae22256e9.jpg',
+        image: '/Popup/1785939100853_7647185241213986356_7647185241213986356_b6701b175904630fdbfa9cbae22256e9.webp',
         images: [
-          '/Popup/1785939100853_7647185241213986356_7647185241213986356_b6701b175904630fdbfa9cbae22256e9.jpg',
-          '/Popup/1785939100901_7647185241213986356_7647185241213986356_f98e8f28cce9c3aa5380ade75b6ff94c.jpg',
-          '/Popup/1785939100891_7647185241213986356_7647185241213986356_9ffac162547b01a334908c8b8c4f48fe.jpg',
+          '/Popup/1785939100853_7647185241213986356_7647185241213986356_b6701b175904630fdbfa9cbae22256e9.webp',
+          '/Popup/1785939100901_7647185241213986356_7647185241213986356_f98e8f28cce9c3aa5380ade75b6ff94c.webp',
+          '/Popup/1785939100891_7647185241213986356_7647185241213986356_9ffac162547b01a334908c8b8c4f48fe.webp',
         ],
         link: 'https://www.booking.com/hotel/vn/odyssey-ha-giang-hostel.vi.html',
       },
@@ -179,7 +179,7 @@ const HOSTELS: Hostel[] = [
         name: 'King Room',
         price: '650000',
         priceSub: 'per room / night',
-        image: '/Popup/king%20room.jpg',
+        image: '/Popup/king%20room.webp',
         link: 'https://www.booking.com/hotel/vn/odyssey-ha-giang-hostel.vi.html',
       },
     ],
@@ -189,8 +189,8 @@ const HOSTELS: Hostel[] = [
     label: 'Odyssey Hostel 2',
     address: 'No 88, Nguyen Trai Ward, Ha Giang City',
     images: [
-      'https://res.cloudinary.com/bs1csiim/image/upload/v1786007847/1786007727449_5692166649656267231_g2276650073979578041_1115bb6594efd34b81ec2cdb875a4392_jlkgbx.jpg',
-      'https://res.cloudinary.com/bs1csiim/image/upload/v1785911086/c%C6%A1_s%E1%BB%9F_1-2_yxa9gt.jpg',
+      '/Popup/C%C6%A1%20s%E1%BB%9F%201.webp',
+      '/Popup/c%C6%A1%20s%E1%BB%9F%201,2.webp',
     ],
     overview: {
       tagline: 'MODERN COMFORT MEETS HIGHLAND CHARM AT ODYSSEY HOSTEL 2',

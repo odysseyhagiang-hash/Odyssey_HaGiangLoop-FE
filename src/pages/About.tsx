@@ -70,70 +70,70 @@ const differentiators = [
 const galleryImages = [
   {
     id: 'g1',
-    src: '/Aboutpic/1785766572904_7647185241213986356_7647185241213986356_82225e506f616a5854379925f064efa3.jpg',
+    src: '/Aboutpic/1785766572904_7647185241213986356_7647185241213986356_82225e506f616a5854379925f064efa3.webp',
     alt: 'Travellers taking a break and looking at the scenic valley in Ha Giang',
     caption: 'Scenic rest stop on the loop',
     span: 'square'
   },
   {
     id: 'g2',
-    src: '/Aboutpic/1785766572897_7647185241213986356_7647185241213986356_0ab02287220381ef80d916e698d93ac7.jpg',
+    src: '/Aboutpic/1785766572897_7647185241213986356_7647185241213986356_0ab02287220381ef80d916e698d93ac7.webp',
     alt: 'Winding road through rocky limestone karsts in northern Vietnam',
     caption: 'Winding mountain pass roads',
     span: 'wide'
   },
   {
     id: 'g3',
-    src: '/Aboutpic/1785766572884_7647185241213986356_7647185241213986356_95bcbda3a0083d54af810a1860bbba60.jpg',
+    src: '/Aboutpic/1785766572884_7647185241213986356_7647185241213986356_95bcbda3a0083d54af810a1860bbba60.webp',
     alt: 'Group of riders navigating the high mountain passes in Ha Giang',
     caption: 'Riders conquering the heights',
     span: 'square'
   },
   {
     id: 'g4',
-    src: '/Aboutpic/1785766572877_7647185241213986356_7647185241213986356_ac70c9d9e27e171a82a6d051dc9913b4.jpg',
+    src: '/Aboutpic/1785766572877_7647185241213986356_7647185241213986356_ac70c9d9e27e171a82a6d051dc9913b4.webp',
     alt: 'Local guide standing beside a motorcycle overlooking the deep canyons',
     caption: 'Stunning canyon view overlooking the river',
     span: 'tall'
   },
   {
     id: 'g5',
-    src: '/Aboutpic/1785766572787_7647185241213986356_7647185241213986356_ea726a5f8a4dcd38a36ba53fa6720c99.jpg',
+    src: '/Aboutpic/1785766572787_7647185241213986356_7647185241213986356_ea726a5f8a4dcd38a36ba53fa6720c99.webp',
     alt: 'Scenic overlook of lush green valleys and towering karst peaks',
     caption: 'Lush highland vistas',
     span: 'square'
   },
   {
     id: 'g6',
-    src: '/Aboutpic/1785766572850_7647185241213986356_7647185241213986356_dfdebb517141da2d4a3c0f5c226bb1bb.jpg',
+    src: '/Aboutpic/1785766572850_7647185241213986356_7647185241213986356_dfdebb517141da2d4a3c0f5c226bb1bb.webp',
     alt: 'Rustic homestay in a quiet valley surrounded by mountains',
     caption: 'Cosy local homestay stay',
     span: 'square'
   },
   {
     id: 'g7',
-    src: '/Aboutpic/1785766572861_7647185241213986356_7647185241213986356_ceedcb9da07284e2181f8119c9ca2609.jpg',
+    src: '/Aboutpic/1785766572861_7647185241213986356_7647185241213986356_ceedcb9da07284e2181f8119c9ca2609.webp',
     alt: 'Motorcycles parked along the scenic cliffs of the Ma Pi Leng pass',
     caption: 'Motorcycles parked on the pass edge',
     span: 'wide'
   },
   {
     id: 'g8',
-    src: '/Aboutpic/1785766572870_7647185241213986356_7647185241213986356_33aa8c4c45235ab2c12729102ac02895.jpg',
+    src: '/Aboutpic/1785766572870_7647185241213986356_7647185241213986356_33aa8c4c45235ab2c12729102ac02895.webp',
     alt: 'Close-up of traditional woven fabric and local garments',
     caption: 'Traditional ethnic weaving texture',
     span: 'square'
   },
   {
     id: 'g9',
-    src: '/Aboutpic/1785766572839_7647185241213986356_7647185241213986356_9c61e2755fa6890b28f23d85818785b6.jpg',
+    src: '/Aboutpic/1785766572839_7647185241213986356_7647185241213986356_9c61e2755fa6890b28f23d85818785b6.webp',
     alt: 'Clear emerald river water cutting through steep limestone cliffs',
     caption: 'Turquoise water of the canyon river',
     span: 'square'
   },
   {
     id: 'g10',
-    src: '/Aboutpic/1785766572825_7647185241213986356_7647185241213986356_eb0dc5e9ef27a6a1f965570b1c5de9e3.jpg',
+    src: '/Aboutpic/1785766572825_7647185241213986356_7647185241213986356_eb0dc5e9ef27a6a1f965570b1c5de9e3.webp',
     alt: 'Spectacular sunset over the mountains of Ha Giang',
     caption: 'Golden mountain sunset',
     span: 'wide'
@@ -296,7 +296,7 @@ export function About() {
                   transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}>
 
                   <LazyImage
-                    src="/Aboutpic/1785766572810_7647185241213986356_7647185241213986356_71e6e25fc8bfa001be45d0166b57013f.jpg"
+                    src="/Aboutpic/1785766572810_7647185241213986356_7647185241213986356_71e6e25fc8bfa001be45d0166b57013f.webp"
                     alt="Beautiful winding mountain path landscape in Ha Giang"
                     wrapperClassName="block aspect-[3/4] w-full"
                     sizes="(min-width: 1024px) 40vw, 100vw" />
