@@ -86,19 +86,19 @@ interface BusTypeShowcase {
 const BUS_TYPES: BusTypeShowcase[] = [
   {
     name: 'LIMOUSINE',
-    image: 'https://res.cloudinary.com/bs1csiim/image/upload/v1785911012/Limousine_fxllrp.jpg'
+    image: '/Popup/Limousine.jpg'
   },
   {
     name: 'REGULAR SLEEPING BUS',
-    image: 'https://res.cloudinary.com/bs1csiim/image/upload/v1785911012/regular_xlxtid.jpg'
+    image: '/Popup/regular.jpg'
   },
   {
     name: 'ROYAL CABIN BUS (CABIN 24)',
-    image: 'https://res.cloudinary.com/bs1csiim/image/upload/v1785911012/Royal_cabin_bus_gw1gjw.jpg'
+    image: '/Popup/Royal%20cabin%20bus.jpg'
   },
   {
     name: 'HOTEL SLEEPING BUS (CABIN 34)',
-    image: 'https://res.cloudinary.com/bs1csiim/image/upload/v1785911013/Hotel_sleeping_bus_tbtph2.jpg'
+    image: '/Popup/Hotel%20sleeping%20bus.jpg'
   }
 ];
 
@@ -132,7 +132,7 @@ const HOSTELS: Hostel[] = [
     label: 'Odyssey Hostel',
     address: 'No 11, Lane 29, Group 18, Nguyen Trai Ward, Ha Giang City',
     images: [
-      'https://res.cloudinary.com/bs1csiim/image/upload/v1785911093/c%C6%A1_s%E1%BB%9F_1_2_qehqwg.jpg',
+      '/Popup/C%C6%A1%20s%E1%BB%9F%201.jpg',
       'https://res.cloudinary.com/bs1csiim/image/upload/v1785983596/C%C6%A1_s%E1%BB%9F_1_opgg9m.jpg',
     ],
     overview: {
@@ -167,11 +167,11 @@ const HOSTELS: Hostel[] = [
         name: 'Bungalow Sky View',
         price: '950000',
         priceSub: 'per room / night',
-        image: 'https://res.cloudinary.com/bs1csiim/image/upload/v1785989452/1785939100853_7647185241213986356_7647185241213986356_b6701b175904630fdbfa9cbae22256e9_spsd10.jpg',
+        image: '/Popup/1785939100853_7647185241213986356_7647185241213986356_b6701b175904630fdbfa9cbae22256e9.jpg',
         images: [
-          'https://res.cloudinary.com/bs1csiim/image/upload/v1785989452/1785939100853_7647185241213986356_7647185241213986356_b6701b175904630fdbfa9cbae22256e9_spsd10.jpg',
-          'https://res.cloudinary.com/bs1csiim/image/upload/v1785983652/1785939100901_7647185241213986356_7647185241213986356_f98e8f28cce9c3aa5380ade75b6ff94c_vpjpsm.jpg',
-          'https://res.cloudinary.com/bs1csiim/image/upload/v1785983650/1785939100891_7647185241213986356_7647185241213986356_9ffac162547b01a334908c8b8c4f48fe_nx6aoa.jpg',
+          '/Popup/1785939100853_7647185241213986356_7647185241213986356_b6701b175904630fdbfa9cbae22256e9.jpg',
+          '/Popup/1785939100901_7647185241213986356_7647185241213986356_f98e8f28cce9c3aa5380ade75b6ff94c.jpg',
+          '/Popup/1785939100891_7647185241213986356_7647185241213986356_9ffac162547b01a334908c8b8c4f48fe.jpg',
         ],
         link: 'https://www.booking.com/hotel/vn/odyssey-ha-giang-hostel.vi.html',
       },
@@ -179,7 +179,7 @@ const HOSTELS: Hostel[] = [
         name: 'King Room',
         price: '650000',
         priceSub: 'per room / night',
-        image: 'https://res.cloudinary.com/bs1csiim/image/upload/v1785983636/king_room_qwa6gy.jpg',
+        image: '/Popup/king%20room.jpg',
         link: 'https://www.booking.com/hotel/vn/odyssey-ha-giang-hostel.vi.html',
       },
     ],

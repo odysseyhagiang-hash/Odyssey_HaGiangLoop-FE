@@ -70,70 +70,70 @@ const differentiators = [
 const galleryImages = [
   {
     id: 'g1',
-    src: 'https://res.cloudinary.com/bs1csiim/image/upload/v1785982755/1785766572904_7647185241213986356_7647185241213986356_82225e506f616a5854379925f064efa3_eb8bj7.jpg',
+    src: '/Aboutpic/1785766572904_7647185241213986356_7647185241213986356_82225e506f616a5854379925f064efa3.jpg',
     alt: 'Travellers taking a break and looking at the scenic valley in Ha Giang',
     caption: 'Scenic rest stop on the loop',
     span: 'square'
   },
   {
     id: 'g2',
-    src: 'https://res.cloudinary.com/bs1csiim/image/upload/v1785982755/1785766572897_7647185241213986356_7647185241213986356_0ab02287220381ef80d916e698d93ac7_nprgpy.jpg',
+    src: '/Aboutpic/1785766572897_7647185241213986356_7647185241213986356_0ab02287220381ef80d916e698d93ac7.jpg',
     alt: 'Winding road through rocky limestone karsts in northern Vietnam',
     caption: 'Winding mountain pass roads',
     span: 'wide'
   },
   {
     id: 'g3',
-    src: 'https://res.cloudinary.com/bs1csiim/image/upload/v1785982755/1785766572884_7647185241213986356_7647185241213986356_95bcbda3a0083d54af810a1860bbba60_hva9df.jpg',
+    src: '/Aboutpic/1785766572884_7647185241213986356_7647185241213986356_95bcbda3a0083d54af810a1860bbba60.jpg',
     alt: 'Group of riders navigating the high mountain passes in Ha Giang',
     caption: 'Riders conquering the heights',
     span: 'square'
   },
   {
     id: 'g4',
-    src: 'https://res.cloudinary.com/bs1csiim/image/upload/v1785982755/1785766572877_7647185241213986356_7647185241213986356_ac70c9d9e27e171a82a6d051dc9913b4_qhi5oi.jpg',
+    src: '/Aboutpic/1785766572877_7647185241213986356_7647185241213986356_ac70c9d9e27e171a82a6d051dc9913b4.jpg',
     alt: 'Local guide standing beside a motorcycle overlooking the deep canyons',
     caption: 'Stunning canyon view overlooking the river',
     span: 'tall'
   },
   {
     id: 'g5',
-    src: 'https://res.cloudinary.com/bs1csiim/image/upload/v1785982753/1785766572787_7647185241213986356_7647185241213986356_ea726a5f8a4dcd38a36ba53fa6720c99_zcrspd.jpg',
+    src: '/Aboutpic/1785766572787_7647185241213986356_7647185241213986356_ea726a5f8a4dcd38a36ba53fa6720c99.jpg',
     alt: 'Scenic overlook of lush green valleys and towering karst peaks',
     caption: 'Lush highland vistas',
     span: 'square'
   },
   {
     id: 'g6',
-    src: 'https://res.cloudinary.com/bs1csiim/image/upload/v1785982753/1785766572850_7647185241213986356_7647185241213986356_dfdebb517141da2d4a3c0f5c226bb1bb_kwizaa.jpg',
+    src: '/Aboutpic/1785766572850_7647185241213986356_7647185241213986356_dfdebb517141da2d4a3c0f5c226bb1bb.jpg',
     alt: 'Rustic homestay in a quiet valley surrounded by mountains',
     caption: 'Cosy local homestay stay',
     span: 'square'
   },
   {
     id: 'g7',
-    src: 'https://res.cloudinary.com/bs1csiim/image/upload/v1785982753/1785766572861_7647185241213986356_7647185241213986356_ceedcb9da07284e2181f8119c9ca2609_ux7ksb.jpg',
+    src: '/Aboutpic/1785766572861_7647185241213986356_7647185241213986356_ceedcb9da07284e2181f8119c9ca2609.jpg',
     alt: 'Motorcycles parked along the scenic cliffs of the Ma Pi Leng pass',
     caption: 'Motorcycles parked on the pass edge',
     span: 'wide'
   },
   {
     id: 'g8',
-    src: 'https://res.cloudinary.com/bs1csiim/image/upload/v1785982753/1785766572870_7647185241213986356_7647185241213986356_33aa8c4c45235ab2c12729102ac02895_xyksnh.jpg',
+    src: '/Aboutpic/1785766572870_7647185241213986356_7647185241213986356_33aa8c4c45235ab2c12729102ac02895.jpg',
     alt: 'Close-up of traditional woven fabric and local garments',
     caption: 'Traditional ethnic weaving texture',
     span: 'square'
   },
   {
     id: 'g9',
-    src: 'https://res.cloudinary.com/bs1csiim/image/upload/v1785982752/1785766572839_7647185241213986356_7647185241213986356_9c61e2755fa6890b28f23d85818785b6_lihdc6.jpg',
+    src: '/Aboutpic/1785766572839_7647185241213986356_7647185241213986356_9c61e2755fa6890b28f23d85818785b6.jpg',
     alt: 'Clear emerald river water cutting through steep limestone cliffs',
     caption: 'Turquoise water of the canyon river',
     span: 'square'
   },
   {
     id: 'g10',
-    src: 'https://res.cloudinary.com/bs1csiim/image/upload/v1785982752/1785766572825_7647185241213986356_7647185241213986356_eb0dc5e9ef27a6a1f965570b1c5de9e3_ldytd1.jpg',
+    src: '/Aboutpic/1785766572825_7647185241213986356_7647185241213986356_eb0dc5e9ef27a6a1f965570b1c5de9e3.jpg',
     alt: 'Spectacular sunset over the mountains of Ha Giang',
     caption: 'Golden mountain sunset',
     span: 'wide'
@@ -296,7 +296,7 @@ export function About() {
                   transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}>
 
                   <LazyImage
-                    src="https://res.cloudinary.com/bs1csiim/image/upload/v1785982771/1785766572810_7647185241213986356_7647185241213986356_71e6e25fc8bfa001be45d0166b57013f_v7bmru.jpg"
+                    src="/Aboutpic/1785766572810_7647185241213986356_7647185241213986356_71e6e25fc8bfa001be45d0166b57013f.jpg"
                     alt="Beautiful winding mountain path landscape in Ha Giang"
                     wrapperClassName="block aspect-[3/4] w-full"
                     sizes="(min-width: 1024px) 40vw, 100vw" />
