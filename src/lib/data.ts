@@ -903,10 +903,10 @@ export const destinations: Destination[] = [
     slug: 'du-gia-valley',
     name: 'Du Gia Village',
     region: 'Yen Minh',
-    image: 'https://res.cloudinary.com/bs1csiim/image/upload/v1785913299/du_gia_village_jgydzr.png',
+    image: '/Popup/dugiavalley.webp',
     elevation: '760 m',
     bestSeason: 'April – September',
-    blurb: 'A green bowl of rice fields, waterfalls and slow evenings.',
+    blurb: 'A valley of rice fields and a village nestled among the mountains.',
     description:
       'Du Gia Village, a serene haven in Ha Giang, is a picturesque locale that’s perfect for relaxation during the Ha Giang loop. This charming village is nestled alongside a river and is encircled by lush hills, offering an idyllic setting for travelers. It’s a place where you can immerse yourself in the peaceful beauty of nature, explore the surrounding rice fields and rolling hills, and experience the warmth of the local hospitality. With a variety of homestays and local eateries, Du Gia provides a delightful glimpse into rural Vietnamese life and culture.',
     experiences: ['Waterfall swim', 'Homestay supper', 'Rice field cycling']
