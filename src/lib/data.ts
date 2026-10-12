@@ -819,10 +819,10 @@ export const destinations: Destination[] = [
     slug: 'yen-minh-town',
     name: 'Yen Minh Town',
     region: 'Yen Minh',
-    image: 'https://res.cloudinary.com/bs1csiim/image/upload/v1785913297/yen_minh_town_zsz027.jpg',
+    image: '/Popup/yenminh.webp',
     elevation: '800 m',
     bestSeason: 'All year',
-    blurb: 'A tranquil pine-forested valley stop untouched by heavy tourism.',
+    blurb: 'A town nestled in a valley.',
     description:
       'Yen Minh Town, a quaint stop on the Ha Giang Loop, is a gateway to the stunning landscapes and rich ethnic tapestry of Vietnam’s northern frontier. While the town itself is modest, it’s celebrated for its authentic vibe and delicious local cuisine. The surrounding areas, like the Na Khe Pine Forest—often called the “Da Lat of the North”—and Du Gia National Park, offer breathtaking natural beauty and a glimpse into the lives of the region’s diverse ethnic communities. Whether you’re exploring the serene pine forests or joining the locals for a game of football, Yen Minh provides a slice of rural Vietnamese life untouched by tourism.',
     experiences: ['Pine forest stroll', 'Local food tasting', 'Ethnic village homestay']
@@ -831,10 +831,10 @@ export const destinations: Destination[] = [
     slug: 'tham-ma-pass',
     name: 'Tham Ma Pass',
     region: 'Dong Van',
-    image: 'https://res.cloudinary.com/bs1csiim/image/upload/v1785913300/tham_ma_pass_ny60xl.png',
+    image: '/Popup/thamma.webp',
     elevation: '1,500 m',
     bestSeason: 'All year',
-    blurb: "The iconic S-shaped zigzag pass historically used to test horses' strength.",
+    blurb: 'A winding S-shaped mountain pass through green hills.',
     description:
       'Tham Ma Pass, with its iconic s-shaped curves, is a breathtaking feature of Ha Giang’s landscape. This 5 km stretch of road winds through the Dong Van district, offering stunning views of the surrounding karst formations. At an altitude of 1500 meters, it’s not the highest pass in the region, but its unique zigzagging path provides a thrilling ride for travelers. Historically, locals tested their horses’ strength here, a tradition that adds to the pass’s rich cultural tapestry.',
     experiences: ['S-curve scenic ride', 'Mountain-top photography', 'Local H\'Mong children greeting']
@@ -855,10 +855,10 @@ export const destinations: Destination[] = [
     slug: 'lung-cu-flag-point',
     name: 'Lung Cu Flag Point',
     region: 'Dong Van',
-    image: 'https://res.cloudinary.com/bs1csiim/image/upload/v1785913293/lung_cu_flag_point_nkx0ca.png',
+    image: '/Popup/lungcu.webp',
     elevation: '1,470 m',
     bestSeason: 'All year',
-    blurb: 'The historic monument marking the northernmost point of Vietnam.',
+    blurb: 'A flagpole on the mountaintop flying a red flag, seen from above.',
     description:
       'A monument that marks the northernmost point of Vietnam. It is located on Lung Cu peak, 1,470 meters above sea level, in Dong Van district. The monument consists of a 30-meter-high tower on the summit of the peak. The tower is topped with a large Vietnamese flag that represents the 54 ethnic groups in Vietnam. It is located near the Chinese border and offers a panoramic view of the border area. It has 839 stone steps that lead to the top of the tower, divided into three parts. Visitors can climb 200 steps to reach the flagpole. It is surrounded by a beautiful landscape of mountains, valleys and villages. You can see the rice terraces, corn fields and buckwheat flowers along the way.',
     experiences: ['Stone steps climb', 'Panoramic border views', 'Lo Lo Chai village visit']
