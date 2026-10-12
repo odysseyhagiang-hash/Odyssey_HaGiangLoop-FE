@@ -771,7 +771,7 @@ export const destinations: Destination[] = [
     slug: 'ma-pi-leng-pass',
     name: 'Ma Pi Leng Pass',
     region: 'Between Dong Van & Meo Vac',
-    image: 'https://res.cloudinary.com/bs1csiim/image/upload/v1785913901/ma_pi_leng_pass_kz3rqi.png',
+    image: '/Popup/mapileng.jpg',
     elevation: '1,500 m',
     bestSeason: 'March – May',
     blurb: 'Twenty kilometres of cliff road cut by hand across the sky.',
