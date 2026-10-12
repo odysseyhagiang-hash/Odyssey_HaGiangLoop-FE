@@ -292,7 +292,7 @@ export function TourDetail() {
                 <h2 className="font-display text-[1.75rem] leading-snug text-ink sm:text-[2.25rem]">
                   About this tour
                 </h2>
-                <p className="mt-5 text-[15px] leading-[1.8] text-ink-soft text-justify">{tour.summary}</p>
+                <p className="mt-5 text-[15px] leading-[1.8] text-ink-soft text-left [text-wrap:pretty]">{tour.summary}</p>
               </Reveal>
 
               {/* Included / Excluded */}
@@ -301,7 +301,7 @@ export function TourDetail() {
                   <h3 className="font-display text-xl text-ink">What's included</h3>
                   <ul className="mt-5 space-y-3">
                     {tour.inclusions.map((item) => (
-                      <li key={item} className="flex gap-3 text-sm leading-relaxed text-ink-soft text-justify">
+                      <li key={item} className="flex gap-3 text-sm leading-relaxed text-ink-soft text-left [text-wrap:pretty]">
                         <CheckIcon aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0 text-forest-500" />
                         <span>{item}</span>
                       </li>
@@ -312,7 +312,7 @@ export function TourDetail() {
                   <h3 className="font-display text-xl text-ink">Not included</h3>
                   <ul className="mt-5 space-y-3">
                     {tour.exclusions.map((item) => (
-                      <li key={item} className="flex gap-3 text-sm leading-relaxed text-ink-soft text-justify">
+                      <li key={item} className="flex gap-3 text-sm leading-relaxed text-ink-soft text-left [text-wrap:pretty]">
                         <XIcon aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0 text-ink-muted" />
                         <span>{item}</span>
                       </li>
@@ -394,7 +394,7 @@ export function TourDetail() {
                     <span aria-hidden="true" className="shrink-0">ℹ️</span>
                     <ul className="space-y-1">
                       {tour.priceNote.map((note, i) => (
-                        <li key={i} className="text-[12px] leading-relaxed text-forest-700 text-justify">{note}</li>
+                        <li key={i} className="text-[12px] leading-relaxed text-forest-700 text-left [text-wrap:pretty]">{note}</li>
                       ))}
                     </ul>
                   </div>
@@ -447,7 +447,7 @@ export function TourDetail() {
                             {day.distance}
                           </span>
                         )}
-                        <p className="mt-3 text-sm leading-relaxed text-ink-soft whitespace-pre-line text-justify">{day.summary}</p>
+                        <p className="mt-3 text-sm leading-relaxed text-ink-soft whitespace-pre-line text-left [text-wrap:pretty]">{day.summary}</p>
                         <ul className="mt-4 flex flex-wrap gap-2">
                           {day.highlights.map((h) => (
                             <li
