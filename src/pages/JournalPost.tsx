@@ -4,7 +4,7 @@ import { ArrowLeftIcon } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import { useSeo } from '../hooks/useSeo';
 import { apiGetPostBySlug, apiGetPosts } from '../lib/api';
-import { formatDate } from '../lib/utils';
+import { blogImageOnError, formatDate } from '../lib/utils';
 import { PageHero } from '../components/layout/PageHero';
 import { PostCard } from '../components/cards/PostCard';
 import { Reveal, Stagger } from '../components/ui/Reveal';
@@ -133,7 +133,7 @@ export function JournalPost() {
                 ),
                 img: ({ src, alt }) => (
                   <figure className="my-8">
-                    <img src={src} alt={alt || ''} className="w-full h-auto max-h-[550px] object-cover" />
+                    <img src={src} alt={alt || ''} onError={blogImageOnError(src || alt || '')} className="w-full h-auto max-h-[550px] object-cover" />
                     {alt && (
                       <figcaption className="mt-2.5 text-center text-xs text-ink-muted italic">
                         {alt}

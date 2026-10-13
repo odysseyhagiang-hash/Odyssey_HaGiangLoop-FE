@@ -2,7 +2,7 @@ import React from 'react';
 import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
 import { LazyImage } from '../ui/LazyImage';
 import { Container } from '../ui/Section';
-import { cn } from '../../lib/utils';
+import { blogFallbackImage, cn } from '../../lib/utils';
 
 interface PageHeroProps {
   eyebrow: string;
@@ -33,7 +33,7 @@ export function PageHero({
   return (
     <section className={cn('relative isolate flex min-h-[62vh] items-end overflow-hidden pb-16 pt-40 md:min-h-[70vh] md:pb-24', className)}>
       <motion.div style={{ y }} className="absolute inset-0 -z-10 scale-110">
-        <LazyImage src={image} alt={imageAlt} priority wrapperClassName="h-full w-full" />
+        <LazyImage src={image} alt={imageAlt} fallbackSrc={blogFallbackImage(imageAlt)} priority wrapperClassName="h-full w-full" />
       </motion.div>
       <div
         aria-hidden="true"

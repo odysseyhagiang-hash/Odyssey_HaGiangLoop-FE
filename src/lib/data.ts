@@ -1423,7 +1423,7 @@ export const posts: BlogPost[] = [
     title: 'Reading the weather on the plateau',
     excerpt:
       'Cloud seas, cold snaps and the two-hour window that makes the difference between a grey morning and the photograph you came for.',
-    cover: images.pass,
+    cover: '/Blog/75.webp',
     date: '2026-06-18',
     readingTime: '7 min read',
     category: 'Guides',
@@ -1439,7 +1439,7 @@ export const posts: BlogPost[] = [
     title: 'A short history of indigo',
     excerpt:
       'How a plant, a clay vat and eleven dips became the visual signature of the northern highlands.',
-    cover: images.market,
+    cover: '/Blog/31.webp',
     date: '2026-05-02',
     readingTime: '9 min read',
     category: 'Culture',
@@ -1455,7 +1455,7 @@ export const posts: BlogPost[] = [
     title: 'What to pack for four days on the loop',
     excerpt:
       'A short, tested list — and the four things almost everyone brings and never once uses.',
-    cover: images.tourClassic,
+    cover: '/Blog/55.webp',
     date: '2026-04-11',
     readingTime: '5 min read',
     category: 'Guides',
@@ -1471,7 +1471,7 @@ export const posts: BlogPost[] = [
     title: 'The case for staying an extra night',
     excerpt:
       'Why the travellers who add a day to Du Gia almost never regret it, and what happens when you stop moving.',
-    cover: images.experience,
+    cover: '/Blog/7.webp',
     date: '2026-03-06',
     readingTime: '6 min read',
     category: 'Journal',
@@ -1487,7 +1487,7 @@ export const posts: BlogPost[] = [
     title: 'Ma Pi Leng Pass: the complete guide for first-time riders',
     excerpt:
       'Everything you need to know before you ride the most celebrated road in northern Vietnam — distance, difficulty, best time of day, and what to do when you get there.',
-    cover: images.pass,
+    cover: '/Blog/79.webp',
     date: '2026-07-14',
     readingTime: '11 min read',
     category: 'Destinations',
@@ -1554,7 +1554,7 @@ There is no petrol station between Dong Van and Meo Vac. Fill your tank in Dong 
     title: 'Dong Van Sunday market: what to expect and when to arrive',
     excerpt:
       'The highland market that still runs on barter and buckwheat wine. A practical guide to getting there early, what to look for, and how to buy without an interpreter.',
-    cover: images.village,
+    cover: '/Blog/52.webp',
     date: '2026-07-01',
     readingTime: '8 min read',
     category: 'Culture',
@@ -1609,7 +1609,7 @@ The market runs regardless of weather. Bring a rain shell in any season.`
     title: 'Hoang Su Phi in harvest season: what nobody tells you before you go',
     excerpt:
       'The golden terraces of western Ha Giang are one of the most photographed landscapes in Vietnam. Here is what the images leave out — and how to experience the harvest properly.',
-    cover: images.terraces,
+    cover: '/Blog/57.webp',
     date: '2026-06-05',
     readingTime: '10 min read',
     category: 'Destinations',

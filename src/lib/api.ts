@@ -1,5 +1,6 @@
 import { BlogPost } from './types';
 import { getPosts, savePost as saveLocalPost, deletePost as deleteLocalPost } from './storage';
+import { blogFallbackImage } from './utils';
 
 const getApiBase = () => {
   return import.meta.env.VITE_API_URL ?? `${window.location.protocol}//${window.location.hostname}:5000/api`;
@@ -55,7 +56,7 @@ const mapBackendToFrontend = (item: any): BlogPost => {
     title: item.title,
     excerpt: item.excerpt || '',
     body: body.length > 0 ? body : [''],
-    cover: item.thumbnail?.url || item.cover || '/images/experience.jpg',
+    cover: item.thumbnail?.url || item.cover || blogFallbackImage(item.slug),
     date: (item.publishedAt || item.createdAt || new Date().toISOString()).slice(0, 10),
     readingTime: item.readingTime || '5 min read',
     category: item.category || 'Journal',
@@ -93,47 +94,44 @@ export async function apiGetPostBySlug(slug: string): Promise<BlogPost | undefin
   }
 }
 
-export async function apiUploadBlogImage(file: File): Promise<{ url: string; publicId?: string }> {
-  const formData = new FormData();
-  formData.append('image', file);
+// Cloudinary unsigned upload: ảnh bài viết mới được upload thẳng từ trình duyệt lên Cloudinary,
+// backend chỉ nhận lại URL (secure_url) qua field `cover`. Preset phải để chế độ "Unsigned".
+const CLOUDINARY_CLOUD_NAME = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME || 'ize5h4fj';
+const CLOUDINARY_UPLOAD_PRESET = import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET || 'Odyssey_HaGiang';
 
-  const res = await fetch(`${getApiBase()}/blogs/upload-image`, {
+export async function apiUploadBlogImage(file: File): Promise<{ url: string; publicId?: string }> {
+  if (!file.type.startsWith('image/')) throw new Error('Only image files are allowed');
+  if (file.size > 5 * 1024 * 1024) throw new Error('Image must be 5MB or smaller');
+
+  const formData = new FormData();
+  formData.append('file', file);
+  formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
+
+  const res = await fetch(`https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/image/upload`, {
     method: 'POST',
     body: formData,
-    credentials: 'include',
   });
-
-  if (!res.ok) {
-    const errorText = await res.text();
-    throw new Error(`Upload failed (${res.status}): ${errorText}`);
-  }
-
   const json = await res.json();
-  if (json.success && json.data?.url) {
-    return json.data;
+  if (!res.ok || !json.secure_url) {
+    throw new Error(json.error?.message || `Cloudinary upload failed (${res.status})`);
   }
-  throw new Error(json.message || 'Upload image failed');
+  return { url: json.secure_url as string, publicId: json.public_id as string };
 }
 
 export async function apiSavePost(
   postData: Omit<BlogPost, 'cover'>,
-  file: File | null,
   coverUrl: string
 ): Promise<BlogPost> {
-  const formData = new FormData();
-  formData.append('title', postData.title);
-  formData.append('slug', postData.slug);
-  formData.append('excerpt', postData.excerpt);
-  formData.append('content', postData.body.join('\n\n'));
-  formData.append('readingTime', postData.readingTime);
-  formData.append('category', postData.category);
-  formData.append('status', 'published'); // Default to published on save from admin page
-
-  if (file) {
-    formData.append('thumbnail', file);
-  } else {
-    formData.append('cover', coverUrl);
-  }
+  const payload = {
+    title: postData.title,
+    slug: postData.slug,
+    excerpt: postData.excerpt,
+    content: postData.body.join('\n\n'),
+    readingTime: postData.readingTime,
+    category: postData.category,
+    status: 'published', // Default to published on save from admin page
+    cover: coverUrl, // static path, e.g. /Blog/12.webp
+  };
 
   const isEdit = !!postData._id;
   const url = isEdit
@@ -143,7 +141,8 @@ export async function apiSavePost(
   try {
     const res = await fetch(url, {
       method: isEdit ? 'PUT' : 'POST',
-      body: formData,
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
       credentials: 'include',
     });
 

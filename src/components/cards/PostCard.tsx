@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import type { BlogPost } from '../../lib/types';
-import { formatDate } from '../../lib/utils';
+import { blogFallbackImage, formatDate } from '../../lib/utils';
 import { LazyImage } from '../ui/LazyImage';
 import { staggerItem } from '../ui/Reveal';
 
@@ -13,6 +13,7 @@ export function PostCard({ post }: {post: BlogPost;}) {
       
       <LazyImage
         src={post.cover}
+        fallbackSrc={blogFallbackImage(post.slug)}
         alt={post.title}
         wrapperClassName="block aspect-[16/10] w-full"
         className="transition-transform duration-[1400ms] ease-editorial group-hover:scale-105"

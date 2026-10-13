@@ -41,7 +41,7 @@ import {
   apiVerifyAuth, apiLogout,
 } from '../lib/api';
 import { BlogPost } from '../lib/types';
-import { cn } from '../lib/utils';
+import { blogImageOnError, cn } from '../lib/utils';
 import { Button } from '../components/ui/Button';
 import { TextField, TextAreaField, SelectField } from '../components/ui/Field';
 
@@ -458,7 +458,9 @@ export function Admin() {
 
     setIsSavingBlog(true);
     try {
-      await apiSavePost(postData, selectedFile, blogForm.cover);
+      // Ảnh cover mới chọn được upload lên Cloudinary khi bấm Save, rồi lưu URL làm cover
+      const coverUrl = selectedFile ? (await apiUploadBlogImage(selectedFile)).url : blogForm.cover;
+      await apiSavePost(postData, coverUrl);
       const updated = await apiGetPosts();
       setPostsList(updated);
       setIsBlogModalOpen(false);
@@ -963,6 +965,7 @@ export function Admin() {
                         <img
                           src={post.cover}
                           alt={post.title}
+                          onError={blogImageOnError(post.slug)}
                           className="h-20 w-32 rounded-3xl object-cover shrink-0"
                         />
                         <div className="flex-1 min-w-0">
@@ -1500,7 +1503,7 @@ export function Admin() {
                           blockquote: ({ children }) => <blockquote className="my-4 border-l-2 border-gold-300 pl-4 italic text-ink/80 text-xs">{children}</blockquote>,
                           img: ({ src, alt }) => (
                             <figure className="my-4">
-                              <img src={src} alt={alt || ''} className="w-full h-auto max-h-[350px] object-cover" />
+                              <img src={src} alt={alt || ''} onError={blogImageOnError(src || alt || '')} className="w-full h-auto max-h-[350px] object-cover" />
                               {alt && <figcaption className="mt-2 text-center text-[10px] text-ink-muted italic">{alt}</figcaption>}
                             </figure>
                           ),

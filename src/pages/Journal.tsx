@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useSeo } from '../hooks/useSeo';
 import { images } from '../lib/data';
 import { apiGetPosts } from '../lib/api';
-import { formatDate } from '../lib/utils';
+import { blogFallbackImage, formatDate } from '../lib/utils';
 import { PageHero } from '../components/layout/PageHero';
 import { PostCard } from '../components/cards/PostCard';
 import { LazyImage } from '../components/ui/LazyImage';
@@ -86,6 +86,7 @@ export function Journal() {
             <article className="group grid gap-8 overflow-hidden rounded-5xl border border-ink/[0.07] bg-white transition-shadow duration-700 ease-editorial hover:shadow-lift lg:grid-cols-2">
               <LazyImage
                 src={lead.cover}
+                fallbackSrc={blogFallbackImage(lead.slug)}
                 alt={lead.title}
                 priority
                 wrapperClassName="block aspect-[16/11] w-full lg:aspect-auto lg:h-full"
