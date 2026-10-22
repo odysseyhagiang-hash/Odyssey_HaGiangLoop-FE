@@ -5,7 +5,8 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
-import { PlayIcon } from "lucide-react";
+import { PlayIcon, Star } from "lucide-react";
+import { GOOGLE_MAPS_URL } from "./Testimonials";
 import { heroVideo, images } from "../../lib/data";
 import { VideoBackground } from "../ui/VideoBackground";
 import { Button } from "../ui/Button";
@@ -207,6 +208,38 @@ export function Hero() {
                 <PlayIcon aria-hidden="true" className="h-4 w-4" />
                 GET A MOTORBIKE
               </Button>
+            </motion.div>
+
+            {/* Badge Google review */}
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.75, ease }}
+              className="mt-6 sm:mt-7 flex justify-center lg:justify-start"
+            >
+              <a
+                href={GOOGLE_MAPS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Rated 5.0 from 4,100+ Google reviews"
+                className="
+                  inline-flex items-center gap-3 rounded-full
+                  border border-white/15 bg-black/40 backdrop-blur-md
+                  px-4 py-2 sm:px-5 sm:py-2.5
+                  transition-colors hover:border-gold-300/50 hover:bg-black/50
+                "
+              >
+                <span className="flex items-center gap-0.5" aria-hidden="true">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star key={i} className="h-3.5 w-3.5 fill-gold-300 text-gold-300 sm:h-4 sm:w-4" />
+                  ))}
+                </span>
+                <span className="text-sm font-semibold text-white sm:text-base">5.0</span>
+                <span aria-hidden="true" className="h-4 w-px bg-white/25" />
+                <span className="text-sm text-white/85 underline decoration-white/40 underline-offset-4 sm:text-base">
+                  4,100+ Google reviews
+                </span>
+              </a>
             </motion.div>
 
           </Container>

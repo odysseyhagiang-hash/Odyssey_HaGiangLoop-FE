@@ -36,7 +36,7 @@ function TaDefaultAvatar({ size = 'sm' }: { size?: 'sm' | 'md' }) {
   );
 }
 const TA_PAGE_URL = 'https://www.tripadvisor.com/Attraction_Review-g1544599-d26321485-Reviews-Ha_Giang_Odyssey_Hostel_Tours_Motorbike_Rental-Ha_Giang_Ha_Giang_Province.html';
-const GOOGLE_MAPS_URL = 'https://www.google.com/maps/place/Ha+Giang+Odyssey+Hostel,+Tours+%26+Motorbikes+Rental/@22.8093443,104.9830724,6924m/data=!3m1!1e3!4m22!1m12!3m11!1s0x36cc79e737b9cf5f:0x7a88a0de402c48b0!2sHa+Giang+Odyssey+Hostel,+Tours+%26+Motorbikes+Rental!5m2!4m1!1i2!8m2!3d22.805793!4d104.9779149!9m1!1b1!16s%2Fg%2F11t_rxn70s!3m8!1s0x36cc79e737b9cf5f:0x7a88a0de402c48b0!5m2!4m1!1i2!8m2!3d22.805793!4d104.9779149!16s%2Fg%2F11t_rxn70s?hl=vi&entry=ttu';
+export const GOOGLE_MAPS_URL = 'https://www.google.com/maps/place/Ha+Giang+Odyssey+Hostel,+Tours+%26+Motorbikes+Rental/@22.8093443,104.9830724,6924m/data=!3m1!1e3!4m22!1m12!3m11!1s0x36cc79e737b9cf5f:0x7a88a0de402c48b0!2sHa+Giang+Odyssey+Hostel,+Tours+%26+Motorbikes+Rental!5m2!4m1!1i2!8m2!3d22.805793!4d104.9779149!9m1!1b1!16s%2Fg%2F11t_rxn70s!3m8!1s0x36cc79e737b9cf5f:0x7a88a0de402c48b0!5m2!4m1!1i2!8m2!3d22.805793!4d104.9779149!16s%2Fg%2F11t_rxn70s?hl=vi&entry=ttu';
 
 function Avatar({
   name, src, size = 'md', taFallback = false,
