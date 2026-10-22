@@ -190,32 +190,12 @@ export function Hero() {
               beauty of Ha Giang becomes a lifelong memory.
             </motion.p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: 0.65, ease }}
-              className="
-                mt-7 sm:mt-8 lg:mt-10
-                flex flex-col items-center gap-3
-                sm:flex-row sm:justify-center
-                lg:justify-start
-              "
-            >
-              <Button to="/contact?topic=book-private-tour" size="lg" variant="gold">
-                BOOK TOUR NOW
-              </Button>
-              <Button to="/rentalbikes" size="lg" variant="glass">
-                <PlayIcon aria-hidden="true" className="h-4 w-4" />
-                GET A MOTORBIKE
-              </Button>
-            </motion.div>
-
             {/* Badge Google review */}
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: 0.75, ease }}
-              className="mt-6 sm:mt-7 flex justify-center lg:justify-start"
+              transition={{ duration: 0.9, delay: 0.65, ease }}
+              className="mt-7 sm:mt-8 lg:mt-10 flex justify-center lg:justify-start"
             >
               <a
                 href={GOOGLE_MAPS_URL}
@@ -240,6 +220,26 @@ export function Hero() {
                   4,100+ Google reviews
                 </span>
               </a>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.75, ease }}
+              className="
+                mt-6 sm:mt-7
+                flex flex-col items-center gap-3
+                sm:flex-row sm:justify-center
+                lg:justify-start
+              "
+            >
+              <Button to="/contact?topic=book-private-tour" size="lg" variant="gold">
+                BOOK TOUR NOW
+              </Button>
+              <Button to="/rentalbikes" size="lg" variant="glass">
+                <PlayIcon aria-hidden="true" className="h-4 w-4" />
+                GET A MOTORBIKE
+              </Button>
             </motion.div>
 
           </Container>
