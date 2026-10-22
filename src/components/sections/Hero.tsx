@@ -201,7 +201,7 @@ export function Hero() {
                 href={GOOGLE_MAPS_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Rated 5.0 from 4,100+ Google reviews"
+                aria-label="Rated 5.0 from 2,615+ Google reviews"
                 className="
                   inline-flex items-center gap-3 rounded-full
                   border border-white/15 bg-black/40 backdrop-blur-md
@@ -217,7 +217,7 @@ export function Hero() {
                 <span className="text-sm font-semibold text-white sm:text-base">5.0</span>
                 <span aria-hidden="true" className="h-4 w-px bg-white/25" />
                 <span className="text-sm text-white/85 underline decoration-white/40 underline-offset-4 sm:text-base">
-                  4,100+ Google reviews
+                  2,615+ Google reviews
                 </span>
               </a>
             </motion.div>
