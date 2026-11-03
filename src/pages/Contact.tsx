@@ -27,6 +27,7 @@ const topics = [
   { value: 'book-private-tour', label: 'Book Private Tour' },
   { value: 'book-group-tour', label: 'Book Group Tour' },
   { value: 'book-car-tour', label: 'Book Car Tour' },
+  { value: 'book-luxury-tour', label: 'Book Luxury Tour' },
   { value: 'get-a-motorbike', label: 'Get A Motorbike' },
   { value: 'book-a-room', label: 'Book a Room' },
   { value: 'book-bus', label: 'Book Bus' },

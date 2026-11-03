@@ -218,3 +218,36 @@
   scrollbar-width: thin;
   scrollbar-color: rgba(184, 156, 105, 0.4) transparent;
 }
+
+/* Luxury tour — vertical photo marquee (two columns scrolling in opposite directions) */
+@keyframes marquee-up {
+  from { transform: translateY(0); }
+  to { transform: translateY(-50%); }
+}
+.animate-marquee-up {
+  animation: marquee-up 40s linear infinite;
+}
+.animate-marquee-down {
+  animation: marquee-up 40s linear infinite reverse;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee-up,
+  .animate-marquee-down {
+    animation: none;
+  }
+}
+
+/* Lenis smooth scroll (used on the Luxury tour page) */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}

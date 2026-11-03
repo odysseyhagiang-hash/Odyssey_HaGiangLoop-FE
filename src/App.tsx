@@ -10,6 +10,7 @@ import { CreatorPopup } from './components/ui/CreatorPopup';
 
 const Home = lazy(() => import('./pages/Home').then((m) => ({ default: m.Home })));
 const Tours = lazy(() => import('./pages/Tours').then((m) => ({ default: m.Tours })));
+const LuxuryTour = lazy(() => import('./pages/LuxuryTour').then((m) => ({ default: m.LuxuryTour })));
 const TourDetail = lazy(() => import('./pages/TourDetail').then((m) => ({ default: m.TourDetail })));
 const Destinations = lazy(() =>
   import('./pages/Destinations').then((m) => ({ default: m.Destinations }))
@@ -51,6 +52,7 @@ function AppContent() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/journeys" element={<Tours />} />
+            <Route path="/journeys/luxury-tour" element={<LuxuryTour />} />
             <Route path="/journeys/:slug" element={<TourDetail />} />
             <Route path="/destinations" element={<Destinations />} />
             <Route path="/destinations/:slug" element={<DestinationDetail />} />

@@ -4,6 +4,7 @@ import type { Tour } from '../../lib/types';
 import { cn } from '../../lib/utils';
 import { LazyImage } from '../ui/LazyImage';
 import { staggerItem } from '../ui/Reveal';
+import { getMinPrice } from '../../lib/tourPrice';
 
 interface TourCardProps {
   tour: Tour;
@@ -19,6 +20,7 @@ const STYLE_BADGE: Record<string, string> = {
   Car:     'bg-slate-600 text-white',
   Jeep:    'bg-amber-600 text-white',
   Expedition: 'bg-emerald-600 text-white',
+  Luxury:  'bg-gold-500 text-white',
 };
 
 const TOPIC: Record<string, string> = {
@@ -27,24 +29,8 @@ const TOPIC: Record<string, string> = {
   Car:     'book-car-tour',
   Jeep:    'book-jeep-tour',
   Expedition: 'book-hagiang-caobang-tour',
+  Luxury:  'book-luxury-tour',
 };
-
-function getMinPrice(tour: Tour): number {
-  let min = tour.price || Infinity;
-  for (const p of tour.pricing) {
-    if (p.behindPartner !== undefined) min = Math.min(min, p.behindPartner);
-    if (p.selfDrive !== undefined) min = Math.min(min, p.selfDrive);
-    if (p.behindEasyrider !== undefined) min = Math.min(min, p.behindEasyrider);
-    if (p.perPersonPrice !== undefined) min = Math.min(min, p.perPersonPrice);
-    if (p.flatPrice !== undefined) min = Math.min(min, p.flatPrice);
-    if (p.perPerson) {
-      for (const item of p.perPerson) {
-        min = Math.min(min, item.price);
-      }
-    }
-  }
-  return min === Infinity ? tour.price : min;
-}
 
 export function TourCard({ tour }: TourCardProps) {
   const minPrice = getMinPrice(tour);

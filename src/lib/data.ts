@@ -12,6 +12,7 @@ import type {
   Vehicle
 } from
   './types';
+import { luxuryTourCard } from './luxuryTour';
 
 export const images = {
   hero: "/de0f5d36-05b7-4559-bee0-506bdbfebc80.webp",
@@ -739,6 +740,7 @@ export const tours: Tour[] = [
       },
     ],
   },
+  luxuryTourCard,
 ];
 
 

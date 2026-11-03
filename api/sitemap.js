@@ -9,6 +9,7 @@ const STATIC_ROUTES = [
   { path: '/journeys/car-tour', priority: '0.8', changefreq: 'weekly' },
   { path: '/journeys/jeep-tour', priority: '0.8', changefreq: 'weekly' },
   { path: '/journeys/ha-giang-cao-bang', priority: '0.8', changefreq: 'weekly' },
+  { path: '/journeys/luxury-tour', priority: '0.8', changefreq: 'weekly' },
   { path: '/destinations', priority: '0.9', changefreq: 'weekly' },
   { path: '/destinations/nho-que-canyon', priority: '0.7', changefreq: 'monthly' },
   { path: '/destinations/ma-pi-leng-pass', priority: '0.7', changefreq: 'monthly' },
