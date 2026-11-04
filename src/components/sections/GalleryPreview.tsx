@@ -12,7 +12,9 @@ const spans: Record<string, string> = {
 };
 
 export function GalleryPreview() {
-  const preview = gallery.slice(0, 8);
+  // First 8 photos, plus a tall filler (g34) for the empty right column (rows 3-4)
+  const filler = gallery.find((item) => item.id === 'g34');
+  const preview = filler ? [...gallery.slice(0, 8), filler] : gallery.slice(0, 8);
 
   return (
     <Section
@@ -54,6 +56,7 @@ export function GalleryPreview() {
             else if (index === 5) gridClass = 'sm:col-start-2 sm:row-start-3';
             else if (index === 6) gridClass = 'sm:col-start-1 sm:row-start-4';
             else if (index === 7) gridClass = 'sm:col-start-2 sm:row-start-4';
+            else if (index === 8) gridClass = 'sm:col-start-3 sm:row-start-3';
             return (
               <motion.figure
                 key={item.id}
