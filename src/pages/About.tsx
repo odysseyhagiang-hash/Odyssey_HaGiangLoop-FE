@@ -13,7 +13,7 @@ import { CtaBanner } from '../components/sections/CtaBanner';
 const values = [
   {
     title: 'Pay properly, all year',
-    text: 'Our guides are on annual salaries, not per-trip fees, so nobody has to push a group through weather they should sit out.'
+    text: 'Our guides are on annual salaries, not per trip fees, so nobody has to push a group through weather they should sit out.'
   },
   {
     title: 'Stay smaller than we could',
@@ -21,7 +21,7 @@ const values = [
   },
   {
     title: 'Leave the road better',
-    text: 'A percentage of every booking funds road-side waste collection and the school transport fund in two communes.'
+    text: 'A percentage of every booking funds road side waste collection and the school transport fund in two communes.'
   }];
 
 
@@ -34,7 +34,7 @@ const timeline = [
   {
     year: '2024',
     title: 'Community partnerships',
-    text: 'Partnering with the first local families to upgrade homestay rooms and securing a fleet of safety-tested bikes.'
+    text: 'Partnering with the first local families to upgrade homestay rooms and securing a fleet of safety tested bikes.'
   },
   {
     year: '2025',
@@ -59,11 +59,11 @@ const differentiators = [
   },
   {
     title: 'Premium Protective Gear',
-    desc: 'Fully provided top-tier body protective guards to keep you safe on the road.'
+    desc: 'Fully provided top tier body protective guards to keep you safe on the road.'
   },
   {
-    title: 'High-Quality Helmets',
-    desc: 'Comfortable, safety-certified helmets that fit securely for maximum protection.'
+    title: 'High Quality Helmets',
+    desc: 'Comfortable, safety certified helmets that fit securely for maximum protection.'
   }
 ];
 
@@ -120,7 +120,7 @@ const galleryImages = [
   {
     id: 'g8',
     src: '/Aboutpic/1785766572870_7647185241213986356_7647185241213986356_33aa8c4c45235ab2c12729102ac02895.webp',
-    alt: 'Close-up of traditional woven fabric and local garments',
+    alt: 'Close up of traditional woven fabric and local garments',
     caption: 'Traditional ethnic weaving texture',
     span: 'square'
   },
@@ -240,7 +240,7 @@ export function About() {
         title="Locally owned, deliberately small"
         description="We are eleven people based in Ha Giang City. Everything we know about this plateau we learned by living on it."
         image={images.village}
-        imageAlt="Traditional stone-walled village houses on a highland plateau in northern Vietnam" />
+        imageAlt="Traditional stone walled village houses on a highland plateau in northern Vietnam" />
 
 
       <Section tone="canvas">
@@ -285,7 +285,7 @@ export function About() {
                 </p>
                 <p>
                   That is also why our team always goes the extra mile every day, from preparing a
-                  safe motorcycle, selecting quality homestays, sharing off-the-beaten-path
+                  safe motorcycle, selecting quality homestays, sharing off the beaten path
                   locations, to always being ready to support guests whenever needed.
                 </p>
                 <p>
@@ -446,7 +446,7 @@ export function About() {
                 <ul className="space-y-3">
                   {[
                     "Backpack (40L or smaller)",
-                    "Driving license (if self-driving)",
+                    "Driving license (if self driving)",
                     "Travel insurance (highly recommended)",
                     "Charger & power bank",
                     "Waterproof gear / raincoat",
@@ -468,13 +468,13 @@ export function About() {
                 <h3 className="font-display text-lg font-bold text-ink mb-4 border-b border-ink/10 pb-2">Personal Gear</h3>
                 <ul className="space-y-3">
                   {[
-                    "3 to 4 T-shirts",
+                    "3 to 4 T shirts",
                     "2 pairs of trousers / shorts",
                     "Warm sweater / jacket / gloves / scarf",
                     "Towel (for swimming; homestays provide them at night)",
                     "Personal medicine & toiletries",
                     "Toilet paper (some public toilets do not provide it)",
-                    "Swimwear (for year-round swimming opportunities)"
+                    "Swimwear (for year round swimming opportunities)"
                   ].map((item, idx) => (
                     <li key={idx} className="flex items-start gap-2 text-sm text-ink-soft">
                       <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-forest-500" />

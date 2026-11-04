@@ -1116,9 +1116,15 @@ export function LuxuryTour() {
                 {luxuryOptions.map((o) => <PriceCard key={o.id} option={o} />)}
               </div>
 
-              <div className="flex items-start gap-3 rounded-[18px] bg-white px-6 py-5 sm:px-10">
-                <InfoIcon aria-hidden="true" className="mt-0.5 h-5 w-5 shrink-0 text-forest-700" />
-                <p className="text-[15px] leading-relaxed text-ink-soft [text-wrap:pretty]">{luxuryContent.priceNote}</p>
+              <div className="flex flex-col gap-3 rounded-[18px] bg-white px-6 py-5 sm:px-10">
+                <div className="flex items-start gap-3">
+                  <UsersIcon aria-hidden="true" className="mt-0.5 h-5 w-5 shrink-0 text-forest-700" />
+                  <p className="text-[15px] font-semibold leading-relaxed text-forest-900 [text-wrap:pretty]">{luxuryContent.minGroupNote}</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <InfoIcon aria-hidden="true" className="mt-0.5 h-5 w-5 shrink-0 text-forest-700" />
+                  <p className="text-[15px] leading-relaxed text-ink-soft [text-wrap:pretty]">{luxuryContent.priceNote}</p>
+                </div>
               </div>
             </div>
 

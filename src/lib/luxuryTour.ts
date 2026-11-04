@@ -79,8 +79,8 @@ export const luxuryContent = {
       text: 'Enjoy carefully selected accommodation with impressive views and premium amenities. After each day of exploration, unwind amid peaceful mountain scenery and enjoy moments of complete rest.',
     },
     {
-      title: 'High-quality motorbikes, smooth on every road',
-      text: 'The journey uses high-quality motorbikes, chosen to provide comfort, stable performance and a smooth riding experience on mountain roads. Every trip combines the thrill of conquest, the freedom of exploration and the enjoyment of natural scenery.',
+      title: 'High quality motorbikes, smooth on every road',
+      text: 'The journey uses high quality motorbikes, chosen to provide comfort, stable performance and a smooth riding experience on mountain roads. Every trip combines the thrill of conquest, the freedom of exploration and the enjoyment of natural scenery.',
     },
     {
       title: 'A professional, dedicated team',
@@ -97,12 +97,13 @@ export const luxuryContent = {
   ],
   tagline: 'Not just a trip, but a journey to enjoy distinctive values.',
   pillars: 'Private in experience. Premium in service. Authentic in discovery.',
+  minGroupNote: 'Tours are organised for groups of 2 people or more.',
   priceNote:
-    'The reason the with-driver price and the self-drive price are the same is that all self-driving guests use the XR 150.',
+    'The reason the with driver price and the self drive price are the same is that all self driving guests use the XR 150.',
 };
 
 const day1Intro3 = [
-  'Your adventure begins at our hotel in Ha Giang. Start the morning by completing your check-out, settling any remaining payments and getting your luggage ready for the journey. Before departure, your tour guide will introduce the itinerary, explain the highlights of the route and share some useful information about the places you\'ll visit.',
+  'Your adventure begins at our hotel in Ha Giang. Start the morning by completing your check out, settling any remaining payments and getting your luggage ready for the journey. Before departure, your tour guide will introduce the itinerary, explain the highlights of the route and share some useful information about the places you\'ll visit.',
   'And now, the Ha Giang Loop adventure officially begins!',
   'Before hitting the road, enjoy a special breakfast featuring Vietnamese Pho served in a hot stone bowl. This unique twist on traditional Vietnamese Pho is served in a stone bowl heated to approximately 300°C, keeping the delicious broth bubbling hot throughout your meal. After breakfast, enjoy a cup of traditional Ha Giang tea and experience a little taste of local life.',
 ];
@@ -117,9 +118,9 @@ export const luxuryOptions: LuxuryOption[] = [
       'Day 3: Dong Van – Vuong Family Mansion – Lao Xa Silver Village – Lao Chai – Ha Giang',
     ],
     prices: [
-      { label: 'With driver', price: 13000000, unit: '/ person' },
-      { label: 'Self-drive', price: 13000000, unit: '/ person' },
-      { label: '2 people sharing one motorbike', price: 24350000 },
+      { label: 'With driver', price: 13500000, unit: '/ person' },
+      { label: 'Self drive', price: 13500000, unit: '/ person' },
+      { label: '2 people sharing one motorbike', price: 24850000 },
     ],
     days: [
       {
@@ -152,7 +153,7 @@ export const luxuryOptions: LuxuryOption[] = [
         experiencesLead: "Today's journey includes some exceptional experiences:",
         experiences: [
           { name: 'Bamboo Boat Trip on Ngoc Long River', text: 'Enjoy a relaxing journey aboard a traditional bamboo boat, surrounded by magnificent limestone mountains and beautiful natural scenery. Take in the peaceful atmosphere and admire the untouched beauty of the river.' },
-          { name: 'Natural Cave Exploration & Swimming', text: 'Continue your adventure by discovering a fascinating natural cave. Explore its hidden beauty and enjoy a refreshing swim in the crystal-clear water.' },
+          { name: 'Natural Cave Exploration & Swimming', text: 'Continue your adventure by discovering a fascinating natural cave. Explore its hidden beauty and enjoy a refreshing swim in the crystal clear water.' },
           { name: 'Lunch on a Bamboo Boat', text: 'Experience something truly special with lunch served aboard a bamboo boat. Enjoy delicious food while taking in the peaceful surroundings and spectacular river scenery.' },
           { name: 'Discover Lung Phin Village', text: 'Experience the authentic charm of local village life. Discover the culture, traditions and everyday lifestyle of the local communities along the route.' },
           { name: 'Ma Pi Leng Pass', text: "Ride along one of Vietnam's most spectacular mountain passes. Marvel at the dramatic limestone mountains, winding roads and breathtaking views overlooking the famous Nho Que River." },
@@ -162,12 +163,12 @@ export const luxuryOptions: LuxuryOption[] = [
         closing: {
           heading: 'An Evening of Relaxation in Dong Van',
           paragraphs: [
-            "Tonight, we'll stay at a carefully selected five-star hotel in Dong Van, offering a comfortable and relaxing experience after a full day of exploration.",
+            "Tonight, we'll stay at a carefully selected five star hotel in Dong Van, offering a comfortable and relaxing experience after a full day of exploration.",
             "In the evening, enjoy a specially arranged dinner at a local restaurant in the Old Quarter. After dinner, take some time to explore the charming streets, soak up the atmosphere and discover the town's evening life.",
             "To finish the day, enjoy a traditional therapeutic massage performed by local practitioners. It's the perfect opportunity to relax, recharge and experience another aspect of local culture before continuing your Ha Giang adventure tomorrow.",
           ],
         },
-        signoff: ['A day filled with breathtaking scenery, authentic experiences, adventure and well-deserved relaxation.'],
+        signoff: ['A day filled with breathtaking scenery, authentic experiences, adventure and well deserved relaxation.'],
         gallery: photos.day2,
       },
       {
@@ -182,7 +183,7 @@ export const luxuryOptions: LuxuryOption[] = [
           { name: "Hmong King's Palace (Vuong Family Mansion)", text: "Step back in time as we visit the historic residence of the Vuong family, also known as the Hmong King's Palace. Discover its fascinating history, admire the unique architectural design and learn about the powerful family who once ruled this region." },
           { name: 'Tham Ma Pass', text: "Stop at one of Ha Giang's most famous mountain passes. Capture some memorable photos and admire the spectacular winding road surrounded by dramatic mountain landscapes." },
           { name: 'Lao Chai Village', text: 'Discover the traditional culture and everyday lifestyle of the Hmong people. Learn more about their customs, local traditions and the way of life that has been preserved through generations.' },
-          { name: 'Lao Xa Village: Traditional Silver Craftsmanship', text: 'Visit this charming traditional village, known for its long-standing silver-making heritage. Meet local artisans and discover the intricate techniques behind their traditional silver jewellery and handcrafted products.' },
+          { name: 'Lao Xa Village: Traditional Silver Craftsmanship', text: 'Visit this charming traditional village, known for its long standing silver making heritage. Meet local artisans and discover the intricate techniques behind their traditional silver jewellery and handcrafted products.' },
         ],
         closing: {
           heading: 'Return to Ha Giang City: The Journey Comes to an End',
@@ -203,16 +204,16 @@ export const luxuryOptions: LuxuryOption[] = [
     id: '4D3N',
     label: '4 Days 3 Nights',
     prices: [
-      { label: 'With driver', price: 17000000, unit: '/ person' },
-      { label: 'Self-drive', price: 17000000, unit: '/ person' },
-      { label: '2 people sharing one motorbike', price: 31800000 },
+      { label: 'With driver', price: 18000000, unit: '/ person' },
+      { label: 'Self drive', price: 18000000, unit: '/ person' },
+      { label: '2 people sharing one motorbike', price: 32800000 },
     ],
     days: [
       {
         day: 1,
         title: 'KHAU LAN WATERFALL – QUAN BA TWIN MOUNTAINS – TRADITIONAL WEAVING VILLAGE – DUONG THUONG – HMONG VILLAGE',
         intro: [
-          'Your adventure begins at our hotel in Ha Giang. Start the morning by completing your check-out, settling any remaining payments and preparing your luggage for the journey. Before departure, your tour guide will introduce the itinerary and highlight the special experiences awaiting you along the way.',
+          'Your adventure begins at our hotel in Ha Giang. Start the morning by completing your check out, settling any remaining payments and preparing your luggage for the journey. Before departure, your tour guide will introduce the itinerary and highlight the special experiences awaiting you along the way.',
           'And now, your Ha Giang adventure officially begins!',
           'Before hitting the road, enjoy a special breakfast featuring Vietnamese Pho served in a hot stone bowl. This unique twist on traditional Vietnamese Pho is served in a stone bowl heated to approximately 300°C, keeping the delicious broth bubbling hot throughout your meal. After breakfast, enjoy a cup of traditional Ha Giang tea and experience the authentic flavours of our region.',
         ],
@@ -229,7 +230,7 @@ export const luxuryOptions: LuxuryOption[] = [
           heading: 'Overnight in Quan Ba: A Premium Mountain Resort Experience',
           paragraphs: [
             "After a day of exploration, we'll arrive at a carefully selected premium resort in Quan Ba.",
-            "Combining distinctive H'Mong-inspired architecture with modern comforts and high-quality facilities, this special accommodation offers a unique balance between traditional local culture and contemporary luxury.",
+            "Combining distinctive H'Mong inspired architecture with modern comforts and high quality facilities, this special accommodation offers a unique balance between traditional local culture and contemporary luxury.",
             'Take time to relax, enjoy the peaceful mountain surroundings and immerse yourself in the local atmosphere.',
           ],
         },
@@ -247,14 +248,14 @@ export const luxuryOptions: LuxuryOption[] = [
         experiences: [
           { name: "H'Mong Village", text: "Begin the day by exploring the traditional village and discovering the daily life, unique architecture and cultural traditions of the H'Mong people." },
           { name: 'Tham Ma Pass', text: "Ride along one of Ha Giang's most iconic mountain passes. Admire its famous winding roads, dramatic mountain scenery and spectacular viewpoints." },
-          { name: 'Lao Xa Silver Village', text: "Visit a traditional H'Mong village renowned for its generations-old silver craftsmanship. Meet local artisans, discover the intricate process of handmade silver jewellery and learn about a valuable cultural tradition passed down through generations." },
+          { name: 'Lao Xa Silver Village', text: "Visit a traditional H'Mong village renowned for its generations old silver craftsmanship. Meet local artisans, discover the intricate process of handmade silver jewellery and learn about a valuable cultural tradition passed down through generations." },
           { name: 'Lung Cu Flag Tower', text: "Visit one of Vietnam's most significant national landmarks, located in the northernmost region of the country. Climb to the flag tower and enjoy panoramic views of the surrounding mountains and villages." },
           { name: 'Dong Van Ancient Town', text: 'Continue to Dong Van, a charming historic town surrounded by spectacular limestone mountains. Explore its traditional architecture, narrow streets and distinctive local atmosphere.' },
         ],
         closing: {
           heading: 'A Luxury Evening in Dong Van',
           paragraphs: [
-            'After a full day of exploration, enjoy a relaxing overnight stay at a carefully selected five-star hotel in Dong Van. Unwind in a comfortable setting and enjoy premium hospitality surrounded by the beautiful mountain scenery.',
+            'After a full day of exploration, enjoy a relaxing overnight stay at a carefully selected five star hotel in Dong Van. Unwind in a comfortable setting and enjoy premium hospitality surrounded by the beautiful mountain scenery.',
             "In the evening, we'll enjoy a specially arranged dinner at a local restaurant in Dong Van Ancient Town. Afterwards, take a leisurely stroll through the historic streets and discover the charming atmosphere of this mountain town.",
             'To make your evening even more special, indulge in a traditional therapeutic massage performed by local practitioners. Let yourself relax and recharge after a day on the road while experiencing a unique aspect of local wellness culture.',
           ],
@@ -272,7 +273,7 @@ export const luxuryOptions: LuxuryOption[] = [
         experiences: [
           { name: 'Ma Pi Leng Pass', text: "Begin the day by riding along one of Vietnam's most legendary mountain passes. Admire the dramatic limestone mountains, winding roads and breathtaking views that make this route one of the highlights of the Ha Giang Loop." },
           { name: 'Ma Pi Leng Sky Walk', text: "For those looking for an extra adventure, experience the famous Sky Walk. Follow the spectacular mountain trail and enjoy incredible panoramic views from above. It's an unforgettable opportunity to appreciate the grandeur of the surrounding landscapes." },
-          { name: 'Nho Que River', text: 'Discover the stunning beauty of the emerald-green Nho Que River, winding its way through towering limestone cliffs. Enjoy the magnificent scenery and capture some incredible photos of this natural wonder.' },
+          { name: 'Nho Que River', text: 'Discover the stunning beauty of the emerald green Nho Que River, winding its way through towering limestone cliffs. Enjoy the magnificent scenery and capture some incredible photos of this natural wonder.' },
           { name: 'Du Gia Waterfall', text: 'Continue your journey towards Du Gia and visit its beautiful waterfall, a peaceful natural retreat surrounded by lush mountains. Take a refreshing swim, relax by the water and enjoy the fresh mountain air after an exciting day of exploration.' },
         ],
         closing: {
@@ -294,7 +295,7 @@ export const luxuryOptions: LuxuryOption[] = [
         experiencesLead: "Today's journey includes some special experiences:",
         experiences: [
           { name: 'Bamboo Boat Trip on Ngoc Long River', text: 'Enjoy a relaxing journey aboard a traditional bamboo boat along the beautiful Ngoc Long River. Surrounded by lush mountains and stunning natural scenery, this peaceful experience offers a wonderful opportunity to appreciate the quieter side of Ha Giang.' },
-          { name: 'Natural Cave Exploration & Swimming', text: 'Continue your adventure by discovering a fascinating natural cave along the river. Explore its unique formations and enjoy a refreshing swim in the crystal-clear water.' },
+          { name: 'Natural Cave Exploration & Swimming', text: 'Continue your adventure by discovering a fascinating natural cave along the river. Explore its unique formations and enjoy a refreshing swim in the crystal clear water.' },
           { name: 'Lunch on a Bamboo Boat', text: 'Enjoy a special lunch served aboard a bamboo boat while taking in the peaceful river scenery. A memorable dining experience surrounded by nature, away from the busy roads and crowds.' },
           { name: 'Po Ly Cave', text: 'Continue to explore Po Ly Cave, a fascinating natural attraction in the area. Discover its impressive cave formations and enjoy one last opportunity to connect with the natural beauty of Ha Giang.' },
         ],
@@ -302,7 +303,7 @@ export const luxuryOptions: LuxuryOption[] = [
           heading: 'Return to Ha Giang City: The End of Your Journey',
           paragraphs: [
             "After a relaxing morning filled with river adventures and natural discoveries, we'll make our way back to Ha Giang City.",
-            'Our four-day adventure officially concludes at Odyssey Hostel, where you can collect your belongings, freshen up and take a moment to look back on the incredible experiences shared throughout the journey.',
+            'Our four day adventure officially concludes at Odyssey Hostel, where you can collect your belongings, freshen up and take a moment to look back on the incredible experiences shared throughout the journey.',
           ],
         },
         signoff: [
@@ -322,9 +323,9 @@ export const luxuryTourCard: Tour = {
   tagline: luxuryContent.subtitle,
   image: luxuryHeroImage,
   duration: '3–4 days',
-  groupSize: 'Private',
+  groupSize: 'From 2 people',
   difficulty: 'Gentle',
-  price: 13000000,
+  price: 13500000,
   rating: 5,
   reviews: 0,
   style: 'Luxury',

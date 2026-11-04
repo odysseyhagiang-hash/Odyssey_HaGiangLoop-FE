@@ -66,15 +66,15 @@ export const tours: Tour[] = [
     reviews: 86,
     style: 'Private',
     summary:
-      'Your own certified English-speaking guide, your own easy rider, and a private room every night. Built for travellers who want the highlands without compromising on comfort or pace.',
+      'Your own certified English speaking guide, your own easy rider, and a private room every night. Built for travellers who want the highlands without compromising on comfort or pace.',
     highlights: [
       'Personalize your experience with private services',
-      'Professional English-speaking tour guide, attentive to introduce the features, interesting and impressive points',
+      'Professional English speaking tour guide, attentive to introduce the features, interesting and impressive points',
       'Easy Rider for each person, ensuring safety and freedom to admire the landscape',
       'Rest comfortably with your own space in Single/Double Private room',
     ],
     inclusions: [
-      'English-speaking tour guide',
+      'English speaking tour guide',
       'Easy Rider (Optional)',
       'High Quality of Accommodation: Private Ensuite room (Double Bed or Twin Bed)',
       'Local Specialties',
@@ -84,6 +84,7 @@ export const tours: Tour[] = [
     exclusions: ['Tip for drivers', 'Drinks', 'Border pass fee: 260,000 VND / person'],
     priceNote: [
       'Border pass fee: 260.000 VND / person (not included)',
+      'For safety reasons, the total weight (passenger + luggage) must not exceed 100kg. If it exceed 100kg, we recommend upgrading to a Honda XR motorcycle for an additional 550.000VND per day.',
     ],
     pricing: [
       {
@@ -127,7 +128,7 @@ export const tours: Tour[] = [
           {
             day: 3,
             title: 'Dong Van → Vuong Family Mansion → Tham Ma Pass\n→ Lao Chai → Ha Giang',
-            summary: 'On the final day, we will visit some famous destinations on the way back to Ha Giang.\n- Explore the Vuong Family Mansion, also known as the Hmong King’s Palace, and discover its unique and impressive architecture.\n- Stop at the famous Tham Ma Pass to take photos and enjoy the beautiful mountain views.\n- Experience the local culture of the H’Mong people in Lao Chai Village and learn more about their traditional way of life.\n- Visit Lao Xa Village, where you can meet local people and learn about the long-standing traditional silver-making craft.\nWe will finish our journey at Odyssey Hostel in Ha Giang.',
+            summary: 'On the final day, we will visit some famous destinations on the way back to Ha Giang.\n- Explore the Vuong Family Mansion, also known as the Hmong King’s Palace, and discover its unique and impressive architecture.\n- Stop at the famous Tham Ma Pass to take photos and enjoy the beautiful mountain views.\n- Experience the local culture of the H’Mong people in Lao Chai Village and learn more about their traditional way of life.\n- Visit Lao Xa Village, where you can meet local people and learn about the long standing traditional silver making craft.\nWe will finish our journey at Odyssey Hostel in Ha Giang.',
             highlights: ['Vuong Family Mansion (Hmong King Palace)', 'Tham Ma Pass', 'Lao Chai Village', 'Lao Xa Village & Silversmithing', 'Odyssey Hostel'],
           },
         ],
@@ -159,7 +160,7 @@ export const tours: Tour[] = [
           {
             day: 4,
             title: 'Yen Minh → Lao Chai → Lung Tam Traditional Weaving Village\n→ Po Ly Cave → Ha Giang',
-            summary: 'On the final day, discover a traditional weaving village and explore a natural cave before returning to Ha Giang.\n- Visit Lao Chai and enjoy the beautiful mountain scenery and local atmosphere.\n- Explore Lung Tam Traditional Weaving Village and learn about the long-standing weaving traditions of the local people.\n- Discover Po Ly Cave, a natural cave with interesting rock formations.\n- Stop at several scenic viewpoints along the way and enjoy the beautiful landscapes of Ha Giang.\nOur journey will end at Odyssey Hostel in Ha Giang.',
+            summary: 'On the final day, discover a traditional weaving village and explore a natural cave before returning to Ha Giang.\n- Visit Lao Chai and enjoy the beautiful mountain scenery and local atmosphere.\n- Explore Lung Tam Traditional Weaving Village and learn about the long standing weaving traditions of the local people.\n- Discover Po Ly Cave, a natural cave with interesting rock formations.\n- Stop at several scenic viewpoints along the way and enjoy the beautiful landscapes of Ha Giang.\nOur journey will end at Odyssey Hostel in Ha Giang.',
             highlights: ['Lao Chai Village', 'Lung Tam Traditional Weaving', 'Po Ly Cave exploration', 'Scenic viewpoints', 'Odyssey Hostel'],
           },
         ],
@@ -197,7 +198,7 @@ export const tours: Tour[] = [
   {
     slug: 'group-tour',
     name: 'Group Tour',
-    tagline: 'The most budget-friendly way to ride the loop with fellow travellers',
+    tagline: 'The most budget friendly way to ride the loop with fellow travellers',
     image: images.tourClassic,
     duration: '3–4 days',
     groupSize: 'Small group',
@@ -207,7 +208,7 @@ export const tours: Tour[] = [
     reviews: 214,
     style: 'Group',
     summary:
-      'The most cost-efficient option: share the loop with travellers from around the world, enjoy lively evenings and make friends that last long after the ride.',
+      'The most cost efficient option: share the loop with travellers from around the world, enjoy lively evenings and make friends that last long after the ride.',
     highlights: [
       'The cost is optimized and saved the most',
       'Many interesting night activities ',
@@ -225,6 +226,7 @@ export const tours: Tour[] = [
     exclusions: ['Tip for drivers', 'Drinks', 'Border pass fee: 260,000 VND / person'],
     priceNote: [
       'Border pass fee: 260.000 VND / person (not included)',
+      'For safety reasons, the total weight (passenger + luggage) must not exceed 100kg. If it exceed 100kg, we recommend upgrading to a Honda XR motorcycle for an additional 550.000VND per day.',
     ],
     pricing: [
       {
@@ -251,7 +253,7 @@ export const tours: Tour[] = [
           {
             day: 3,
             title: 'Dong Van → Vuong Family Mansion → Tham Ma Pass\n→ Lao Chai → Ha Giang',
-            summary: 'On the final day, we will visit some famous destinations on the way back to Ha Giang.\n- Explore the Vuong Family Mansion, also known as the Hmong King’s Palace, and discover its unique and impressive architecture.\n- Stop at the famous Tham Ma Pass to take photos and enjoy the beautiful mountain views.\n- Experience the local culture of the H’Mong people in Lao Chai Village and learn more about their traditional way of life.\n- Visit Lao Xa Village, where you can meet local people and learn about the long-standing traditional silver-making craft.\nWe will finish our journey at Odyssey Hostel in Ha Giang.',
+            summary: 'On the final day, we will visit some famous destinations on the way back to Ha Giang.\n- Explore the Vuong Family Mansion, also known as the Hmong King’s Palace, and discover its unique and impressive architecture.\n- Stop at the famous Tham Ma Pass to take photos and enjoy the beautiful mountain views.\n- Experience the local culture of the H’Mong people in Lao Chai Village and learn more about their traditional way of life.\n- Visit Lao Xa Village, where you can meet local people and learn about the long standing traditional silver making craft.\nWe will finish our journey at Odyssey Hostel in Ha Giang.',
             highlights: ['Vuong Family Mansion (Hmong King Palace)', 'Tham Ma Pass', 'Lao Chai Village', 'Lao Xa Village & Silversmithing', 'Odyssey Hostel'],
           },
         ],
@@ -286,7 +288,7 @@ export const tours: Tour[] = [
           {
             day: 4,
             title: 'Yen Minh → Lao Chai → Lung Tam Traditional Weaving Village\n→ Po Ly Cave → Ha Giang',
-            summary: 'On the final day, discover a traditional weaving village and explore a natural cave before returning to Ha Giang.\n- Visit Lao Chai and enjoy the beautiful mountain scenery and local atmosphere.\n- Explore Lung Tam Traditional Weaving Village and learn about the long-standing weaving traditions of the local people.\n- Discover Po Ly Cave, a natural cave with interesting rock formations.\n- Stop at several scenic viewpoints along the way and enjoy the beautiful landscapes of Ha Giang.\nOur journey will end at Odyssey Hostel in Ha Giang.',
+            summary: 'On the final day, discover a traditional weaving village and explore a natural cave before returning to Ha Giang.\n- Visit Lao Chai and enjoy the beautiful mountain scenery and local atmosphere.\n- Explore Lung Tam Traditional Weaving Village and learn about the long standing weaving traditions of the local people.\n- Discover Po Ly Cave, a natural cave with interesting rock formations.\n- Stop at several scenic viewpoints along the way and enjoy the beautiful landscapes of Ha Giang.\nOur journey will end at Odyssey Hostel in Ha Giang.',
             highlights: ['Lao Chai Village', 'Lung Tam Traditional Weaving', 'Po Ly Cave exploration', 'Scenic viewpoints', 'Odyssey Hostel'],
           },
         ],
@@ -324,7 +326,7 @@ export const tours: Tour[] = [
   {
     slug: 'car-tour',
     name: 'Car Tour',
-    tagline: 'All the scenery, maximum comfort, by private air-conditioned car',
+    tagline: 'All the scenery, maximum comfort, by private air conditioned car',
     image: images.tourPhoto,
     duration: '2–4 days',
     groupSize: 'Up to 7 guests',
@@ -334,7 +336,7 @@ export const tours: Tour[] = [
     reviews: 57,
     style: 'Car',
     summary:
-      'See every highlight of the Ha Giang Loop from a private, air-conditioned car with a professional guide. Perfect for families, seniors, or anyone who prefers four wheels.',
+      'See every highlight of the Ha Giang Loop from a private, air conditioned car with a professional guide. Perfect for families, seniors, or anyone who prefers four wheels.',
     highlights: [
       'The cost is optimized and saved the most',
       'Many interesting night activities',
@@ -342,8 +344,8 @@ export const tours: Tour[] = [
       'Have the opportunity to exchange culture with many tourists from different countries',
     ],
     inclusions: [
-      'English-speaking tour guide',
-      'Private air-conditioned car & driver',
+      'English speaking tour guide',
+      'Private air conditioned car & driver',
       'Local Specialties',
       'Gasoline',
       'Entrance Tickets',
@@ -392,7 +394,7 @@ export const tours: Tour[] = [
           {
             day: 3,
             title: 'Dong Van → Vuong Family Mansion → Tham Ma Pass\n→ Lao Chai → Ha Giang',
-            summary: 'On the final day, we will visit some famous destinations on the way back to Ha Giang.\n- Explore the Vuong Family Mansion, also known as the Hmong King’s Palace, and discover its unique and impressive architecture.\n- Stop at the famous Tham Ma Pass to take photos and enjoy the beautiful mountain views.\n- Experience the local culture of the H’Mong people in Lao Chai Village and learn more about their traditional way of life.\n- Visit Lao Xa Village, where you can meet local people and learn about the long-standing traditional silver-making craft.\nWe will finish our journey at Odyssey Hostel in Ha Giang.',
+            summary: 'On the final day, we will visit some famous destinations on the way back to Ha Giang.\n- Explore the Vuong Family Mansion, also known as the Hmong King’s Palace, and discover its unique and impressive architecture.\n- Stop at the famous Tham Ma Pass to take photos and enjoy the beautiful mountain views.\n- Experience the local culture of the H’Mong people in Lao Chai Village and learn more about their traditional way of life.\n- Visit Lao Xa Village, where you can meet local people and learn about the long standing traditional silver making craft.\nWe will finish our journey at Odyssey Hostel in Ha Giang.',
             highlights: ['Vuong Family Mansion (Hmong King Palace)', 'Tham Ma Pass', 'Lao Chai Village', 'Lao Xa Village & Silversmithing', 'Odyssey Hostel'],
           },
         ],
@@ -422,7 +424,7 @@ export const tours: Tour[] = [
           {
             day: 4,
             title: 'Yen Minh → Lao Chai → Lung Tam Traditional Weaving Village\n→ Po Ly Cave → Ha Giang',
-            summary: 'On the final day, discover a traditional weaving village and explore a natural cave before returning to Ha Giang.\n- Visit Lao Chai and enjoy the beautiful mountain scenery and local atmosphere.\n- Explore Lung Tam Traditional Weaving Village and learn about the long-standing weaving traditions of the local people.\n- Discover Po Ly Cave, a natural cave with interesting rock formations.\n- Stop at several scenic viewpoints along the way and enjoy the beautiful landscapes of Ha Giang.\nOur journey will end at Odyssey Hostel in Ha Giang.',
+            summary: 'On the final day, discover a traditional weaving village and explore a natural cave before returning to Ha Giang.\n- Visit Lao Chai and enjoy the beautiful mountain scenery and local atmosphere.\n- Explore Lung Tam Traditional Weaving Village and learn about the long standing weaving traditions of the local people.\n- Discover Po Ly Cave, a natural cave with interesting rock formations.\n- Stop at several scenic viewpoints along the way and enjoy the beautiful landscapes of Ha Giang.\nOur journey will end at Odyssey Hostel in Ha Giang.',
             highlights: ['Lao Chai Village', 'Lung Tam Traditional Weaving', 'Po Ly Cave exploration', 'Scenic viewpoints', 'Odyssey Hostel'],
           },
         ],
@@ -460,7 +462,7 @@ export const tours: Tour[] = [
   {
     slug: 'jeep-tour',
     name: 'Jeep Tour',
-    tagline: 'Open-top 4x4 military jeep adventure across the legendary passes',
+    tagline: 'Open top 4x4 military jeep adventure across the legendary passes',
     image: images.tourJeep,
     duration: '3–4 days',
     groupSize: 'Max 3 guests / jeep (Min. 2 guests)',
@@ -470,16 +472,16 @@ export const tours: Tour[] = [
     reviews: 42,
     style: 'Jeep',
     summary:
-      'Experience the Ha Giang Loop with complete freedom in a classic open-top 4x4 military jeep. Unobstructed 360-degree views, an expert local driver, and a dedicated English-speaking guide make this the most cinematic way to conquer the northern highlands.',
+      'Experience the Ha Giang Loop with complete freedom in a classic open top 4x4 military jeep. Unobstructed 360 degree views, an expert local driver, and a dedicated English speaking guide make this the most cinematic way to conquer the northern highlands.',
     highlights: [
-      'Open-top 4x4 Jeep with unobstructed 360° views of canyons and passes',
-      'Professional driver & dedicated English-speaking guide throughout',
-      'Curated off-the-beaten-path photo stops and scenic viewpoints',
+      'Open top 4x4 Jeep with unobstructed 360° views of canyons and passes',
+      'Professional driver & dedicated English speaking guide throughout',
+      'Curated off the beaten path photo stops and scenic viewpoints',
       'Comfortable boutique accommodation & authentic highland gastronomy',
     ],
     inclusions: [
-      'Open-top 4x4 Jeep, experienced driver & all gasoline',
-      'English-speaking tour guide',
+      'Open top 4x4 Jeep, experienced driver & all gasoline',
+      'English speaking tour guide',
       'High Quality Accommodation: Private Ensuite room or boutique homestay',
       'All daily meals featuring local specialties',
       'Entrance tickets & Nho Que River boat cruise',
@@ -513,7 +515,7 @@ export const tours: Tour[] = [
           {
             day: 3,
             title: 'Dong Van → Vuong Family Mansion → Tham Ma Pass\n→ Lao Chai → Ha Giang',
-            summary: 'On the final day, we will visit some famous destinations on the way back to Ha Giang.\n- Explore the Vuong Family Mansion, also known as the Hmong King’s Palace, and discover its unique and impressive architecture.\n- Stop at the famous Tham Ma Pass to take photos and enjoy the beautiful mountain views.\n- Experience the local culture of the H’Mong people in Lao Chai Village and learn more about their traditional way of life.\n- Visit Lao Xa Village, where you can meet local people and learn about the long-standing traditional silver-making craft.\nWe will finish our journey at Odyssey Hostel in Ha Giang.',
+            summary: 'On the final day, we will visit some famous destinations on the way back to Ha Giang.\n- Explore the Vuong Family Mansion, also known as the Hmong King’s Palace, and discover its unique and impressive architecture.\n- Stop at the famous Tham Ma Pass to take photos and enjoy the beautiful mountain views.\n- Experience the local culture of the H’Mong people in Lao Chai Village and learn more about their traditional way of life.\n- Visit Lao Xa Village, where you can meet local people and learn about the long standing traditional silver making craft.\nWe will finish our journey at Odyssey Hostel in Ha Giang.',
             highlights: ['Vuong Family Mansion (Hmong King Palace)', 'Tham Ma Pass', 'Lao Chai Village', 'Lao Xa Village & Silversmithing', 'Odyssey Hostel'],
           },
         ],
@@ -546,7 +548,7 @@ export const tours: Tour[] = [
           {
             day: 4,
             title: 'Yen Minh → Lao Chai → Lung Tam Traditional Weaving Village\n→ Po Ly Cave → Ha Giang',
-            summary: 'On the final day, discover a traditional weaving village and explore a natural cave before returning to Ha Giang.\n- Visit Lao Chai and enjoy the beautiful mountain scenery and local atmosphere.\n- Explore Lung Tam Traditional Weaving Village and learn about the long-standing weaving traditions of the local people.\n- Discover Po Ly Cave, a natural cave with interesting rock formations.\n- Stop at several scenic viewpoints along the way and enjoy the beautiful landscapes of Ha Giang.\nOur journey will end at Odyssey Hostel in Ha Giang.',
+            summary: 'On the final day, discover a traditional weaving village and explore a natural cave before returning to Ha Giang.\n- Visit Lao Chai and enjoy the beautiful mountain scenery and local atmosphere.\n- Explore Lung Tam Traditional Weaving Village and learn about the long standing weaving traditions of the local people.\n- Discover Po Ly Cave, a natural cave with interesting rock formations.\n- Stop at several scenic viewpoints along the way and enjoy the beautiful landscapes of Ha Giang.\nOur journey will end at Odyssey Hostel in Ha Giang.',
             highlights: ['Lao Chai Village', 'Lung Tam Traditional Weaving', 'Po Ly Cave exploration', 'Scenic viewpoints', 'Odyssey Hostel'],
           },
         ],
@@ -598,13 +600,13 @@ export const tours: Tour[] = [
       'Combine Vietnam\'s two most spectacular northern provinces in one unforgettable overland journey. From the towering karst peaks of the Ha Giang Loop to the thunderous cascades of Ban Gioc Waterfall and the subterranean wonder of Nguom Ngao Cave in Cao Bang.',
     highlights: [
       'Comprehensive grand loop: Ha Giang Karst Plateau + Cao Bang UNESCO Geopark',
-      'Visit Ban Gioc Waterfall, Southeast Asia\'s largest trans-border waterfall',
+      'Visit Ban Gioc Waterfall, Southeast Asia\'s largest trans border waterfall',
       'Explore Ma Pi Leng Pass, Tu San Canyon, Nguom Ngao Cave & Pac Bo historical site',
       'Flexible options: Motorbike or Private Car with 100% private rooms',
     ],
     inclusions: [
       'Motorbike with Easy Rider or private car transport & all fuel',
-      'Dedicated professional English-speaking guide',
+      'Dedicated professional English speaking guide',
       'Full accommodation (100% Private Ensuite rooms & boutique homestays)',
       'All daily meals with regional culinary specialties',
       'All sightseeing tickets, boat trips at Nho Que & Ban Gioc Waterfall',
@@ -630,7 +632,7 @@ export const tours: Tour[] = [
           {
             day: 1,
             title: 'Ha Giang → Khau Lan Waterfall → Lung Tam Weaving Village\n→ Du Gia',
-            summary: 'Start your day with breakfast at our homestay. After breakfast, you will complete the check out process, check your luggage, and prepare for the journey. If you choose the Easy Rider option, you will meet your driver and tour guide. They will introduce the itinerary and explain the places we will visit during the trip.\n- Explore Khau Lan Waterfall and enjoy the beautiful natural surroundings.\n- Have lunch at a local family’s house and enjoy traditional local food.\n- Visit the Lung Tam Weaving Village, a long-standing village of the H’Mong people. Learn about their culture and how they create beautiful handmade products using traditional linen weaving techniques.\n- Visit Du Gia Waterfall, one of the famous natural attractions in Ha Giang.\nThat evening, we will stay at a beautiful homestay in Du Gia and relax after the first day of the journey.',
+            summary: 'Start your day with breakfast at our homestay. After breakfast, you will complete the check out process, check your luggage, and prepare for the journey. If you choose the Easy Rider option, you will meet your driver and tour guide. They will introduce the itinerary and explain the places we will visit during the trip.\n- Explore Khau Lan Waterfall and enjoy the beautiful natural surroundings.\n- Have lunch at a local family’s house and enjoy traditional local food.\n- Visit the Lung Tam Weaving Village, a long standing village of the H’Mong people. Learn about their culture and how they create beautiful handmade products using traditional linen weaving techniques.\n- Visit Du Gia Waterfall, one of the famous natural attractions in Ha Giang.\nThat evening, we will stay at a beautiful homestay in Du Gia and relax after the first day of the journey.',
             highlights: ['Khau Lan Waterfall', 'Local family lunch', 'Lung Tam Weaving Village', 'Du Gia Waterfall', 'Du Gia Homestay'],
           },
           {
@@ -641,9 +643,9 @@ export const tours: Tour[] = [
           },
           {
             day: 3,
-            title: 'Dong Van → Ma Pi Leng Pass → Bao Lac → 15-Tier Pass\n→ Na Teanh Pass → Pac Bo',
+            title: 'Dong Van → Ma Pi Leng Pass → Bao Lac → 15 Tier Pass\n→ Na Teanh Pass → Pac Bo',
             summary: 'The third day takes you through spectacular mountain landscapes and challenging mountain passes.\n- Explore the majestic Ma Pi Leng Pass, one of the most impressive mountain passes in northern Vietnam.\n- If you want more adventure, take a challenging walk to the Sky Walk and enjoy breathtaking views.\n- Travel through the impressive mountain passes of Cao Bang and discover the beautiful landscapes of the region.\nStop and relax in Pac Bo after an exciting day on the road.',
-            highlights: ['Ma Pi Leng Pass', 'Sky Walk experience', '15-Tier Pass & Na Teanh Pass', 'Pac Bo Homestay'],
+            highlights: ['Ma Pi Leng Pass', 'Sky Walk experience', '15 Tier Pass & Na Teanh Pass', 'Pac Bo Homestay'],
           },
           {
             day: 4,
@@ -672,7 +674,7 @@ export const tours: Tour[] = [
           {
             day: 1,
             title: 'Ha Giang → Khau Lan Waterfall → Lung Tam Weaving Village\n→ Du Gia',
-            summary: 'Start your day with breakfast at our homestay. After breakfast, you will complete the check out process, check your luggage, and prepare for the journey. If you choose the Easy Rider option, you will meet your driver and tour guide. They will introduce the itinerary and explain the places we will visit during the trip.\n- Explore Khau Lan Waterfall and enjoy the beautiful natural surroundings.\n- Have lunch at a local family’s house and enjoy traditional local food.\n- Visit Lung Tam Weaving Village, a long-standing village of the H’Mong people. Learn about their culture and discover how they create beautiful handmade products using traditional linen weaving techniques.\n- Visit Du Gia Waterfall, one of the famous natural attractions in Ha Giang.\nThat evening, we will stay at a beautiful homestay in Du Gia and relax after the first day of the journey.',
+            summary: 'Start your day with breakfast at our homestay. After breakfast, you will complete the check out process, check your luggage, and prepare for the journey. If you choose the Easy Rider option, you will meet your driver and tour guide. They will introduce the itinerary and explain the places we will visit during the trip.\n- Explore Khau Lan Waterfall and enjoy the beautiful natural surroundings.\n- Have lunch at a local family’s house and enjoy traditional local food.\n- Visit Lung Tam Weaving Village, a long standing village of the H’Mong people. Learn about their culture and discover how they create beautiful handmade products using traditional linen weaving techniques.\n- Visit Du Gia Waterfall, one of the famous natural attractions in Ha Giang.\nThat evening, we will stay at a beautiful homestay in Du Gia and relax after the first day of the journey.',
             highlights: ['Khau Lan Waterfall', 'Local family lunch', 'Lung Tam Weaving Village', 'Du Gia Waterfall', 'Du Gia Homestay'],
           },
           {
@@ -683,9 +685,9 @@ export const tours: Tour[] = [
           },
           {
             day: 3,
-            title: 'Dong Van → Ma Pi Leng Pass → Bao Lac → 15-Tier Pass\n→ Na Teanh Pass → Pac Bo',
+            title: 'Dong Van → Ma Pi Leng Pass → Bao Lac → 15 Tier Pass\n→ Na Teanh Pass → Pac Bo',
             summary: 'The third day takes you through spectacular mountain landscapes and challenging mountain passes.\n- Explore the majestic Ma Pi Leng Pass and enjoy breathtaking views of the mountains.\n- If you want more adventure, take a challenging walk to the Sky Walk.\n- Travel through the impressive mountain passes of Cao Bang and discover the beautiful landscapes of the region.\nStop and relax in Pac Bo after an exciting day on the road.',
-            highlights: ['Ma Pi Leng Pass', 'Sky Walk hike', '15-Tier Pass & Na Teanh Pass', 'Pac Bo Homestay'],
+            highlights: ['Ma Pi Leng Pass', 'Sky Walk hike', '15 Tier Pass & Na Teanh Pass', 'Pac Bo Homestay'],
           },
           {
             day: 4,
@@ -702,7 +704,7 @@ export const tours: Tour[] = [
           {
             day: 6,
             title: 'Ba Be Lake → Hanoi',
-            summary: 'Enjoy a relaxing day exploring Ba Be Lake, one of the largest natural freshwater\nlakes in Vietnam.\n- Explore the lake and nearby caves by boat.\n- Have lunch on the lake and enjoy local specialties.\n- After the tour, board a sleeper bus and travel back to Hanoi.\nThis marks the end of our 6-day Ha Giang – Cao Bang – Ba Be adventure.',
+            summary: 'Enjoy a relaxing day exploring Ba Be Lake, one of the largest natural freshwater\nlakes in Vietnam.\n- Explore the lake and nearby caves by boat.\n- Have lunch on the lake and enjoy local specialties.\n- After the tour, board a sleeper bus and travel back to Hanoi.\nThis marks the end of our 6 day Ha Giang – Cao Bang – Ba Be adventure.',
             highlights: ['Ba Be Lake boat tour', 'Cave exploration', 'Lunch on lake', 'Sleeper bus to Hanoi'],
           },
         ],
@@ -723,9 +725,9 @@ export const tours: Tour[] = [
       },
       {
         day: 3,
-        title: 'Dong Van → Ma Pi Leng Pass → Bao Lac → 15-Tier Pass → Pac Bo',
-        summary: 'Conquer Ma Pi Leng Pass and Sky Walk. Ride exhilarating mountain roads through Bao Lac, 15-tier Me Pia Pass and Na Tenh Pass to Pac Bo.',
-        highlights: ['Ma Pi Leng Pass', 'Sky Walk hike', '15-Tier Me Pia Pass', 'Pac Bo Homestay'],
+        title: 'Dong Van → Ma Pi Leng Pass → Bao Lac → 15 Tier Pass → Pac Bo',
+        summary: 'Conquer Ma Pi Leng Pass and Sky Walk. Ride exhilarating mountain roads through Bao Lac, 15 tier Me Pia Pass and Na Tenh Pass to Pac Bo.',
+        highlights: ['Ma Pi Leng Pass', 'Sky Walk hike', '15 Tier Me Pia Pass', 'Pac Bo Homestay'],
       },
       {
         day: 4,
@@ -753,9 +755,9 @@ export const destinations: Destination[] = [
     image: '/Popup/khaulan.webp',
     elevation: '1,100 m',
     bestSeason: 'May – October',
-    blurb: 'A spectacular multi-tiered waterfall hidden in the heart of Quan Ba valley.',
+    blurb: 'A spectacular multi tiered waterfall hidden in the heart of Quan Ba valley.',
     description:
-      'Khau Lan Waterfall is one of the most breathtaking natural wonders in Quan Ba district. This impressive cascade tumbles down multiple tiers through lush jungle vegetation, creating a series of pristine pools perfect for swimming during the wet season. The waterfall is located in a remote area, surrounded by traditional H\'Mong villages and terraced rice fields. The 30-minute trek to reach the falls takes you through stunning mountain scenery and offers glimpses into local highland life. During peak flow season (May-October), the waterfall becomes a thundering display of nature\'s power, while the dry season (November-April) reveals a gentler, more intimate cascade ideal for photography and peaceful contemplation.',
+      'Khau Lan Waterfall is one of the most breathtaking natural wonders in Quan Ba district. This impressive cascade tumbles down multiple tiers through lush jungle vegetation, creating a series of pristine pools perfect for swimming during the wet season. The waterfall is located in a remote area, surrounded by traditional H\'Mong villages and terraced rice fields. The 30 minute trek to reach the falls takes you through stunning mountain scenery and offers glimpses into local highland life. During peak flow season (May-October), the waterfall becomes a thundering display of nature\'s power, while the dry season (November-April) reveals a gentler, more intimate cascade ideal for photography and peaceful contemplation.',
     experiences: ['Waterfall swim', 'Village trek', 'Local lunch with villagers']
   },
   {
@@ -765,7 +767,7 @@ export const destinations: Destination[] = [
     image: '/Popup/nhoque.webp',
     elevation: '320 m',
     bestSeason: 'October – April',
-    blurb: 'A ribbon of jade water between thousand-metre limestone walls.',
+    blurb: 'A ribbon of jade water between thousand metre limestone walls.',
     description:
       'The Nho Que River is a stunning natural attraction in Ha Giang, known for its serene emerald waters that flow through the dramatic landscapes of the region. It originates from China and enters Vietnam at Seo Lung village, offering a unique boating experience through the Tu San Canyon and along the Ma Pi Leng Pass. The river is not only a picturesque site but also an essential part of local life, supporting fishing and agriculture. A boat trip on the Nho Que River allows visitors to fully immerse themselves in the tranquil beauty of Ha Giang’s nature.',
     experiences: ['Private boat charter', 'Tu San Canyon boating', 'Emerald water swim']
@@ -779,7 +781,7 @@ export const destinations: Destination[] = [
     bestSeason: 'March – May',
     blurb: 'Twenty kilometres of cliff road cut by hand across the sky.',
     description:
-      'Ma Pi Leng Pass is a 20-km-long mountain pass that connects Dong Van and Meo Vac districts. It is considered one of the most dangerous and beautiful roads in Vietnam, with steep cliffs, winding curves and breathtaking views of the Nho Que River and the karst landscape.',
+      'Ma Pi Leng Pass is a 20 km long mountain pass that connects Dong Van and Meo Vac districts. It is considered one of the most dangerous and beautiful roads in Vietnam, with steep cliffs, winding curves and breathtaking views of the Nho Que River and the karst landscape.',
     experiences: ['Sunrise ride', 'Sky path walk', 'Cloud sea viewpoint']
   },
   {
@@ -815,7 +817,7 @@ export const destinations: Destination[] = [
     bestSeason: 'All year',
     blurb: "A vibrant tapestry of traditional H'Mong handwoven linen craftsmanship.",
     description:
-      'Lung Tam Weaving Village, nestled in the heart of Ha Giang’s Quản Bạ valley, is a vibrant tapestry of culture and tradition. Here, the H’Mong people’s artistry comes alive in every handwoven linen piece, reflecting a heritage rich with color and texture. Visitors can witness the meticulous 41-step process that transforms flax into exquisite fabrics, a testament to the community’s dedication to preserving their ancestral craft. With products ranging from clothing to decorative items, each creation embodies the spirit of Lung Tam, making it a must-visit destination for those seeking to experience the authentic essence of Vietnam’s highland craftsmanship.',
+      'Lung Tam Weaving Village, nestled in the heart of Ha Giang’s Quản Bạ valley, is a vibrant tapestry of culture and tradition. Here, the H’Mong people’s artistry comes alive in every handwoven linen piece, reflecting a heritage rich with color and texture. Visitors can witness the meticulous 41 step process that transforms flax into exquisite fabrics, a testament to the community’s dedication to preserving their ancestral craft. With products ranging from clothing to decorative items, each creation embodies the spirit of Lung Tam, making it a must visit destination for those seeking to experience the authentic essence of Vietnam’s highland craftsmanship.',
     experiences: ['Loom weaving workshop', 'Flax processing demo', 'Handicraft shopping']
   },
   {
@@ -837,10 +839,10 @@ export const destinations: Destination[] = [
     image: '/Popup/thamma.webp',
     elevation: '1,500 m',
     bestSeason: 'All year',
-    blurb: 'A winding S-shaped mountain pass through green hills.',
+    blurb: 'A winding S shaped mountain pass through green hills.',
     description:
-      'Tham Ma Pass, with its iconic s-shaped curves, is a breathtaking feature of Ha Giang’s landscape. This 5 km stretch of road winds through the Dong Van district, offering stunning views of the surrounding karst formations. At an altitude of 1500 meters, it’s not the highest pass in the region, but its unique zigzagging path provides a thrilling ride for travelers. Historically, locals tested their horses’ strength here, a tradition that adds to the pass’s rich cultural tapestry.',
-    experiences: ['S-curve scenic ride', 'Mountain-top photography', 'Local H\'Mong children greeting']
+      'Tham Ma Pass, with its iconic s shaped curves, is a breathtaking feature of Ha Giang’s landscape. This 5 km stretch of road winds through the Dong Van district, offering stunning views of the surrounding karst formations. At an altitude of 1500 meters, it’s not the highest pass in the region, but its unique zigzagging path provides a thrilling ride for travelers. Historically, locals tested their horses’ strength here, a tradition that adds to the pass’s rich cultural tapestry.',
+    experiences: ['S curve scenic ride', 'Mountain top photography', 'Local H\'Mong children greeting']
   },
   {
     slug: 'hmong-kings-palace',
@@ -863,7 +865,7 @@ export const destinations: Destination[] = [
     bestSeason: 'All year',
     blurb: 'A flagpole on the mountaintop flying a red flag, seen from above.',
     description:
-      'A monument that marks the northernmost point of Vietnam. It is located on Lung Cu peak, 1,470 meters above sea level, in Dong Van district. The monument consists of a 30-meter-high tower on the summit of the peak. The tower is topped with a large Vietnamese flag that represents the 54 ethnic groups in Vietnam. It is located near the Chinese border and offers a panoramic view of the border area. It has 839 stone steps that lead to the top of the tower, divided into three parts. Visitors can climb 200 steps to reach the flagpole. It is surrounded by a beautiful landscape of mountains, valleys and villages. You can see the rice terraces, corn fields and buckwheat flowers along the way.',
+      'A monument that marks the northernmost point of Vietnam. It is located on Lung Cu peak, 1,470 meters above sea level, in Dong Van district. The monument consists of a 30 meter high tower on the summit of the peak. The tower is topped with a large Vietnamese flag that represents the 54 ethnic groups in Vietnam. It is located near the Chinese border and offers a panoramic view of the border area. It has 839 stone steps that lead to the top of the tower, divided into three parts. Visitors can climb 200 steps to reach the flagpole. It is surrounded by a beautiful landscape of mountains, valleys and villages. You can see the rice terraces, corn fields and buckwheat flowers along the way.',
     experiences: ['Stone steps climb', 'Panoramic border views', 'Lo Lo Chai village visit']
   },
   {
@@ -875,7 +877,7 @@ export const destinations: Destination[] = [
     bestSeason: 'All year',
     blurb: 'A place of profound national pride overlooking the Nho Que River.',
     description:
-      'Vietnam’s North Point is a place of profound national pride and natural splendor. Located in Lung Cu, Dong Van District, this northernmost tip of Vietnam is marked by a flag tower on a peak overlooking the Nho Que River. The site offers panoramic views that stretch across the border into China, symbolizing the sovereignty and unity of the Vietnamese nation. It’s a must-visit for travelers seeking to experience the geographical and cultural extremities of Vietnam.',
+      'Vietnam’s North Point is a place of profound national pride and natural splendor. Located in Lung Cu, Dong Van District, this northernmost tip of Vietnam is marked by a flag tower on a peak overlooking the Nho Que River. The site offers panoramic views that stretch across the border into China, symbolizing the sovereignty and unity of the Vietnamese nation. It’s a must visit for travelers seeking to experience the geographical and cultural extremities of Vietnam.',
     experiences: ['Border overlook hike', 'Nho Que river views', 'National sovereignty landmark']
   },
   {
@@ -888,7 +890,7 @@ export const destinations: Destination[] = [
     blurb: 'A historical mosaic of heritage houses, cafes, and ethnic markets.',
     description:
       'Dong Van Ancient Town, nestled in the heart of Ha Giang’s Dong Van Karst Plateau, is a historical jewel. With over a century of history, this small town is a mosaic of cultural heritage and natural beauty. The town’s old quarter is lined with houses that are nearly 200 years old, offering a glimpse into a bygone era. Visitors can explore the market, enjoy local cuisine at quaint cafes, and stay in homestays that preserve the town’s rustic charm. Dong Van is not just a place but an experience, where the past and present of Vietnam’s northern highlands converge.',
-    experiences: ['Old quarter cafe hopping', 'Clay-tiled house tour', 'Sunday market exchange']
+    experiences: ['Old quarter cafe hopping', 'Clay tiled house tour', 'Sunday market exchange']
   },
   {
     slug: 'ban-an-stream-ngoc-long',
@@ -933,10 +935,10 @@ export const vehicles: Vehicle[] = [
   {
     id: 'semi-110',
     name: 'Honda Blade',
-    category: 'Semi-Automatic 110cc',
+    category: 'Semi Automatic 110cc',
     image: images.bikeSemi,
-    engine: '110cc semi-automatic',
-    bestFor: 'First-time riders and anyone who prefers not to think about a clutch',
+    engine: '110cc semi automatic',
+    bestFor: 'First time riders and anyone who prefers not to think about a clutch',
     dailyRate: 180000,
     specs: [
       { label: 'Price (per day - VND)', value: '180.000 VND' },
@@ -966,7 +968,7 @@ export const vehicles: Vehicle[] = [
     category: 'Manual / Clutch Motorbike 150cc',
     image: images.bikeYmhWr,
     images: [images.bikeYmhWr, images.bikeDualSport],
-    engine: '150cc manual dual-sport',
+    engine: '150cc manual dual sport',
     bestFor: 'Experienced riders who want the steep detours and unsealed tracks',
     dailyRate: 550000,
     specs: [
@@ -974,7 +976,7 @@ export const vehicles: Vehicle[] = [
       { label: 'Price + Insurance', value: '800.000 VND' }],
 
     notes:
-      'Long-travel suspension and proper ground clearance for the rough sections west of Dong Van. Prior manual experience required.'
+      'Long travel suspension and proper ground clearance for the rough sections west of Dong Van. Prior manual experience required.'
   }];
 
 
@@ -997,7 +999,7 @@ export const features: Feature[] = [
     id: 'stays',
     title: 'Stays worth arriving to',
     description:
-      'Hand-picked homestays and two boutique lodges, each visited by our team every season before it goes on the itinerary.',
+      'Hand picked homestays and two boutique lodges, each visited by our team every season before it goes on the itinerary.',
     icon: 'bed'
   }];
 
@@ -1015,7 +1017,7 @@ export const experienceSteps: ExperienceStep[] = [
     step: '02',
     title: 'Your route, drafted',
     description:
-      'Within three days you receive a day-by-day route with stays, distances and the two or three decisions still open.'
+      'Within three days you receive a day by day route with stays, distances and the two or three decisions still open.'
   },
   {
     id: 'ride',
@@ -1322,7 +1324,7 @@ export const faqs: FaqItem[] = [
     category: 'On the road',
     question: 'What kind of accommodation can I expect on the loop?',
     answer:
-      'A mixture. Most nights are spent in family-run homestays that we have upgraded with the owners, with dorms featuring comfortable mattresses, hot showers, and good coffee. On longer trips, one or two nights are spent in boutique lodges with valley views.\n\nIf you’d rather not share and would like more privacy and comfort, you can upgrade to a private room for the whole trip when you book.'
+      'A mixture. Most nights are spent in family run homestays that we have upgraded with the owners, with dorms featuring comfortable mattresses, hot showers, and good coffee. On longer trips, one or two nights are spent in boutique lodges with valley views.\n\nIf you’d rather not share and would like more privacy and comfort, you can upgrade to a private room for the whole trip when you book.'
   },
   {
     id: 'f14',
@@ -1341,7 +1343,7 @@ export const faqs: FaqItem[] = [
   {
     id: 'f16',
     category: 'On the road',
-    question: 'Are vegetarian, vegan, and allergy-friendly meals available during the loop?',
+    question: 'Are vegetarian, vegan, and allergy friendly meals available during the loop?',
     answer:
       'Yes, vegetarian and vegan meals can be arranged, and we can also arrange meals for guests with food allergies. Please let us know about any dietary requirements before the tour.'
   },
@@ -1597,7 +1599,7 @@ export const gallery: GalleryItem[] = [
   {
     id: 'g29',
     src: '/gallery/g29.webp',
-    alt: 'Travellers at a ridge-top lookout with a flag and hazy mountains',
+    alt: 'Travellers at a ridge top lookout with a flag and hazy mountains',
     caption: 'Lookout on the ridge',
     category: 'Road',
     span: 'tall'

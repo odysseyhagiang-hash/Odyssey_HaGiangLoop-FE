@@ -9,7 +9,7 @@ export function Terms() {
   useSeo({
     title: 'Terms & Conditions - Odyssey Ha Giang',
     description:
-      'Terms and Conditions of Odyssey Hostel & Tours Ha Giang. Border permits, payment rules, itinerary flexibility, self-driving requirements, and accommodation policies.',
+      'Terms and Conditions of Odyssey Hostel & Tours Ha Giang. Border permits, payment rules, itinerary flexibility, self driving requirements, and accommodation policies.',
     image: images.pass,
   });
 
@@ -124,7 +124,7 @@ export function Terms() {
                     After selecting the service you wish to join, a confirmation will be sent via WhatsApp or email.
                   </p>
                   <p>
-                    This confirmation will include important details such as: <strong className="font-semibold text-ink">start date, bus departure time, and pick-up location</strong>.
+                    This confirmation will include important details such as: <strong className="font-semibold text-ink">start date, bus departure time, and pick up location</strong>.
                   </p>
                 </div>
 
@@ -139,7 +139,7 @@ export function Terms() {
                     No refund will be provided for any unused services included in the tour package.
                   </p>
                   <p>
-                    In the event of a no-show, the full tour price will be charged and non-refundable.
+                    In the event of a no show, the full tour price will be charged and non refundable.
                   </p>
                 </div>
 
@@ -232,7 +232,7 @@ export function Terms() {
                     We provide free luggage storage throughout your journey. Your luggage will be returned upon completion of the tour.
                   </p>
                   <p>
-                    All valuable items such as: <strong className="font-semibold text-ink">cash, computers, or high-value items</strong> must be deposited at the reception area.
+                    All valuable items such as: <strong className="font-semibold text-ink">cash, computers, or high value items</strong> must be deposited at the reception area.
                   </p>
                   <p>
                     Your belongings and luggage will be organized and kept by us; however, we are not liable for any damage to your luggage as we cannot determine the prior condition of your luggage before it is handed over to us.
@@ -250,7 +250,7 @@ export function Terms() {
                     To comply with Vietnamese law and ensure your safety, please adhere to the following regulations at all accommodation facilities:
                   </p>
                   <ul className="list-disc pl-5 space-y-1.5 pt-1">
-                    <li>Present valid identification documents prior to check-in</li>
+                    <li>Present valid identification documents prior to check in</li>
                     <li>Do not bring weapons, prohibited substances, or explosives</li>
                     <li>Do not use drugs or stimulants</li>
                     <li>No gambling</li>
@@ -269,7 +269,7 @@ export function Terms() {
                     To ensure safety for customers and drivers on the road, the maximum combined weight for a passenger and luggage is <strong className="font-semibold text-ink">100kg</strong>. If a customer&apos;s weight exceeds 100kg, please select a vehicle upgrade package to ensure safety.
                   </p>
                   <p>
-                    Self-driving customers may still ride provided they meet all driving requirements.
+                    Self driving customers may still ride provided they meet all driving requirements.
                   </p>
                 </div>
 
@@ -278,7 +278,7 @@ export function Terms() {
                 {/* 17 */}
                 <div className="space-y-3">
                   <h2 className="text-base sm:text-lg font-bold text-ink">
-                    17. Self-driving requirements:
+                    17. Self driving requirements:
                   </h2>
                   <p>
                     <strong className="font-semibold text-ink">Valid driving documents:</strong> You must carry an International Driving Permit (IDP) under the 1968 Convention with a valid motorcycle endorsement. Category AM is not eligible. You must also carry the original driving licence from your home country, and motorcycle riding privileges on both documents must match. Both documents must be official physical copies issued by the government or authorized governmental authority. Digital copies, photographs, screenshots, unofficial permits, or documents issued by private entities are not accepted.
@@ -287,7 +287,7 @@ export function Terms() {
                     <strong className="font-semibold text-ink">Compliance with traffic laws:</strong> You are strictly required to adhere to all applicable traffic laws, road rules in Vietnam, and instructions from our tour guide throughout the group trip.
                   </p>
                   <p>
-                    <strong className="font-semibold text-ink">Ability to ride with the group:</strong> You must have sufficient riding experience and the ability to maintain a safe riding pace with the group. If our team determines that your riding ability poses a safety risk to yourself, other guests, our staff, or other road users, we reserve the right to require you to stop self-driving and switch to our Easy Rider service at your own expense, subject to availability.
+                    <strong className="font-semibold text-ink">Ability to ride with the group:</strong> You must have sufficient riding experience and the ability to maintain a safe riding pace with the group. If our team determines that your riding ability poses a safety risk to yourself, other guests, our staff, or other road users, we reserve the right to require you to stop self driving and switch to our Easy Rider service at your own expense, subject to availability.
                   </p>
                   <p>
                     <strong className="font-semibold text-ink">Liability when operating a vehicle:</strong> As a self-driver, you are financially and legally responsible for your actions when operating the motorcycle, including any damage to the motorcycle, other vehicles, property, or third parties, as well as any fines, penalties, injuries, or other expenses arising from your actions or riding.
@@ -302,7 +302,7 @@ export function Terms() {
                 {/* 18 */}
                 <div className="space-y-2">
                   <h2 className="text-base sm:text-lg font-bold text-ink">
-                    18. Self-driving customers:
+                    18. Self driving customers:
                   </h2>
                   <p>
                     If you choose to ride your own vehicle: You must prove your ability to ride safely. Otherwise, you will be required to switch to an Easy Rider option. All incurred costs must be paid by the customer.

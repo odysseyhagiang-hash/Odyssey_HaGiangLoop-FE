@@ -40,7 +40,7 @@ export function PopularTours() {
               </span>
             </>
           }
-          description="Whether you prefer a private guide, a group adventure, an open-top Jeep, a comfortable car, or an extended grand loop to Cao Bang, there's a perfect journey for every traveller."
+          description="Whether you prefer a private guide, a group adventure, an open top Jeep, a comfortable car, or an extended grand loop to Cao Bang, there's a perfect journey for every traveller."
           action={
             <Button to="/journeys" variant="outline">
               All journeys

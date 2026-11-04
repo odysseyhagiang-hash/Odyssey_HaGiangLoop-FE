@@ -6,7 +6,7 @@ import {
   useTransform,
 } from "framer-motion";
 import { PlayIcon, Star } from "lucide-react";
-import { GOOGLE_MAPS_URL } from "./Testimonials";
+import { GOOGLE_MAPS_URL, TA_PAGE_URL } from "./Testimonials";
 import { heroVideo, images } from "../../lib/data";
 import { VideoBackground } from "../ui/VideoBackground";
 import { Button } from "../ui/Button";
@@ -14,6 +14,11 @@ import { Container } from "../ui/Section";
 import { SectionDivider } from "../ui/SectionDivider";
 
 const ease = [0.22, 1, 0.36, 1] as const;
+
+const REVIEW_BADGES = [
+  { label: "Google", count: "2,615+", href: GOOGLE_MAPS_URL },
+  { label: "TripAdvisor", count: "1,899+", href: TA_PAGE_URL },
+];
 
 const routePath =
   "M0 40 C 45 40, 60 6, 110 6 S 170 66, 225 58 S 280 8, 335 20 S 390 70, 445 48 S 515 10, 560 28";
@@ -190,36 +195,39 @@ export function Hero() {
               beauty of Ha Giang becomes a lifelong memory.
             </motion.p>
 
-            {/* Badge Google review */}
+            {/* Review badges: Google + TripAdvisor */}
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.65, ease }}
-              className="mt-7 sm:mt-8 lg:mt-10 flex justify-center lg:justify-start"
+              className="mt-7 sm:mt-8 lg:mt-10 flex flex-wrap justify-center gap-3 lg:justify-start"
             >
-              <a
-                href={GOOGLE_MAPS_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Rated 5.0 from 2,615+ Google reviews"
-                className="
-                  inline-flex items-center gap-3 rounded-full
-                  border border-white/15 bg-black/40 backdrop-blur-md
-                  px-4 py-2 sm:px-5 sm:py-2.5
-                  transition-colors hover:border-gold-300/50 hover:bg-black/50
-                "
-              >
-                <span className="flex items-center gap-0.5" aria-hidden="true">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className="h-3.5 w-3.5 fill-gold-300 text-gold-300 sm:h-4 sm:w-4" />
-                  ))}
-                </span>
-                <span className="text-sm font-semibold text-white sm:text-base">5.0</span>
-                <span aria-hidden="true" className="h-4 w-px bg-white/25" />
-                <span className="text-sm text-white/85 underline decoration-white/40 underline-offset-4 sm:text-base">
-                  2,615+ Google reviews
-                </span>
-              </a>
+              {REVIEW_BADGES.map((badge) => (
+                <a
+                  key={badge.label}
+                  href={badge.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Rated 5.0 from ${badge.count} ${badge.label} reviews`}
+                  className="
+                    inline-flex items-center gap-3 rounded-full
+                    border border-white/15 bg-black/40 backdrop-blur-md
+                    px-4 py-2 sm:px-5 sm:py-2.5
+                    transition-colors hover:border-gold-300/50 hover:bg-black/50
+                  "
+                >
+                  <span className="flex items-center gap-0.5" aria-hidden="true">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <Star key={i} className="h-3.5 w-3.5 fill-gold-300 text-gold-300 sm:h-4 sm:w-4" />
+                    ))}
+                  </span>
+                  <span className="text-sm font-semibold text-white sm:text-base">5.0</span>
+                  <span aria-hidden="true" className="h-4 w-px bg-white/25" />
+                  <span className="text-sm text-white/85 underline decoration-white/40 underline-offset-4 sm:text-base">
+                    {badge.count} {badge.label} reviews
+                  </span>
+                </a>
+              ))}
             </motion.div>
 
             <motion.div

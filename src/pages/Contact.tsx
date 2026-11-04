@@ -187,7 +187,7 @@ export function Contact() {
       <PageHero
         eyebrow="Contact"
         title="Talk to someone who rides these roads"
-        description="Our office sits two streets from the start of the loop. Write, call, or ask us for a fifteen-minute video call."
+        description="Our office sits two streets from the start of the loop. Write, call, or ask us for a fifteen minute video call."
         image={images.experience}
         imageAlt="Candlelit dinner table on a wooden balcony overlooking misty mountains"
       />

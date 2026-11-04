@@ -30,7 +30,7 @@ export function Tours() {
       <PageHero
         eyebrow="Our journeys"
         title="Curated ways to cross the northern highlands"
-        description="Every itinerary shares the same expert guides, top-tier fleet and dedicated local hospitality. What changes is the pace, the privacy and the vehicles you ride."
+        description="Every itinerary shares the same expert guides, top tier fleet and dedicated local hospitality. What changes is the pace, the privacy and the vehicles you ride."
         image={images.tourClassic}
         imageAlt="A rider on a narrow cliffside road above a river canyon in northern Vietnam" />
 
@@ -81,7 +81,7 @@ export function Tours() {
       <CtaBanner
         eyebrow="Not quite right?"
         title="We build private routes from scratch"
-        description="Tell us how long you have, how far you want to ride and what you would rather skip. We will draft an itinerary within three days." />
+        description="Let us know how much time you have, how far you’d like to travel, and what you’d prefer to skip. We will send you an itinerary." />
 
     </main>);
 

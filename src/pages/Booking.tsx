@@ -138,7 +138,7 @@ const HOSTELS: Hostel[] = [
     overview: {
       tagline: 'A UNIQUE RELAXATION SPACE AT ODYSSEY GUEST HOUSE',
       description:
-        'Odyssey Guest House is a unique guest house with stunning architecture, including stilt houses and brick houses, offering guests a complete experience from the coziness of a family home to the elegance and cleanliness of a three-star hotel. We also offer a second facility called Odyssey Hotel 2, with fully equipped spaces. This is the ideal place to relax after a long, tiring day. We have relaxation areas such as a tea room, swimming pool, billiards room, etc.',
+        'Odyssey Guest House is a unique guest house with stunning architecture, including stilt houses and brick houses, offering guests a complete experience from the coziness of a family home to the elegance and cleanliness of a three star hotel. We also offer a second facility called Odyssey Hotel 2, with fully equipped spaces. This is the ideal place to relax after a long, tiring day. We have relaxation areas such as a tea room, swimming pool, billiards room, etc.',
       bookingUrl: undefined,
     },
     rooms: [

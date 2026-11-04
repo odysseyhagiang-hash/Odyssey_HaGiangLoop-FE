@@ -102,7 +102,7 @@ function RidingPricingTable({
       <div className="rounded-2xl overflow-hidden border border-ink/[0.08] text-sm">
         <div className="grid grid-cols-3 bg-forest-900 text-white/80 text-[11px] uppercase tracking-wider">
           <span className="px-4 py-3">Behind easyrider</span>
-          <span className="px-4 py-3 border-x border-white/10">Self-Drive</span>
+          <span className="px-4 py-3 border-x border-white/10">Self Drive</span>
           <span className="px-4 py-3">{partnerLabel}</span>
         </div>
         <div className="grid grid-cols-3 bg-white">
