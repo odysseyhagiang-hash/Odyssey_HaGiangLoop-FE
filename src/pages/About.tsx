@@ -132,11 +132,25 @@ const galleryImages = [
     span: 'square'
   },
   {
+    id: 'g12',
+    src: '/gallery/g14.webp',
+    alt: 'A group of travellers posing beside a Vietnamese flag above a winding mountain road',
+    caption: 'Group stop at the flag viewpoint',
+    span: 'square'
+  },
+  {
     id: 'g10',
     src: '/Aboutpic/1785766572825_7647185241213986356_7647185241213986356_eb0dc5e9ef27a6a1f965570b1c5de9e3.webp',
     alt: 'Spectacular sunset over the mountains of Ha Giang',
     caption: 'Golden mountain sunset',
     span: 'wide'
+  },
+  {
+    id: 'g11',
+    src: '/gallery/g17.webp',
+    alt: 'Travellers with a crowd of smiling children outside a wooden village school',
+    caption: 'Visiting the village school',
+    span: 'square'
   }
 ];
 
@@ -153,8 +167,10 @@ const itemStyles = [
   { span: 'sm:col-span-1 aspect-[16/10]', sizes: '(min-width: 1024px) 33vw, 100vw' },
   { span: 'sm:col-span-1 aspect-[16/10]', sizes: '(min-width: 1024px) 33vw, 100vw' },
 
-  // Block 3 (2 images)
+  // Block 3 (4 images): same pattern as block 1, fully filled
   { span: 'sm:col-span-2 aspect-[16/10]', sizes: '(min-width: 1024px) 66vw, 100vw' },
+  { span: 'sm:col-span-1 sm:row-span-2 sm:aspect-auto aspect-[16/10]', sizes: '(min-width: 1024px) 33vw, 100vw' },
+  { span: 'sm:col-span-1 aspect-[16/10]', sizes: '(min-width: 1024px) 33vw, 100vw' },
   { span: 'sm:col-span-1 aspect-[16/10]', sizes: '(min-width: 1024px) 33vw, 100vw' }
 ];
 

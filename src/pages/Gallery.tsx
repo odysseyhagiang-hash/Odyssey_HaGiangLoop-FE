@@ -13,11 +13,53 @@ import { CtaBanner } from '../components/sections/CtaBanner';
 
 const categories: (GalleryItem['category'] | 'All')[] = ['All', 'Landscape', 'Culture', 'Stays', 'Road'];
 
-const spans: Record<GalleryItem['span'], string> = {
-  wide: 'aspect-[4/3] sm:col-span-2 sm:row-span-1 sm:aspect-auto',
-  tall: 'aspect-[4/3] sm:col-span-1 sm:row-span-2 sm:aspect-auto',
-  square: 'aspect-[4/3] sm:col-span-1 sm:row-span-1 sm:aspect-auto'
-};
+interface Placed {
+  item: GalleryItem;
+  /** CSS grid-column / grid-row values for the 3-column desktop grid */
+  col: number;
+  row: string;
+}
+
+/**
+ * Packs photos into gap-free blocks of 3 columns × 2 rows.
+ * Each block column holds either one tall (portrait) photo or two stacked
+ * square photos. The number of photos shown tall is chosen so the total cell
+ * count is an exact multiple of 6, then photos are poured into columns in
+ * order — a square always completes a half-filled column before a new column
+ * opens — so every block, including the last one, is completely filled.
+ */
+function packGallery(items: GalleryItem[]): Placed[] {
+  const n = items.length;
+  const portraits = items.filter((i) => i.span === 'tall').length;
+  let tallCount = -1;
+  for (let t = portraits; t >= 0; t--) {
+    if ((n + t) % 6 === 0) { tallCount = t; break; }
+  }
+  // Fallback (too few portraits to square the grid): keep natural shapes.
+  if (tallCount < 0) tallCount = portraits;
+
+  let tallLeft = tallCount;
+  let nextCol = 0; // index of the next empty column (block-major)
+  let halfCol = -1; // column with one square already placed, waiting for a second
+  const place = (colIndex: number, top: number, span: number) => ({
+    col: (colIndex % 3) + 1,
+    row: `${Math.floor(colIndex / 3) * 2 + top} / span ${span}`
+  });
+
+  return items.map((item) => {
+    if (item.span === 'tall' && tallLeft > 0) {
+      tallLeft--;
+      return { item, ...place(nextCol++, 1, 2) };
+    }
+    if (halfCol >= 0) {
+      const c = halfCol;
+      halfCol = -1;
+      return { item, ...place(c, 2, 1) };
+    }
+    halfCol = nextCol++;
+    return { item, ...place(halfCol, 1, 1) };
+  });
+}
 
 export function Gallery() {
   useSeo({
@@ -34,6 +76,8 @@ export function Gallery() {
     () => category === 'All' ? gallery : gallery.filter((item) => item.category === category),
     [category]
   );
+
+  const packed = useMemo(() => packGallery(visible), [visible]);
 
   const activeIndex = visible.findIndex((item) => item.id === active?.id);
 
@@ -117,18 +161,13 @@ export function Gallery() {
 
           <Stagger
             key={category}
-            className={cn(
-              'mt-12 grid grid-cols-1 sm:grid-cols-3',
-              category === 'All' ? 'gap-4 sm:auto-rows-[260px]' : 'gap-6'
-            )}>
-            {visible.map((item) =>
+            className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-3 sm:auto-rows-[260px]">
+            {packed.map(({ item, col, row }) =>
               <motion.figure
                 key={item.id}
                 variants={staggerItem}
-                className={cn(
-                  'group relative overflow-hidden rounded-4xl',
-                  category === 'All' ? spans[item.span] : 'aspect-[4/3] w-full'
-                )}>
+                style={{ '--gc': col, '--gr': row } as React.CSSProperties}
+                className="group relative aspect-[4/3] overflow-hidden rounded-4xl sm:aspect-auto sm:[grid-column:var(--gc)] sm:[grid-row:var(--gr)]">
 
                 <button
                   type="button"

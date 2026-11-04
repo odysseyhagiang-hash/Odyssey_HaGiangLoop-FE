@@ -7,7 +7,6 @@ import { FeaturedDestinations } from '../components/sections/FeaturedDestination
 import { Testimonials } from '../components/sections/Testimonials';
 import { GalleryPreview } from '../components/sections/GalleryPreview';
 import { FaqSection } from '../components/sections/FaqSection';
-import { CtaBanner } from '../components/sections/CtaBanner';
 import { VideoSection } from '../components/sections/VideoSection';
 
 export function Home() {
@@ -73,7 +72,6 @@ export function Home() {
       <Testimonials />
       <GalleryPreview />
       <FaqSection />
-      <CtaBanner />
     </main>
   );
 }

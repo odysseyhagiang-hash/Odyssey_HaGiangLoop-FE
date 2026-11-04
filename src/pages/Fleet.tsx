@@ -21,7 +21,7 @@ const care = [
   {
     icon: GaugeIcon,
     title: 'Retired early, on purpose',
-    text: 'We refresh our vehicles every two years on a regular basis. Nothing you ride will be older than two seasons.'
+    text: 'We regularly upgrade and maintain our motorbikes, replacing older parts and ensuring every bike is in excellent condition for a safe and comfortable journey.'
   },
   {
     icon: ShieldCheckIcon,

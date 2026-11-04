@@ -15,6 +15,37 @@ interface AccordionProps {
   defaultOpenId?: string;
 }
 
+const BULLET = /^\s*[•*-]\s+/;
+
+/**
+ * Renders an answer: blank lines split paragraphs, and lines starting with
+ * "•" (or "-" / "*") become a real bulleted list with hanging indent.
+ */
+function AnswerBody({ text }: { text: string }) {
+  const blocks = text.split(/\n\s*\n/);
+  return (
+    <div className="max-w-2xl space-y-3 pb-7 pr-10 text-[15px] leading-relaxed text-ink-soft">
+      {blocks.map((block, b) => {
+        const lines = block.split('\n').filter((l) => l.trim());
+        const groups: { list: boolean; lines: string[] }[] = [];
+        for (const line of lines) {
+          const list = BULLET.test(line);
+          const last = groups[groups.length - 1];
+          if (last && last.list === list) last.lines.push(line);
+          else groups.push({ list, lines: [line] });
+        }
+        return groups.map((g, i) =>
+          g.list ?
+            <ul key={`${b}-${i}`} className="list-disc space-y-1.5 pl-5 marker:text-forest-500">
+              {g.lines.map((l) => <li key={l}>{l.replace(BULLET, '')}</li>)}
+            </ul> :
+            <p key={`${b}-${i}`} className="whitespace-pre-line">{g.lines.join('\n')}</p>
+        );
+      })}
+    </div>);
+
+}
+
 export function Accordion({ items, className, defaultOpenId }: AccordionProps) {
   const [openId, setOpenId] = useState<string | null>(defaultOpenId ?? null);
 
@@ -60,9 +91,7 @@ export function Accordion({ items, className, defaultOpenId }: AccordionProps) {
                   transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
                   className="overflow-hidden">
 
-                  <p className="max-w-2xl pb-7 pr-10 text-[15px] leading-relaxed text-ink-soft">
-                    {item.answer}
-                  </p>
+                  <AnswerBody text={item.answer} />
                 </motion.div>
               }
             </AnimatePresence>

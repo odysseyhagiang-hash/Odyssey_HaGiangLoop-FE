@@ -5,7 +5,6 @@ import { useSeo } from '../hooks/useSeo';
 import { destinations } from '../lib/data';
 import { PageHero } from '../components/layout/PageHero';
 import { DestinationCard } from '../components/cards/DestinationCard';
-import { CtaBanner } from '../components/sections/CtaBanner';
 import { Reveal, Stagger } from '../components/ui/Reveal';
 import { Container, Section, SectionHeading } from '../components/ui/Section';
 import { NotFound } from './NotFound';
@@ -98,7 +97,6 @@ export function DestinationDetail() {
         </Container>
       </Section>
 
-      <CtaBanner />
     </main>);
 
 }

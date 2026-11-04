@@ -1247,18 +1247,25 @@ export const googleReviews: GoogleReview[] = [
 
 export const faqs: FaqItem[] = [
   {
+    id: 'f11',
+    category: 'Planning',
+    question: 'Is the Ha Giang Loop safe?',
+    answer:
+      'Mountain adventures can be unpredictable and, like any adventure, come with some risk. We take your safety seriously, with experienced local riders, quality gear, and a team ready to support you along the way.'
+  },
+  {
     id: 'f1',
     category: 'Planning',
-    question: 'What is an easy rider?',
+    question: 'What is an Easy Rider on the Ha Giang Loop?',
     answer:
-      'An easy rider is someone who will drive the bike for you.'
+      'An Easy Rider is a licensed local driver who takes you around the loop on a motorbike while you ride as a passenger. Our Easy Riders are all licensed and have extensive riding experience.'
   },
   {
     id: 'f2',
     category: 'Planning',
-    question: 'Can I drive myself?',
+    question: 'What do I need if I want to drive myself?',
     answer:
-      'If you are not an experienced driver, we strongly advise against driving yourself. The Ha Giang Loop can be dangerous and unpredictable, with difficult road conditions, sharp mountain roads, traffic, weather changes, and inexperienced riders all sharing the road.\n\nTo legally self-drive in Vietnam, you must hold both:\n• A valid International Driving Permit under the 1968 Convention with the motorcycle stamp\n• Your matching motorcycle license from your home country'
+      '• Sufficient riding experience. If you are not an experienced rider, we strongly advise against driving yourself. The Ha Giang Loop can be dangerous and unpredictable, with challenging road conditions, sharp mountain roads, traffic, changing weather, and other inexperienced riders.\n• A valid International Driving Permit issued under the 1968 Convention, with the motorcycle endorsement.\n• Your matching motorcycle licence from your home country.'
   },
   {
     id: 'f3',
@@ -1270,9 +1277,9 @@ export const faqs: FaqItem[] = [
   {
     id: 'f4',
     category: 'Planning',
-    question: 'Do I need to bring money on the tour?',
+    question: 'How much cash should I bring with me?',
     answer:
-      'Most things are included on the tour, but having some extra cash for drinks, snacks, souvenirs, or personal purchases along the way is definitely recommended.\n\nAround 1,000,000 VND should be more than enough for most people during the trip.'
+      'Most things are included on the tour, but having some extra cash for drinks, snacks, souvenirs, or personal purchases along the way is definitely recommended. Around 1,000,000 VND should be more than enough for most people during the trip.'
   },
   {
     id: 'f5',
@@ -1289,6 +1296,20 @@ export const faqs: FaqItem[] = [
       'October to April brings the clearest skies and the famous cloud seas, with cold mornings on the plateau. September is terrace harvest in the west. June to August is lush and green with warm afternoon rain — quieter roads, softer light, and lower prices.'
   },
   {
+    id: 'f12',
+    category: 'Planning',
+    question: 'Should I bring a towel on the tour?',
+    answer:
+      'All homestays provide towels free of charge. We’ll likely stop at a waterfall or cave where you can swim. You may be able to rent a towel there, but you’re welcome to bring your own if you prefer.'
+  },
+  {
+    id: 'f13',
+    category: 'Planning',
+    question: 'Should I take my passport with me on the tour?',
+    answer:
+      'You may need to show your passport during the tour or when checking into homestays. If you’d rather not carry the original, photos of your passport and visa should be sufficient.'
+  },
+  {
     id: 'f7',
     category: 'On the road',
     question: 'When does the tour finish?',
@@ -1298,9 +1319,30 @@ export const faqs: FaqItem[] = [
   {
     id: 'f8',
     category: 'On the road',
-    question: 'What are the accommodations actually like?',
+    question: 'What kind of accommodation can I expect on the loop?',
     answer:
-      'A mixture. Most nights are in family homestays that we have upgraded together with the owners — private or twin rooms, real mattresses, hot showers and good coffee. One or two nights on longer trips are in boutique lodges with valley views.'
+      'A mixture. Most nights are spent in family-run homestays that we have upgraded with the owners, with dorms featuring comfortable mattresses, hot showers, and good coffee. On longer trips, one or two nights are spent in boutique lodges with valley views.\n\nIf you’d rather not share and would like more privacy and comfort, you can upgrade to a private room for the whole trip when you book.'
+  },
+  {
+    id: 'f14',
+    category: 'On the road',
+    question: 'Can I extend my tour from 3 days to 4 days during the loop?',
+    answer:
+      'Yes, it is possible to extend from 3 days to 4 days. You just need to let your group leader know, and he will help you upgrade your tour.'
+  },
+  {
+    id: 'f15',
+    category: 'On the road',
+    question: 'Can I switch to an Easy Rider during the tour?',
+    answer:
+      'Yes. If you’d rather not continue riding your motorbike, let us know. We can arrange for an Easy Rider to meet you and take you the rest of the way. This change comes with an additional fee.'
+  },
+  {
+    id: 'f16',
+    category: 'On the road',
+    question: 'Are vegetarian, vegan, and allergy-friendly meals available during the loop?',
+    answer:
+      'Yes, vegetarian and vegan meals can be arranged, and we can also arrange meals for guests with food allergies. Please let us know about any dietary requirements before the tour.'
   },
   {
     id: 'f9',
@@ -1312,9 +1354,16 @@ export const faqs: FaqItem[] = [
   {
     id: 'f10',
     category: 'Booking',
-    question: 'What happens if the weather is too bad to ride?',
+    question: 'What happens if the weather gets bad on the loop?',
     answer:
       'Safety is our priority. If extreme weather warnings (e.g., severe landslides or storms) occur, we will offer to reschedule or adapt the route. If the tour must be canceled entirely by us, you will receive a full refund for any unused services.'
+  },
+  {
+    id: 'f17',
+    category: 'Booking',
+    question: 'Is travel insurance required for the Ha Giang Loop?',
+    answer:
+      'Travel insurance isn’t mandatory, but we highly recommend having it.'
   }
 ];
 
@@ -1415,6 +1464,230 @@ export const gallery: GalleryItem[] = [
     caption: 'Summit jump celebration',
     category: 'Landscape',
     span: 'wide'
+  },
+  {
+    id: 'g13',
+    src: '/gallery/g13.webp',
+    alt: 'The emerald Nho Que River winding through a deep green canyon',
+    caption: 'Nho Que canyon from the pass',
+    category: 'Landscape',
+    span: 'square'
+  },
+  {
+    id: 'g14',
+    src: '/gallery/g14.webp',
+    alt: 'A group of travellers posing beside a Vietnamese flag above a winding mountain road',
+    caption: 'Group stop at the flag viewpoint',
+    category: 'Road',
+    span: 'square'
+  },
+  {
+    id: 'g15',
+    src: '/gallery/g15.webp',
+    alt: 'Travellers chatting on a thatched lodge terrace overlooking a wide valley',
+    caption: 'Terrace above the valley',
+    category: 'Stays',
+    span: 'tall'
+  },
+  {
+    id: 'g16',
+    src: '/gallery/g16.webp',
+    alt: 'A traveller resting beside a turquoise pool at the foot of a mossy waterfall',
+    caption: 'Swimming hole in the gorge',
+    category: 'Landscape',
+    span: 'tall'
+  },
+  {
+    id: 'g17',
+    src: '/gallery/g17.webp',
+    alt: 'Travellers with a crowd of smiling children outside a wooden village school',
+    caption: 'Visiting the village school',
+    category: 'Culture',
+    span: 'square'
+  },
+  {
+    id: 'g18',
+    src: '/gallery/g18.webp',
+    alt: 'A rider looking out over switchback roads cutting through a green valley',
+    caption: 'Looking down the switchbacks',
+    category: 'Road',
+    span: 'tall'
+  },
+  {
+    id: 'g19',
+    src: '/gallery/g19.webp',
+    alt: 'A clear river with grassy islands beneath tall limestone peaks',
+    caption: 'River below the karst peaks',
+    category: 'Landscape',
+    span: 'square'
+  },
+  {
+    id: 'g20',
+    src: '/gallery/g20.webp',
+    alt: 'Two travellers at a mountain summit with a red flag and layered peaks behind',
+    caption: 'Summit with the flag',
+    category: 'Road',
+    span: 'square'
+  },
+  {
+    id: 'g21',
+    src: '/gallery/g21.webp',
+    alt: 'Travellers relaxing on lounge chairs facing misty mountain ridges',
+    caption: 'Lounging at the viewpoint',
+    category: 'Stays',
+    span: 'square'
+  },
+  {
+    id: 'g22',
+    src: '/gallery/g22.webp',
+    alt: 'Wide curtains of white water pouring over Ban Gioc Waterfall',
+    caption: 'Ban Gioc Waterfall',
+    category: 'Landscape',
+    span: 'tall'
+  },
+  {
+    id: 'g23',
+    src: '/gallery/g23.webp',
+    alt: 'A group of riders celebrating under a red flag on a mountain top',
+    caption: 'Celebrating at the top',
+    category: 'Road',
+    span: 'tall'
+  },
+  {
+    id: 'g24',
+    src: '/gallery/g24.webp',
+    alt: 'Friends wearing conical hats on a pier in front of Ban Gioc Waterfall',
+    caption: 'Conical hats at Ban Gioc',
+    category: 'Culture',
+    span: 'tall'
+  },
+  {
+    id: 'g25',
+    src: '/gallery/g25.webp',
+    alt: 'A traveller standing at the base of a waterfall surrounded by jungle',
+    caption: 'Under the jungle falls',
+    category: 'Landscape',
+    span: 'tall'
+  },
+  {
+    id: 'g26',
+    src: '/gallery/g26.webp',
+    alt: 'A group of friends smiling at a viewpoint above a wide green valley',
+    caption: 'Friends on the plateau',
+    category: 'Road',
+    span: 'square'
+  },
+  {
+    id: 'g27',
+    src: '/gallery/g27.webp',
+    alt: 'Two riders on dirt bikes in front of Odyssey Hostel',
+    caption: 'Ready to ride from the hostel',
+    category: 'Stays',
+    span: 'tall'
+  },
+  {
+    id: 'g28',
+    src: '/gallery/g28.webp',
+    alt: 'A deep green valley with a winding river under a cloudy sky',
+    caption: 'Valley under big skies',
+    category: 'Landscape',
+    span: 'square'
+  },
+  {
+    id: 'g29',
+    src: '/gallery/g29.webp',
+    alt: 'Travellers at a ridge-top lookout with a flag and hazy mountains',
+    caption: 'Lookout on the ridge',
+    category: 'Road',
+    span: 'tall'
+  },
+  {
+    id: 'g30',
+    src: '/gallery/g30.webp',
+    alt: 'Two travellers swimming in a green pool beneath a cave waterfall',
+    caption: 'Cave pool swim',
+    category: 'Landscape',
+    span: 'tall'
+  },
+  {
+    id: 'g31',
+    src: '/gallery/g31.webp',
+    alt: 'A group sitting together under a red flag at a mountain pass viewpoint',
+    caption: 'Group photo on the pass',
+    category: 'Road',
+    span: 'tall'
+  },
+  {
+    id: 'g32',
+    src: '/gallery/g32.webp',
+    alt: 'A traveller on a rock facing the roaring Ban Gioc Waterfall',
+    caption: 'Standing before the falls',
+    category: 'Landscape',
+    span: 'tall'
+  },
+  {
+    id: 'g33',
+    src: '/gallery/g33.webp',
+    alt: 'A large group of travellers lined up beside a Vietnamese flag on a sunny day',
+    caption: 'Flag viewpoint crew',
+    category: 'Road',
+    span: 'tall'
+  },
+  {
+    id: 'g34',
+    src: '/gallery/g34.webp',
+    alt: 'Steep green slopes and a valley floor seen from a mountain road',
+    caption: 'Terraced slopes',
+    category: 'Landscape',
+    span: 'tall'
+  },
+  {
+    id: 'g35',
+    src: '/gallery/g35.webp',
+    alt: 'Riders resting on a guardrail beneath towering limestone cliffs',
+    caption: 'Roadside rest stop',
+    category: 'Road',
+    span: 'tall'
+  },
+  {
+    id: 'g36',
+    src: '/gallery/g36.webp',
+    alt: 'Two travellers cheering above the Nho Que River canyon',
+    caption: 'Above the Nho Que',
+    category: 'Landscape',
+    span: 'square'
+  },
+  {
+    id: 'g37',
+    src: '/gallery/g37.webp',
+    alt: 'A group of travellers at a viewpoint in warm late afternoon light',
+    caption: 'Golden hour on the pass',
+    category: 'Road',
+    span: 'tall'
+  },
+  {
+    id: 'g38',
+    src: '/gallery/g38.webp',
+    alt: 'A traveller leaning on a wooden railing above a wide waterfall',
+    caption: 'Leaning over the falls',
+    category: 'Landscape',
+    span: 'wide'
+  },
+  {
+    id: 'g39',
+    src: '/gallery/g39.webp',
+    alt: 'Two travellers by a large flag on a glass viewpoint high above the valley',
+    caption: 'Flag tower in the sun',
+    category: 'Road',
+    span: 'tall'
+  },
+  {
+    id: 'g40',
+    src: '/gallery/g40.webp',
+    alt: 'Two travellers beside a flag above terraced hills and a winding road',
+    caption: 'Flag above the rice terraces',
+    category: 'Road',
+    span: 'tall'
   }
 ];
 

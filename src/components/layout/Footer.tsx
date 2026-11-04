@@ -1,13 +1,6 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowUpRightIcon, ExternalLinkIcon, MailIcon, MapPinIcon, PhoneIcon } from 'lucide-react';
 import { brand } from '../../lib/data';
-import { Button } from '../ui/Button';
-import { TextField } from '../ui/Field';
-
-import { apiAddSubscriber } from '../../lib/api';
-
-
 
 const columns = [
   {
@@ -44,58 +37,14 @@ const columns = [
 
 
 export function Footer() {
-  const [email, setEmail] = useState('');
-  const [subscribed, setSubscribed] = useState(false);
-
   return (
     <footer className="w-full bg-ink text-white" style={{ borderTop: '3px solid #B99450' }}>
       <div className="mx-auto w-full max-w-[1240px] px-5 pt-16 pb-8 sm:px-8 lg:px-10 lg:pt-20 lg:pb-10">
-        <div className="grid gap-14 lg:grid-cols-[1.15fr_1fr]">
-          <div>
-            <p className="text-[11px] uppercase tracking-widest2 text-gold-300">Letters from the north</p>
-            <h2 className="mt-5 max-w-md font-display text-3xl leading-tight sm:text-[2.5rem]">
-              One considered email each season.
-            </h2>
-            <p className="mt-4 max-w-md text-sm leading-relaxed text-white/65">
-              Route notes, weather windows and the two or three departures we think are worth
-              rearranging a calendar for.
-            </p>
-
-            <form
-              className="mt-8 flex w-full max-w-md flex-col gap-3 sm:flex-row sm:items-end"
-              onSubmit={(event) => {
-                event.preventDefault();
-                if (email.trim()) {
-                  apiAddSubscriber(email.trim());
-                  setSubscribed(true);
-                  setEmail('');
-                }
-              }}>
-
-              <TextField
-                label="Email address"
-                type="email"
-                required
-                value={email}
-                onChange={(event) => setEmail(event.target.value)}
-                placeholder="you@example.com"
-                className="flex-1 [&_label]:text-white/50 [&_input]:border-white/15 [&_input]:bg-white/5 [&_input]:text-white" />
-
-              <Button variant="gold" type="submit" className="h-[52px] shrink-0">
-                Subscribe
-              </Button>
-            </form>
-            {subscribed &&
-              <p role="status" className="mt-3 text-sm text-gold-300">
-                Thank you — we will write to you before the next season opens.
-              </p>
-            }
-          </div>
-
+        <div>
           <div className="hidden sm:grid gap-10 sm:grid-cols-3">
             {columns.map((column) =>
               <nav key={column.title} aria-label={column.title}>
-                <h3 className="text-[11px] uppercase tracking-widest2 text-white/40">{column.title}</h3>
+                <h3 className="text-[11px] uppercase tracking-widest2 text-gold-300">{column.title}</h3>
                 <ul className="mt-5 space-y-3">
                   {column.links.map((link) =>
                     <li key={link.label}>
@@ -114,7 +63,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 grid gap-10 border-t border-white/10 pt-10 md:grid-cols-2 lg:grid-cols-3 items-start">
+        <div className="grid gap-10 sm:mt-16 sm:border-t sm:border-white/10 sm:pt-10 md:grid-cols-2 lg:grid-cols-3 items-start">
           {/* Hostel 1 */}
           <div className="space-y-4">
             <h4 className="font-display text-base text-gold-300">ODYSSEY HOSTEL, TOURS & MOTORBIKES RENTAL</h4>

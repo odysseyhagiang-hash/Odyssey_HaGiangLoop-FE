@@ -30,7 +30,6 @@ import { Reveal } from '../components/ui/Reveal';
 import { Container } from '../components/ui/Section';
 import { Parallax, RippleText } from '../components/luxury/effects';
 import { setLenisPaused, useLenis } from '../components/luxury/lenis';
-import { MistBackground } from '../components/luxury/MistBackground';
 
 /*
  * Layout modelled on the reference product page:
@@ -1000,7 +999,13 @@ export function LuxuryTour() {
           <path d="M0 100 Q720 -100 1440 100 Z" className="fill-gold-300" />
         </svg>
         <div aria-hidden="true" className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-gold-300 to-transparent" />
-        <MistBackground />
+        {/* topographic / wood-grain contour lines */}
+        <img
+          src="/luxury/decor/topo-lines.svg"
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 h-full w-full select-none object-cover opacity-25"
+        />
         <Container className="relative">
           <div className="mx-auto max-w-5xl">
             <Heading0 center text="Pricing & Inclusion" className="text-forest-900" />
