@@ -99,10 +99,6 @@ export const luxuryContent = {
   pillars: 'Private in experience. Premium in service. Authentic in discovery.',
   priceNote:
     'The reason the with-driver price and the self-drive price are the same is that all self-driving guests use the XR 150.',
-  inclusionsTitle: 'Include',
-  exclusionsTitle: 'Exclude',
-  /** Shown until the include / exclude lists are provided */
-  pendingNote: 'Updating…',
 };
 
 const day1Intro3 = [

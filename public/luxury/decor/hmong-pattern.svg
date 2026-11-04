@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <!-- H'Mong brocade inspired tile: nested diamonds, hook spirals and corner stars (repeats seamlessly) -->
+  <path d="M80 10 L150 80 L80 150 L10 80 Z"/>
+  <path d="M80 34 L126 80 L80 126 L34 80 Z"/>
+  <!-- inner square spiral ("snail" hook) -->
+  <path d="M80 58 L102 80 L80 102 L58 80 L76 62 L94 80 L80 94 L66 80 L80 66 L88 74"/>
+  <!-- stepped edges on the outer diamond -->
+  <path d="M45 45 L52 45 L52 52 M115 45 L108 45 L108 52 M45 115 L52 115 L52 108 M115 115 L108 115 L108 108"/>
+  <!-- tile-corner stars, completed by neighbouring tiles -->
+  <path d="M0 0 L12 0 M0 0 L0 12 M160 0 L148 0 M160 0 L160 12 M0 160 L12 160 M0 160 L0 148 M160 160 L148 160 M160 160 L160 148"/>
+  <path d="M0 0 L9 9 M160 0 L151 9 M0 160 L9 151 M160 160 L151 151"/>
+  <circle cx="80" cy="22" r="2.2"/>
+  <circle cx="80" cy="138" r="2.2"/>
+  <circle cx="22" cy="80" r="2.2"/>
+  <circle cx="138" cy="80" r="2.2"/>
+</svg>

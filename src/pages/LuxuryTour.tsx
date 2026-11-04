@@ -11,9 +11,15 @@ import {
   ChevronLeftIcon,
   ChevronRightIcon,
   InfoIcon,
+  LandmarkIcon,
+  LeafIcon,
   MapIcon,
   MoonIcon,
+  MountainIcon,
+  RouteIcon,
+  StarIcon,
   UsersIcon,
+  WaypointsIcon,
   XIcon,
 } from 'lucide-react';
 import { useSeo } from '../hooks/useSeo';
@@ -47,10 +53,30 @@ const NAV = [
   { id: 'tour-overview', label: 'Tour overview' },
   { id: 'highlights', label: 'Highlights' },
   { id: 'itinerary', label: 'Luxury tour itinerary' },
-  { id: 'pricing', label: 'Pricing & Inclusion' },
+  { id: 'pricing', label: 'Pricing' },
 ];
 
 const allPhotos = luxuryOptions[1].days.flatMap((d) => d.gallery);
+
+/** H'Mong brocade inspired tile used as a mask, so it can be painted in any theme colour. */
+const BROCADE_MASK: React.CSSProperties = {
+  maskImage: 'url(/luxury/decor/hmong-pattern.svg)',
+  WebkitMaskImage: 'url(/luxury/decor/hmong-pattern.svg)',
+  maskSize: '150px 150px',
+  WebkitMaskSize: '150px 150px',
+  maskRepeat: 'repeat',
+  WebkitMaskRepeat: 'repeat',
+  maskPosition: 'center',
+  WebkitMaskPosition: 'center',
+};
+/** Keeps the pattern on the edges and clears the middle where the content sits. */
+const TOPO_EDGE_FADE: React.CSSProperties = {
+  maskImage: 'radial-gradient(ellipse at center, transparent 38%, black 82%)',
+  WebkitMaskImage: 'radial-gradient(ellipse at center, transparent 38%, black 82%)',
+};
+
+/** Icon per highlight card, in the same order as luxuryContent.highlights. */
+const HIGHLIGHT_ICONS = [MountainIcon, RouteIcon, LandmarkIcon, LeafIcon, BikeIcon, UsersIcon, StarIcon, WaypointsIcon];
 
 /** Background photo per highlight card (picked to match each theme). */
 const HIGHLIGHT_IMAGES = [
@@ -660,6 +686,100 @@ function NewsCard({ post }: { post: BlogPost }) {
 
 const offerTours = tours.filter((t) => t.slug !== 'luxury-tour');
 
+// ─── Highlights bento ────────────────────────────────────────────────────────
+
+/**
+ * Bento layout per tile index — desktop 4 cols × 3 rows, tablet 2 cols,
+ * mobile 1 col. Every breakpoint fills its grid completely.
+ */
+const BENTO_SPANS = [
+  'sm:col-span-2 lg:row-span-2',   // 01 feature tile
+  '',                              // 02
+  '',                              // 03
+  'sm:col-span-2',                 // 04 wide
+  '', '', '', '',                  // 05–08
+];
+
+/**
+ * Photo tiles that show only icon, number and title; the full description
+ * slides up on hover (desktop) or on tap (touch), so the section reads light
+ * while keeping every word.
+ */
+function HighlightsBento() {
+  const items = luxuryContent.highlights;
+  const [open, setOpen] = useState<number | null>(null);
+
+  return (
+    <div className="mt-10 grid auto-rows-[18rem] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:auto-rows-[17.5rem]">
+      {items.map((h, i) => {
+        const Icon = HIGHLIGHT_ICONS[i];
+        const isOpen = open === i;
+        const big = i === 0;
+        return (
+          <Reveal key={h.title} delay={(i % 4) * 0.05} className={cn('h-full', BENTO_SPANS[i])}>
+            <button
+              type="button"
+              aria-expanded={isOpen}
+              onClick={() => setOpen(isOpen ? null : i)}
+              className="group relative isolate block h-full w-full overflow-hidden rounded-[26px] text-left shadow-[0_18px_40px_-26px_rgba(0,0,0,0.6)]"
+            >
+              <img
+                src={HIGHLIGHT_IMAGES[i]}
+                alt=""
+                loading="lazy"
+                className="absolute inset-0 -z-20 h-full w-full object-cover transition-transform duration-[1400ms] ease-editorial group-hover:scale-110"
+              />
+              <span aria-hidden="true" className="absolute inset-0 -z-10 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
+
+              {/* resting state: icon, number, title */}
+              <span className={cn('absolute inset-x-0 bottom-0 block p-5 sm:p-6', big && 'lg:p-8')}>
+                <span className="flex items-center gap-2.5">
+                  <span className="grid h-10 w-10 place-items-center rounded-xl bg-white/15 text-white backdrop-blur">
+                    <Icon aria-hidden="true" className="h-5 w-5" strokeWidth={1.8} />
+                  </span>
+                  <span className="text-sm font-semibold text-gold-300">{String(i + 1).padStart(2, '0')}</span>
+                </span>
+                <span className={cn(
+                  'mt-3 block font-display font-bold leading-snug text-white [text-wrap:balance]',
+                  big ? 'text-[1.5rem] lg:text-[2.1rem]' : 'text-[1.2rem]'
+                )}>
+                  {h.title}
+                </span>
+              </span>
+
+              {/* reveal: full description slides up (bottom-aligned, scrolls if ever too long) */}
+              <span
+                className={cn(
+                  'absolute inset-0 flex flex-col overflow-y-auto bg-forest-900/90 p-5 backdrop-blur-[2px] transition-transform duration-500 ease-editorial [scrollbar-width:none] sm:p-6',
+                  big && 'lg:p-8',
+                  isOpen ? 'translate-y-0' : 'translate-y-full group-hover:translate-y-0 group-focus-visible:translate-y-0'
+                )}
+              >
+                <span className="mt-auto block">
+                  {big && (
+                    <span className="mb-3 flex items-center gap-2.5">
+                      <span className="grid h-10 w-10 place-items-center rounded-xl bg-white/15 text-white">
+                        <Icon aria-hidden="true" className="h-5 w-5" strokeWidth={1.8} />
+                      </span>
+                      <span className="text-sm font-semibold text-gold-300">{String(i + 1).padStart(2, '0')}</span>
+                    </span>
+                  )}
+                  <span className={cn('block font-display font-bold leading-snug text-white', big ? 'text-[1.5rem] lg:text-[2.1rem]' : 'text-[1.1rem]')}>
+                    {big ? h.title : <><span className="mr-2 font-sans text-sm text-gold-300">{String(i + 1).padStart(2, '0')}</span>{h.title}</>}
+                  </span>
+                  <span className={cn('mt-2 block leading-[1.6] text-white/85', big ? 'text-[15px] lg:text-base' : 'text-[13.5px]')}>
+                    {h.text}
+                  </span>
+                </span>
+              </span>
+            </button>
+          </Reveal>
+        );
+      })}
+    </div>
+  );
+}
+
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export function LuxuryTour() {
@@ -868,32 +988,14 @@ export function LuxuryTour() {
       </section>
 
       {/* ── Highlights ── */}
-      <section id="highlights" className="scroll-mt-32 py-16 lg:py-20">
+      <section id="highlights" className="relative isolate scroll-mt-32 overflow-hidden bg-forest-600 py-16 lg:py-20">
+        {/* gold H'Mong brocade motif around the edges, fading out towards the centre */}
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10" style={TOPO_EDGE_FADE}>
+          <div className="h-full w-full bg-gold-400 opacity-60" style={BROCADE_MASK} />
+        </div>
         <Container>
-          <Heading0 center text={luxuryContent.highlightsTitle} />
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {luxuryContent.highlights.map((h, i) => (
-              <Reveal
-                key={h.title}
-                delay={(i % 4) * 0.06}
-                className="group relative isolate min-h-[22rem] overflow-hidden rounded-[18px] p-6"
-              >
-                <img
-                  src={HIGHLIGHT_IMAGES[i]}
-                  alt=""
-                  loading="lazy"
-                  className="absolute inset-0 -z-20 h-full w-full object-cover transition-transform duration-[1400ms] ease-editorial group-hover:scale-110"
-                />
-                <div
-                  aria-hidden="true"
-                  className="absolute inset-0 -z-10 bg-gradient-to-b from-forest-900/90 via-forest-900/75 to-forest-900/45 transition-opacity duration-700 group-hover:opacity-90"
-                />
-                <span className="font-display text-3xl font-bold leading-none text-gold-300">{String(i + 1).padStart(2, '0')}</span>
-                <h3 className="mt-3 font-display text-[1.1rem] font-bold leading-snug text-white">{h.title}</h3>
-                <p className="mt-2.5 text-sm leading-[1.7] text-white/85 [text-wrap:pretty]">{h.text}</p>
-              </Reveal>
-            ))}
-          </div>
+          <Heading0 center text={luxuryContent.highlightsTitle} className="text-white" />
+          <HighlightsBento />
         </Container>
       </section>
 
@@ -1008,7 +1110,7 @@ export function LuxuryTour() {
         />
         <Container className="relative">
           <div className="mx-auto max-w-5xl">
-            <Heading0 center text="Pricing & Inclusion" className="text-forest-900" />
+            <Heading0 center text="Pricing" className="text-forest-900" />
             <div className="mt-10 flex flex-col gap-5">
               <div className="grid gap-5 md:grid-cols-2">
                 {luxuryOptions.map((o) => <PriceCard key={o.id} option={o} />)}
@@ -1018,21 +1120,6 @@ export function LuxuryTour() {
                 <InfoIcon aria-hidden="true" className="mt-0.5 h-5 w-5 shrink-0 text-forest-700" />
                 <p className="text-[15px] leading-relaxed text-ink-soft [text-wrap:pretty]">{luxuryContent.priceNote}</p>
               </div>
-
-              {[
-                { title: luxuryContent.inclusionsTitle, Icon: CheckIcon, color: 'text-[#03ae00]' },
-                { title: luxuryContent.exclusionsTitle, Icon: XIcon, color: 'text-[#ff0039]' },
-              ].map(({ title, Icon, color }) => (
-                <div key={title} className="rounded-[18px] bg-white px-6 py-6 sm:px-10 sm:py-7">
-                  <p className={cn('flex items-center gap-2.5 font-display text-[1.4rem] font-bold uppercase leading-none', color)}>
-                    <Icon aria-hidden="true" className="h-6 w-6" strokeWidth={3} />
-                    {title}
-                  </p>
-                  <ul className="mt-4 list-disc pl-6 text-[16px] leading-relaxed marker:text-ink">
-                    <li className="text-ink-soft">{luxuryContent.pendingNote}</li>
-                  </ul>
-                </div>
-              ))}
             </div>
 
             <div className="mt-10 flex flex-wrap justify-center gap-3">
