@@ -65,7 +65,7 @@ export function Gallery() {
   useSeo({
     title: 'Gallery',
     description:
-      'Photographs from recent departures across the Ha Giang plateau — landscapes, highland culture, our stays and the roads between them.',
+      'Photographs from recent departures across the Ha Giang plateau: landscapes, highland culture, our stays and the roads between them.',
     image: images.pass
   });
 

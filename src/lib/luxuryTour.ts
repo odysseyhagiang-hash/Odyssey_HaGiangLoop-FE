@@ -57,7 +57,7 @@ export const luxuryHeroImage = '/luxury/day-4/01.webp';
 
 export const luxuryContent = {
   title: 'LUXURY TOUR HA GIANG',
-  subtitle: 'Discover untouched beauty – Enjoy a journey of distinction',
+  subtitle: 'Discover untouched beauty, enjoy a journey of distinction',
   intro:
     'Experience Ha Giang in a different way with a privately designed journey, where the majestic beauty of the mountains blends with authentic local cultural experiences and premium resort services. Every road and every stop is meticulously curated, offering a private, relaxing trip with a strong personal touch.',
   highlightsTitle: 'HIGHLIGHTS',
@@ -67,7 +67,7 @@ export const luxuryContent = {
       text: 'Each journey is designed around your own preferences, needs and pace. Explore freely, enjoy things your way and experience Ha Giang on your own terms, without being limited by fixed schedules.',
     },
     {
-      title: 'Unique routes – Conquer majestic beauty',
+      title: 'Unique routes, conquer majestic beauty',
       text: 'Discover breathtaking roads across the stone plateau, endless mountain ranges and destinations that remain wild and untouched. Leave the crowds of conventional tourist routes behind to fully feel the original beauty of Ha Giang.',
     },
     {
@@ -79,7 +79,7 @@ export const luxuryContent = {
       text: 'Enjoy carefully selected accommodation with impressive views and premium amenities. After each day of exploration, unwind amid peaceful mountain scenery and enjoy moments of complete rest.',
     },
     {
-      title: 'High-quality motorbikes – Smooth on every road',
+      title: 'High-quality motorbikes, smooth on every road',
       text: 'The journey uses high-quality motorbikes, chosen to provide comfort, stable performance and a smooth riding experience on mountain roads. Every trip combines the thrill of conquest, the freedom of exploration and the enjoyment of natural scenery.',
     },
     {
@@ -87,7 +87,7 @@ export const luxuryContent = {
       text: 'Travel with an experienced team of local guides and drivers who know the terrain, culture and local life well. Good English communication, a dedicated service style and attention to every detail help make the journey safe, convenient and memorable.',
     },
     {
-      title: 'Exclusive experiences – A signature made just for you',
+      title: 'Exclusive experiences, a signature made just for you',
       text: 'From the itinerary and services to the special stops, every detail is carefully considered and refined. Personalised experiences make the difference, delivering a sense of exclusivity and value worthy of every trip.',
     },
     {
@@ -96,7 +96,7 @@ export const luxuryContent = {
     },
   ],
   tagline: 'Not just a trip, but a journey to enjoy distinctive values.',
-  pillars: 'Private in experience – Premium in service – Authentic in discovery.',
+  pillars: 'Private in experience. Premium in service. Authentic in discovery.',
   priceNote:
     'The reason the with-driver price and the self-drive price are the same is that all self-driving guests use the XR 150.',
   inclusionsTitle: 'Include',
@@ -186,10 +186,10 @@ export const luxuryOptions: LuxuryOption[] = [
           { name: "Hmong King's Palace (Vuong Family Mansion)", text: "Step back in time as we visit the historic residence of the Vuong family, also known as the Hmong King's Palace. Discover its fascinating history, admire the unique architectural design and learn about the powerful family who once ruled this region." },
           { name: 'Tham Ma Pass', text: "Stop at one of Ha Giang's most famous mountain passes. Capture some memorable photos and admire the spectacular winding road surrounded by dramatic mountain landscapes." },
           { name: 'Lao Chai Village', text: 'Discover the traditional culture and everyday lifestyle of the Hmong people. Learn more about their customs, local traditions and the way of life that has been preserved through generations.' },
-          { name: 'Lao Xa Village – Traditional Silver Craftsmanship', text: 'Visit this charming traditional village, known for its long-standing silver-making heritage. Meet local artisans and discover the intricate techniques behind their traditional silver jewellery and handcrafted products.' },
+          { name: 'Lao Xa Village: Traditional Silver Craftsmanship', text: 'Visit this charming traditional village, known for its long-standing silver-making heritage. Meet local artisans and discover the intricate techniques behind their traditional silver jewellery and handcrafted products.' },
         ],
         closing: {
-          heading: 'Return to Ha Giang City – The Journey Comes to an End',
+          heading: 'Return to Ha Giang City: The Journey Comes to an End',
           paragraphs: [
             "After three days of incredible scenery, cultural discoveries and unforgettable experiences, we'll make our way back to Ha Giang City.",
             'Our journey concludes at Odyssey Hostel, where you can relax, collect your belongings and look back on the wonderful memories made along the Ha Giang Loop.',
@@ -230,7 +230,7 @@ export const luxuryOptions: LuxuryOption[] = [
           { name: "H'Mong Village", text: "Discover the traditional lifestyle, local architecture and cultural heritage of the H'Mong people. Experience the simplicity of village life and learn more about the traditions that make this region so special." },
         ],
         closing: {
-          heading: 'Overnight in Quan Ba – A Premium Mountain Resort Experience',
+          heading: 'Overnight in Quan Ba: A Premium Mountain Resort Experience',
           paragraphs: [
             "After a day of exploration, we'll arrive at a carefully selected premium resort in Quan Ba.",
             "Combining distinctive H'Mong-inspired architecture with modern comforts and high-quality facilities, this special accommodation offers a unique balance between traditional local culture and contemporary luxury.",
@@ -303,7 +303,7 @@ export const luxuryOptions: LuxuryOption[] = [
           { name: 'Po Ly Cave', text: 'Continue to explore Po Ly Cave, a fascinating natural attraction in the area. Discover its impressive cave formations and enjoy one last opportunity to connect with the natural beauty of Ha Giang.' },
         ],
         closing: {
-          heading: 'Return to Ha Giang City – The End of Your Journey',
+          heading: 'Return to Ha Giang City: The End of Your Journey',
           paragraphs: [
             "After a relaxing morning filled with river adventures and natural discoveries, we'll make our way back to Ha Giang City.",
             'Our four-day adventure officially concludes at Odyssey Hostel, where you can collect your belongings, freshen up and take a moment to look back on the incredible experiences shared throughout the journey.',

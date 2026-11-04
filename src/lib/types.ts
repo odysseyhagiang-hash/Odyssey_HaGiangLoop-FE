@@ -43,6 +43,8 @@ export interface Tour {
   exclusions: string[];
   /** Ghi chú điều kiện áp dụng giá, hiển thị dưới bảng giá */
   priceNote?: string[];
+  /** Optional label for the "behind partner" price column (defaults to "Behind partner") */
+  partnerLabel?: string;
   pricing: TourPricing[];
   itinerary: ItineraryDay[];
 }

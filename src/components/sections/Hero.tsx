@@ -186,7 +186,7 @@ export function Hero() {
               "
             >
               More than just a place to stop, Odyssey is where your journey
-              begins — where unforgettable experiences unfold and the pristine
+              begins, where unforgettable experiences unfold and the pristine
               beauty of Ha Giang becomes a lifelong memory.
             </motion.p>
 

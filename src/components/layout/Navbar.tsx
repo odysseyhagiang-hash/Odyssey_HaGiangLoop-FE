@@ -49,7 +49,7 @@ export function Navbar() {
           aria-label="Primary"
           className="mx-auto flex w-full max-w-[1240px] items-center justify-between gap-4 px-5 sm:px-8 lg:px-10"
         >
-          <Link to="/" className="flex items-center gap-3 shrink-0" aria-label="Odyssey — home">
+          <Link to="/" className="flex items-center gap-3 shrink-0" aria-label="Odyssey home">
             {/* Solid navbar → coloured logo (logo.webp) cropped to circle
                 Transparent navbar (dark hero) → no-background logo with thin circular border */}
             {solid ? (

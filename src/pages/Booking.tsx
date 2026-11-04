@@ -195,7 +195,7 @@ const HOSTELS: Hostel[] = [
     overview: {
       tagline: 'MODERN COMFORT MEETS HIGHLAND CHARM AT ODYSSEY HOSTEL 2',
       description:
-        'Odyssey Hostel 2 is our newest property, thoughtfully designed with modern amenities while preserving the warm, welcoming atmosphere of a true Ha Giang guesthouse. Located right in the heart of Ha Giang City with stunning river views, it offers a wide range of rooms from cozy dormitories to spacious deluxe king rooms — perfect for every type of traveller.',
+        'Odyssey Hostel 2 is our newest property, thoughtfully designed with modern amenities while preserving the warm, welcoming atmosphere of a true Ha Giang guesthouse. Located right in the heart of Ha Giang City with stunning river views, it offers a wide range of rooms from cozy dormitories to spacious deluxe king rooms, perfect for every type of traveller.',
       bookingUrl: undefined,
     },
     rooms: [
@@ -281,7 +281,7 @@ const HostelOverviewBlock = React.memo(function HostelOverviewBlock({ images }: 
             >
               <img
                 src={src}
-                alt={`Odyssey Hostel — photo ${i + 1}`}
+                alt={`Odyssey Hostel, photo ${i + 1}`}
                 className="h-full w-full object-cover"
                 loading="lazy"
               />
@@ -627,7 +627,7 @@ export function Booking() {
                 Our Accommodation
               </h2>
               <p className="text-xs sm:text-sm text-ink-soft leading-relaxed">
-                Two branches in Ha Giang City — choose the one that fits your style and budget.
+                Two branches in Ha Giang City. Choose the one that fits your style and budget.
               </p>
             </div>
 

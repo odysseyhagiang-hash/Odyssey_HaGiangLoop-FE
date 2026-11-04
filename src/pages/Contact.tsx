@@ -381,7 +381,7 @@ export function Contact() {
                   <h3 className="font-display text-lg">Arriving from Ha Noi, Ninh Binh, Ha Long, Cat Ba, Sapa, Cao Bang?</h3>
                   <p className="mt-3 text-sm leading-relaxed text-white/65">
                     We book the overnight sleeper or a private car, and hold any luggage you would
-                    rather not carry on the loop — at no charge.
+                    rather not carry on the loop, at no charge.
                   </p>
                 </div>
               </div>

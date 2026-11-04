@@ -16,7 +16,7 @@ const care = [
   {
     icon: WrenchIcon,
     title: 'Serviced after every trip',
-    text: 'Our own workshop and two full-time mechanics. Brakes, chain, tyres and lights checked between every departure — not every season.'
+    text: 'Our own workshop and two full-time mechanics. Brakes, chain, tyres and lights checked between every departure, not every season.'
   },
   {
     icon: GaugeIcon,
@@ -83,7 +83,7 @@ export function Fleet() {
   useSeo({
     title: 'Rental Bikes',
     description:
-      'The motorbikes we ride in Ha Giang — semi-automatic 110s and manual 150 dual-sports, maintained to the highest standards.',
+      'The motorbikes we ride in Ha Giang: semi-automatic 110s and manual 150 dual-sports, maintained to the highest standards.',
     image: images.fleetHero
   });
 

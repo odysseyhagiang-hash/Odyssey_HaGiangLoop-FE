@@ -69,12 +69,14 @@ function RidingPricingTable({
   activeIdx,
   onChangeIdx,
   hideTabs = false,
+  partnerLabel = 'Behind partner',
 }: {
   pricing: TourPricing[];
   style: Tour['style'];
   activeIdx: number;
   onChangeIdx: (i: number) => void;
   hideTabs?: boolean;
+  partnerLabel?: string;
 }) {
   const row = pricing[activeIdx];
 
@@ -101,7 +103,7 @@ function RidingPricingTable({
         <div className="grid grid-cols-3 bg-forest-900 text-white/80 text-[11px] uppercase tracking-wider">
           <span className="px-4 py-3">Behind easyrider</span>
           <span className="px-4 py-3 border-x border-white/10">Self-Drive</span>
-          <span className="px-4 py-3">Behind partner</span>
+          <span className="px-4 py-3">{partnerLabel}</span>
         </div>
         <div className="grid grid-cols-3 bg-white">
           {row.behindEasyrider !== undefined && (
@@ -272,7 +274,7 @@ export function TourDetail() {
         titleClassName="max-w-5xl sm:whitespace-nowrap sm:text-[3rem] lg:text-[3.6rem]"
         description={tour.tagline}
         image={tour.image}
-        imageAlt={`${tour.name} — ${tour.tagline}`}
+        imageAlt={`${tour.name}: ${tour.tagline}`}
       >
         <span className={cn('inline-block rounded-full px-4 py-1.5 text-[12px] font-semibold uppercase tracking-wide text-white', STYLE_COLOR[tour.style])}>
           {tour.style} Tour
@@ -359,6 +361,7 @@ export function TourDetail() {
                         activeIdx={activeDurationIdx}
                         onChangeIdx={setActiveDurationIdx}
                         hideTabs={hasPerPerson}
+                        partnerLabel={tour.partnerLabel}
                       />
                     </div>
                   )}
@@ -407,7 +410,7 @@ export function TourDetail() {
                   <h2 className="font-display text-[1.75rem] leading-snug text-ink sm:text-[2.25rem]">
                     Day by day itinerary
                     <span className="ml-3 text-[1rem] font-normal text-ink-muted italic">
-                      — {tour.pricing[activeDurationIdx]?.duration ?? ''}
+                      {tour.pricing[activeDurationIdx]?.duration ? `(${tour.pricing[activeDurationIdx].duration})` : ''}
                     </span>
                   </h2>
                 </Reveal>

@@ -17,7 +17,7 @@ export function Faq() {
   useSeo({
     title: 'FAQ',
     description:
-      'Everything travellers ask before a Ha Giang journey — riding experience, seasons, accommodation, dietary needs, deposits and transport from Hanoi.',
+      'Everything travellers ask before a Ha Giang journey: riding experience, seasons, accommodation, dietary needs, deposits and transport from Hanoi.',
     image: images.tourPhoto
   });
 
@@ -26,7 +26,7 @@ export function Faq() {
       <PageHero
         eyebrow="Good to know"
         title="Questions, answered plainly"
-        description="No small print games. If something here is unclear, a guide will answer you directly — usually the same day."
+        description="No small print games. If something here is unclear, a guide will answer you directly, usually the same day."
         image={images.tourPhoto}
         imageAlt="Photographer standing on a rocky overlook above a river gorge" />
 

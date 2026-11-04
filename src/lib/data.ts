@@ -83,7 +83,7 @@ export const tours: Tour[] = [
     ],
     exclusions: ['Tip for drivers', 'Drinks', 'Border pass fee: 260,000 VND / person'],
     priceNote: [
-      'Border pass fee: 260.000 VND / person — not included',
+      'Border pass fee: 260.000 VND / person (not included)',
     ],
     pricing: [
       {
@@ -207,7 +207,7 @@ export const tours: Tour[] = [
     reviews: 214,
     style: 'Group',
     summary:
-      'The most cost-efficient option — share the loop with travellers from around the world, enjoy lively evenings and make friends that last long after the ride.',
+      'The most cost-efficient option: share the loop with travellers from around the world, enjoy lively evenings and make friends that last long after the ride.',
     highlights: [
       'The cost is optimized and saved the most',
       'Many interesting night activities ',
@@ -224,7 +224,7 @@ export const tours: Tour[] = [
     ],
     exclusions: ['Tip for drivers', 'Drinks', 'Border pass fee: 260,000 VND / person'],
     priceNote: [
-      'Border pass fee: 260.000 VND / person — not included',
+      'Border pass fee: 260.000 VND / person (not included)',
     ],
     pricing: [
       {
@@ -324,7 +324,7 @@ export const tours: Tour[] = [
   {
     slug: 'car-tour',
     name: 'Car Tour',
-    tagline: 'All the scenery, maximum comfort — by private air-conditioned car',
+    tagline: 'All the scenery, maximum comfort, by private air-conditioned car',
     image: images.tourPhoto,
     duration: '2–4 days',
     groupSize: 'Up to 7 guests',
@@ -352,7 +352,7 @@ export const tours: Tour[] = [
     exclusions: ['Tip for drivers', 'Drinks', 'Border pass fee: 260,000 VND / person'],
     priceNote: [
       'Price per person · Minimum 2 people · Includes 1 private room the night before departure',
-      'Border pass fee: 260.000 VND / person — not included',
+      'Border pass fee: 260.000 VND / person (not included)',
     ],
     pricing: [
       {
@@ -488,7 +488,7 @@ export const tours: Tour[] = [
     exclusions: ['Tip for guide & driver', 'Drinks & personal expenses', 'Border pass fee: 260,000 VND / person'],
     priceNote: [
       'Jeep tour: Maximum 3 guests per Jeep · Minimum booking: 2 guests',
-      'Border pass fee: 260.000 VND / person — not included',
+      'Border pass fee: 260.000 VND / person (not included)',
     ],
     pricing: [
       {
@@ -593,11 +593,12 @@ export const tours: Tour[] = [
     rating: 5,
     reviews: 68,
     style: 'Expedition',
+    partnerLabel: 'Ride with a Partner',
     summary:
       'Combine Vietnam\'s two most spectacular northern provinces in one unforgettable overland journey. From the towering karst peaks of the Ha Giang Loop to the thunderous cascades of Ban Gioc Waterfall and the subterranean wonder of Nguom Ngao Cave in Cao Bang.',
     highlights: [
       'Comprehensive grand loop: Ha Giang Karst Plateau + Cao Bang UNESCO Geopark',
-      'Visit Ban Gioc Waterfall — Southeast Asia\'s largest trans-border waterfall',
+      'Visit Ban Gioc Waterfall, Southeast Asia\'s largest trans-border waterfall',
       'Explore Ma Pi Leng Pass, Tu San Canyon, Nguom Ngao Cave & Pac Bo historical site',
       'Flexible options: Motorbike or Private Car with 100% private rooms',
     ],
@@ -612,7 +613,7 @@ export const tours: Tour[] = [
     exclusions: ['Tip for drivers & guide', 'Drinks & personal expenses', 'Border pass fee: 260,000 VND / person'],
     priceNote: [
       'Private car tour packages include 100% private ensuite rooms throughout the tour',
-      'Border pass fee: 260.000 VND / person — not included',
+      'Border pass fee: 260.000 VND / person (not included)',
       'Includes all transport, boat tours and transfers between Ha Giang and Cao Bang',
     ],
     pricing: [
@@ -826,7 +827,7 @@ export const destinations: Destination[] = [
     bestSeason: 'All year',
     blurb: 'A town nestled in a valley.',
     description:
-      'Yen Minh Town, a quaint stop on the Ha Giang Loop, is a gateway to the stunning landscapes and rich ethnic tapestry of Vietnam’s northern frontier. While the town itself is modest, it’s celebrated for its authentic vibe and delicious local cuisine. The surrounding areas, like the Na Khe Pine Forest—often called the “Da Lat of the North”—and Du Gia National Park, offer breathtaking natural beauty and a glimpse into the lives of the region’s diverse ethnic communities. Whether you’re exploring the serene pine forests or joining the locals for a game of football, Yen Minh provides a slice of rural Vietnamese life untouched by tourism.',
+      'Yen Minh Town, a quaint stop on the Ha Giang Loop, is a gateway to the stunning landscapes and rich ethnic tapestry of Vietnam’s northern frontier. While the town itself is modest, it’s celebrated for its authentic vibe and delicious local cuisine. The surrounding areas, like the Na Khe Pine Forest (often called the “Da Lat of the North”) and Du Gia National Park, offer breathtaking natural beauty and a glimpse into the lives of the region’s diverse ethnic communities. Whether you’re exploring the serene pine forests or joining the locals for a game of football, Yen Minh provides a slice of rural Vietnamese life untouched by tourism.',
     experiences: ['Pine forest stroll', 'Local food tasting', 'Ethnic village homestay']
   },
   {
@@ -982,7 +983,7 @@ export const features: Feature[] = [
     id: 'guides',
     title: 'Guides who grew up here',
     description:
-      'Every journey is led by a local guide from the province, trained in first aid and paid a career wage — not a seasonal one.',
+      'Every journey is led by a local guide from the province, trained in first aid and paid a career wage, not a seasonal one.',
     icon: 'compass'
   },
   {
@@ -1036,7 +1037,7 @@ export const testimonials: Testimonial[] = [
   {
     id: 't1',
     quote:
-      'I have travelled a lot and rarely felt so unmanaged and so looked after at the same time. The pacing was the whole trick — we were never rushing towards the next photograph.',
+      'I have travelled a lot and rarely felt so unmanaged and so looked after at the same time. The pacing was the whole trick: we were never rushing towards the next photograph.',
     name: 'Elena Marchetti',
     origin: 'Milan, Italy',
     tour: 'The Northern Arc',
@@ -1054,7 +1055,7 @@ export const testimonials: Testimonial[] = [
   {
     id: 't3',
     quote:
-      'We booked the private itinerary for our anniversary and it was faultless — beautiful rooms, extraordinary food, and not a single moment of feeling like a customer.',
+      'We booked the private itinerary for our anniversary and it was faultless: beautiful rooms, extraordinary food, and not a single moment of feeling like a customer.',
     name: 'Marie & Theo Aubert',
     origin: 'Lyon, France',
     tour: 'The Private Plateau',
@@ -1293,7 +1294,7 @@ export const faqs: FaqItem[] = [
     category: 'Planning',
     question: 'When is the best time of year to travel?',
     answer:
-      'October to April brings the clearest skies and the famous cloud seas, with cold mornings on the plateau. September is terrace harvest in the west. June to August is lush and green with warm afternoon rain — quieter roads, softer light, and lower prices.'
+      'October to April brings the clearest skies and the famous cloud seas, with cold mornings on the plateau. September is terrace harvest in the west. June to August is lush and green with warm afternoon rain, with quieter roads, softer light, and lower prices.'
   },
   {
     id: 'f12',

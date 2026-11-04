@@ -44,7 +44,7 @@ export function TourCard({ tour }: TourCardProps) {
       <div className="relative overflow-hidden flex-shrink-0">
         <LazyImage
           src={tour.image}
-          alt={`${tour.name} — ${tour.tagline}`}
+          alt={`${tour.name}: ${tour.tagline}`}
           wrapperClassName="block w-full aspect-[16/7]"
           className="transition-transform duration-[1400ms] ease-editorial group-hover:scale-105"
           sizes="(min-width: 1024px) 50vw, 100vw"

@@ -10,7 +10,7 @@ export function Destinations() {
   useSeo({
     title: 'Destinations',
     description:
-      'Fourteen places we return to across the Ha Giang plateau — including the Nho Que river, Ma Pi Leng pass, Lung Cu flag tower, and historic villages.',
+      'Fourteen places we return to across the Ha Giang plateau, including the Nho Que river, Ma Pi Leng pass, Lung Cu flag tower, and historic villages.',
     image: images.canyon
   });
 

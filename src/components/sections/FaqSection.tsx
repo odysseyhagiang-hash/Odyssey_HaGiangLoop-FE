@@ -17,7 +17,7 @@ export function FaqSection() {
               Questions we are asked before every departure
             </h2>
             <p className="mt-6 max-w-sm text-[15px] leading-relaxed text-ink-soft">
-              If yours is not here, write to us — a real person answers, usually within a few hours.
+              If yours is not here, write to us and a real person answers, usually within a few hours.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button to="/faq" variant="outline">

@@ -33,7 +33,7 @@ export class ErrorBoundary extends React.Component<Props, State> {
           <p className="text-[11px] uppercase tracking-widest2 text-forest-500">Something went wrong</p>
           <h1 className="mt-5 font-display text-3xl leading-tight">The road is blocked here</h1>
           <p className="mt-4 text-sm leading-relaxed text-ink-soft">
-            An unexpected error interrupted this page. Reloading usually clears it — if it happens
+            An unexpected error interrupted this page. Reloading usually clears it. If it happens
             again, our team would like to hear about it.
           </p>
           {this.state.message &&

@@ -178,7 +178,7 @@ export function About() {
   useSeo({
     title: 'About',
     description:
-      'A small, locally owned operator in Ha Giang province — eleven years of guiding, salaried local guides, and 82% of every trip budget spent inside the province.',
+      'A small, locally owned operator in Ha Giang province, with eleven years of guiding, salaried local guides, and 82% of every trip budget spent inside the province.',
     image: images.village
   });
 
@@ -253,7 +253,7 @@ export function About() {
               </h2>
               <div className="mt-8 space-y-6 text-[15px] leading-[1.85] text-ink-soft">
                 <p>
-                  Odyssey was founded by the two of us, husband and wife – Duc and Linh. The name
+                  Odyssey was founded by the two of us, husband and wife, Duc and Linh. The name
                   Odyssey was officially born in June 2023, but the dream behind it had been
                   nurtured for many years before.
                 </p>
@@ -284,7 +284,7 @@ export function About() {
                   Vietnam.
                 </p>
                 <p>
-                  That is also why our team always goes the extra mile every day – from preparing a
+                  That is also why our team always goes the extra mile every day, from preparing a
                   safe motorcycle, selecting quality homestays, sharing off-the-beaten-path
                   locations, to always being ready to support guests whenever needed.
                 </p>
@@ -372,13 +372,13 @@ export function About() {
               </h2>
               <div className="mt-8 space-y-6 text-[15px] leading-[1.85] text-ink-soft">
                 <p>
-                  You’re probably not here looking for the wildest party or the cheapest tour—you’re here for a truly memorable experience.
+                  You’re probably not here looking for the wildest party or the cheapest tour. You’re here for a truly memorable experience.
                   That’s exactly what we offer. At Odyssey, we keep things simple: seamless booking, incredible routes, knowledgeable local
                   guides who genuinely care, and a relaxed, welcoming atmosphere.
                 </p>
                 <p>
                   Our days are filled with breathtaking landscapes, hidden gems, and authentic cultural experiences. By evening, most guests
-                  are ready to unwind, not party. That’s why we naturally attract travelers who value meaningful experiences over nightlife— and
+                  are ready to unwind, not party. That’s why we naturally attract travelers who value meaningful experiences over nightlife, and
                   we wouldn’t have it any other way.
                 </p>
                 <p>
@@ -541,7 +541,7 @@ export function About() {
       <CtaBanner
         eyebrow="Come and see"
         title="We would rather show you than explain"
-        description="Send us your dates and we will tell you honestly whether this is the right trip for you — including when it is not." />
+        description="Send us your dates and we will tell you honestly whether this is the right trip for you, including when it is not." />
 
       <AnimatePresence>
         {activePhoto && (
