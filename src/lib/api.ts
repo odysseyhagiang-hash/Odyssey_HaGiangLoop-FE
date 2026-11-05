@@ -6,6 +6,36 @@ const getApiBase = () => {
   return import.meta.env.VITE_API_URL ?? `${window.location.protocol}//${window.location.hostname}:5000/api`;
 };
 
+// ─── Review stats (Google + TripAdvisor) ──────────────────────────────────────
+
+export interface ReviewSourceStats {
+  rating: number;
+  count: number;
+  source?: 'manual' | 'api';
+  updatedAt?: string | null;
+}
+
+export interface ReviewStats {
+  google: ReviewSourceStats;
+  tripadvisor: ReviewSourceStats;
+}
+
+const isValidSource = (s: any): s is ReviewSourceStats =>
+  s && typeof s.rating === 'number' && typeof s.count === 'number' && s.count > 0;
+
+export async function fetchReviewStats(): Promise<ReviewStats | null> {
+  try {
+    const res = await fetch(`${getApiBase()}/review-stats`);
+    if (!res.ok) return null;
+    const json = await res.json();
+    const { google, tripadvisor } = json?.data ?? {};
+    if (!isValidSource(google) || !isValidSource(tripadvisor)) return null;
+    return { google, tripadvisor };
+  } catch {
+    return null;
+  }
+}
+
 // ─── Auth API ─────────────────────────────────────────────────────────────────
 
 export async function apiLogin(

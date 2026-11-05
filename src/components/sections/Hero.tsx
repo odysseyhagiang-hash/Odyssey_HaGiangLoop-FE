@@ -12,13 +12,10 @@ import { VideoBackground } from "../ui/VideoBackground";
 import { Button } from "../ui/Button";
 import { Container } from "../ui/Section";
 import { SectionDivider } from "../ui/SectionDivider";
+import { formatRating, formatReviewCount, useReviewStats } from "../../hooks/useReviewStats";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
-const REVIEW_BADGES = [
-  { label: "Google", count: "2,615+", href: GOOGLE_MAPS_URL },
-  { label: "TripAdvisor", count: "1,899+", href: TA_PAGE_URL },
-];
 
 const routePath =
   "M0 40 C 45 40, 60 6, 110 6 S 170 66, 225 58 S 280 8, 335 20 S 390 70, 445 48 S 515 10, 560 28";
@@ -41,6 +38,11 @@ function MotorbikeIcon() {
 }
 
 export function Hero() {
+  const reviewStats = useReviewStats();
+  const reviewBadges = [
+    { label: "Google", rating: formatRating(reviewStats.google.rating), count: `${formatReviewCount(reviewStats.google.count)}+`, href: GOOGLE_MAPS_URL },
+    { label: "TripAdvisor", rating: formatRating(reviewStats.tripadvisor.rating), count: `${formatReviewCount(reviewStats.tripadvisor.count)}+`, href: TA_PAGE_URL },
+  ];
   const reduceMotion = useReducedMotion();
   const { scrollY } = useScroll();
   const overlayOpacity = useTransform(scrollY, [0, 500], [1, 0.7]);
@@ -202,13 +204,13 @@ export function Hero() {
               transition={{ duration: 0.9, delay: 0.65, ease }}
               className="mt-7 sm:mt-8 lg:mt-10 flex flex-wrap justify-center gap-3 lg:justify-start"
             >
-              {REVIEW_BADGES.map((badge) => (
+              {reviewBadges.map((badge) => (
                 <a
                   key={badge.label}
                   href={badge.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={`Rated 5.0 from ${badge.count} ${badge.label} reviews`}
+                  aria-label={`Rated ${badge.rating} from ${badge.count} ${badge.label} reviews`}
                   className="
                     inline-flex items-center gap-3 rounded-full
                     border border-white/15 bg-black/40 backdrop-blur-md
@@ -221,7 +223,7 @@ export function Hero() {
                       <Star key={i} className="h-3.5 w-3.5 fill-gold-300 text-gold-300 sm:h-4 sm:w-4" />
                     ))}
                   </span>
-                  <span className="text-sm font-semibold text-white sm:text-base">5.0</span>
+                  <span className="text-sm font-semibold text-white sm:text-base">{badge.rating}</span>
                   <span aria-hidden="true" className="h-4 w-px bg-white/25" />
                   <span className="text-sm text-white/85 underline decoration-white/40 underline-offset-4 sm:text-base">
                     {badge.count} {badge.label} reviews

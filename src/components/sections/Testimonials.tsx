@@ -6,6 +6,7 @@ import type { GoogleReview, TripAdvisorReview } from '../../lib/types';
 import { cn } from '../../lib/utils';
 import { Container, Section, SectionHeading } from '../ui/Section';
 import { useResponsivePerPage } from '../../hooks/useResponsivePerPage';
+import { formatRating, formatReviewCount, useReviewStats } from '../../hooks/useReviewStats';
 
 // ─── helpers ─────────────────────────────────────────────────────────────────
 
@@ -367,6 +368,7 @@ export function Testimonials() {
   const [tab, setTab] = useState<Tab>('tripadvisor');
   const [taModal, setTaModal] = useState<TripAdvisorReview | null>(null);
   const [gModal, setGModal] = useState<GoogleReview | null>(null);
+  const reviewStats = useReviewStats();
 
   return (
     <Section tone="parchment" aria-labelledby="testimonials-title">
@@ -389,7 +391,7 @@ export function Testimonials() {
               )}>
               <img src="/tripadvisor.webp" alt="" className="h-4 w-4 object-contain" aria-hidden="true" />
               TripAdvisor
-              <span className={cn('text-xs font-normal', tab === 'tripadvisor' ? 'text-[#00393a]/70' : 'text-ink-muted')}>5.0 · 1,899</span>
+              <span className={cn('text-xs font-normal', tab === 'tripadvisor' ? 'text-[#00393a]/70' : 'text-ink-muted')}>{formatRating(reviewStats.tripadvisor.rating)} · {formatReviewCount(reviewStats.tripadvisor.count)}</span>
             </button>
             <button type="button" onClick={() => setTab('google')}
               className={cn(
@@ -398,7 +400,7 @@ export function Testimonials() {
               )}>
               <GoogleLogo />
               Google
-              <span className={cn('text-xs font-normal', 'text-ink-muted')}>5.0 · 2,393</span>
+              <span className={cn('text-xs font-normal', 'text-ink-muted')}>{formatRating(reviewStats.google.rating)} · {formatReviewCount(reviewStats.google.count)}</span>
             </button>
           </div>
         </div>
