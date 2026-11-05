@@ -9,7 +9,7 @@ import { CtaBanner } from '../components/sections/CtaBanner';
 import { Stagger } from '../components/ui/Reveal';
 import { Container, Section } from '../components/ui/Section';
 
-const styles: (Tour['style'] | 'All')[] = ['All', 'Private', 'Group', 'Car', 'Jeep', 'Expedition', 'Luxury'];
+const styles: (Tour['style'] | 'All')[] = ['All', 'Private', 'Group', 'Expedition', 'Luxury', 'Car', 'Jeep'];
 
 export function Tours() {
   useSeo({

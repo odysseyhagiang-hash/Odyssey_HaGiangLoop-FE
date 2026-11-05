@@ -322,6 +322,169 @@ export const tours: Tour[] = [
     ],
   },
 
+  // ─── HA GIANG - CAO BANG TOUR ────────────────────────────────────────────────
+  {
+    slug: 'ha-giang-cao-bang',
+    name: 'Ha Giang — Cao Bang Tour',
+    tagline: 'The ultimate northern grand loop from Dong Van karst plateau to Ban Gioc Waterfall',
+    image: images.tourCaoBang,
+    duration: '5–6 days',
+    groupSize: 'Private / Small group (2–3 guests)',
+    difficulty: 'Adventurous',
+    price: 11000000,
+    rating: 5,
+    reviews: 68,
+    style: 'Expedition',
+    partnerLabel: 'Ride with a Partner',
+    summary:
+      'Combine Vietnam\'s two most spectacular northern provinces in one unforgettable overland journey. From the towering karst peaks of the Ha Giang Loop to the thunderous cascades of Ban Gioc Waterfall and the subterranean wonder of Nguom Ngao Cave in Cao Bang.',
+    highlights: [
+      'Comprehensive grand loop: Ha Giang Karst Plateau + Cao Bang UNESCO Geopark',
+      'Visit Ban Gioc Waterfall, Southeast Asia\'s largest trans border waterfall',
+      'Explore Ma Pi Leng Pass, Tu San Canyon, Nguom Ngao Cave & Pac Bo historical site',
+      'Flexible options: Motorbike or Private Car with 100% private rooms',
+    ],
+    inclusions: [
+      'Motorbike with Easy Rider or private car transport & all fuel',
+      'Dedicated professional English speaking guide',
+      'Full accommodation (100% Private Ensuite rooms & boutique homestays)',
+      'All daily meals with regional culinary specialties',
+      'All sightseeing tickets, boat trips at Nho Que & Ban Gioc Waterfall',
+      'Free luggage storage and rest facilities before/after tour',
+    ],
+    exclusions: ['Tip for drivers & guide', 'Drinks & personal expenses', 'Border pass fee: 260,000 VND / person'],
+    priceNote: [
+      'Private car tour packages include 100% private ensuite rooms throughout the tour',
+      'Border pass fee: 260.000 VND / person (not included)',
+      'Includes all transport, boat tours and transfers between Ha Giang and Cao Bang',
+    ],
+    pricing: [
+      {
+        duration: '5D4N',
+        behindEasyrider: 11500000,
+        selfDrive: 11000000,
+        behindPartner: 14000000,
+        perPerson: [
+          { persons: 2, price: 40500000 },
+          { persons: 3, price: 48000000 },
+        ],
+        itinerary: [
+          {
+            day: 1,
+            title: 'Ha Giang → Khau Lan Waterfall → Lung Tam Weaving Village\n→ Du Gia',
+            summary: 'Start your day with breakfast at our homestay. After breakfast, you will complete the check out process, check your luggage, and prepare for the journey. If you choose the Easy Rider option, you will meet your driver and tour guide. They will introduce the itinerary and explain the places we will visit during the trip.\n- Explore Khau Lan Waterfall and enjoy the beautiful natural surroundings.\n- Have lunch at a local family’s house and enjoy traditional local food.\n- Visit the Lung Tam Weaving Village, a long standing village of the H’Mong people. Learn about their culture and how they create beautiful handmade products using traditional linen weaving techniques.\n- Visit Du Gia Waterfall, one of the famous natural attractions in Ha Giang.\nThat evening, we will stay at a beautiful homestay in Du Gia and relax after the first day of the journey.',
+            highlights: ['Khau Lan Waterfall', 'Local family lunch', 'Lung Tam Weaving Village', 'Du Gia Waterfall', 'Du Gia Homestay'],
+          },
+          {
+            day: 2,
+            title: 'Du Gia → Ngoc Long → Cave Boat Trip → Mountain Trails',
+            summary: 'The second day takes you through beautiful landscapes and interesting mountain roads that will leave a strong impression.\n- Enjoy a bamboo boat trip on the river and admire the surrounding scenery.\n- Continue into a natural cave, where you can explore and enjoy swimming.\n- Enjoy a special meal on the bamboo boat while surrounded by nature.\n- Experience local mountain trails built and used by local people, while enjoying the beautiful landscapes along the way.\n- Stop and relax in Dong Van Town and explore Dong Van Old Quarter in the evening.',
+            highlights: ['Bamboo boat trip', 'Cave swim & explore', 'Meal on bamboo boat', 'Local mountain trails', 'Dong Van Old Quarter'],
+          },
+          {
+            day: 3,
+            title: 'Dong Van → Ma Pi Leng Pass → Bao Lac → 15 Tier Pass\n→ Na Teanh Pass → Pac Bo',
+            summary: 'The third day takes you through spectacular mountain landscapes and challenging mountain passes.\n- Explore the majestic Ma Pi Leng Pass, one of the most impressive mountain passes in northern Vietnam.\n- If you want more adventure, take a challenging walk to the Sky Walk and enjoy breathtaking views.\n- Travel through the impressive mountain passes of Cao Bang and discover the beautiful landscapes of the region.\nStop and relax in Pac Bo after an exciting day on the road.',
+            highlights: ['Ma Pi Leng Pass', 'Sky Walk experience', '15 Tier Pass & Na Teanh Pass', 'Pac Bo Homestay'],
+          },
+          {
+            day: 4,
+            title: 'Pac Bo → Tra Linh Buffalo Market → Trung Khanh\n→ Ban Gioc Waterfall',
+            summary: 'On the fourth day, we will explore the natural beauty and local culture of Cao Bang.\n- Visit the Tra Linh Buffalo Market, where you can experience the unique culture and daily life of the local people in the highlands.\n- Explore Trung Khanh and admire its impressive mountains and natural landscapes.\n- Enjoy the beautiful scenery of Ban Gioc Waterfall, one of the most famous natural attractions in Cao Bang.\nStop and relax at a homestay near Ban Gioc Waterfall.',
+            highlights: ['Tra Linh Buffalo Market', 'Trung Khanh landscapes', 'Ban Gioc Waterfall', 'Ban Gioc Homestay'],
+          },
+          {
+            day: 5,
+            title: 'Ban Gioc → Nguom Ngao Cave → Angel Eye Mountain\n→ Cao Bang City',
+            summary: 'On the final day, let’s discover some of the most famous attractions in Cao Bang.\n- Explore Nguom Ngao Cave and admire its impressive rock formations.\n- Visit Angel Eye Mountain and enjoy its unique natural scenery.\nEnd the journey in Cao Bang City.',
+            highlights: ['Nguom Ngao Cave', 'Angel Eye Mountain', 'Cao Bang City farewell'],
+          },
+        ],
+      },
+      {
+        duration: '6D5N',
+        behindEasyrider: 13800000,
+        selfDrive: 13200000,
+        behindPartner: 16500000,
+        perPerson: [
+          { persons: 2, price: 47000000 },
+          { persons: 3, price: 55000000 },
+        ],
+        itinerary: [
+          {
+            day: 1,
+            title: 'Ha Giang → Khau Lan Waterfall → Lung Tam Weaving Village\n→ Du Gia',
+            summary: 'Start your day with breakfast at our homestay. After breakfast, you will complete the check out process, check your luggage, and prepare for the journey. If you choose the Easy Rider option, you will meet your driver and tour guide. They will introduce the itinerary and explain the places we will visit during the trip.\n- Explore Khau Lan Waterfall and enjoy the beautiful natural surroundings.\n- Have lunch at a local family’s house and enjoy traditional local food.\n- Visit Lung Tam Weaving Village, a long standing village of the H’Mong people. Learn about their culture and discover how they create beautiful handmade products using traditional linen weaving techniques.\n- Visit Du Gia Waterfall, one of the famous natural attractions in Ha Giang.\nThat evening, we will stay at a beautiful homestay in Du Gia and relax after the first day of the journey.',
+            highlights: ['Khau Lan Waterfall', 'Local family lunch', 'Lung Tam Weaving Village', 'Du Gia Waterfall', 'Du Gia Homestay'],
+          },
+          {
+            day: 2,
+            title: 'Du Gia → Ngoc Long → Cave Boat Trip → Mountain Trails',
+            summary: 'The second day takes you through beautiful landscapes and interesting mountain roads.\n- Enjoy a bamboo boat trip on the river and admire the surrounding scenery.\n- Continue into a natural cave, where you can explore and enjoy swimming.\n- Enjoy a special meal on the bamboo boat while surrounded by nature.\n- Experience local mountain trails and discover paths built and used by local people while enjoying the beautiful scenery.\n- Stop and relax in Dong Van Town and explore Dong Van Old Quarter in the evening.',
+            highlights: ['Bamboo boat trip', 'Cave swim & explore', 'Meal on bamboo boat', 'Local mountain trails', 'Dong Van Old Quarter'],
+          },
+          {
+            day: 3,
+            title: 'Dong Van → Ma Pi Leng Pass → Bao Lac → 15 Tier Pass\n→ Na Teanh Pass → Pac Bo',
+            summary: 'The third day takes you through spectacular mountain landscapes and challenging mountain passes.\n- Explore the majestic Ma Pi Leng Pass and enjoy breathtaking views of the mountains.\n- If you want more adventure, take a challenging walk to the Sky Walk.\n- Travel through the impressive mountain passes of Cao Bang and discover the beautiful landscapes of the region.\nStop and relax in Pac Bo after an exciting day on the road.',
+            highlights: ['Ma Pi Leng Pass', 'Sky Walk hike', '15 Tier Pass & Na Teanh Pass', 'Pac Bo Homestay'],
+          },
+          {
+            day: 4,
+            title: 'Pac Bo → Tra Linh Buffalo Market → Trung Khanh\n→ Ban Gioc Waterfall',
+            summary: 'On the fourth day, we will explore the natural beauty and local culture of Cao Bang.\n- Visit the Tra Linh Buffalo Market and experience the unique culture of the local highland communities.\n- Explore Trung Khanh and admire its impressive mountains and natural scenery.\n- Enjoy the beautiful landscape of Ban Gioc Waterfall, one of the most famous natural attractions in Cao Bang.\nStop and relax at a homestay near Ban Gioc Waterfall.',
+            highlights: ['Tra Linh Buffalo Market', 'Trung Khanh landscapes', 'Ban Gioc Waterfall', 'Ban Gioc Homestay'],
+          },
+          {
+            day: 5,
+            title: 'Ban Gioc → Nguom Ngao Cave → Angel Eye Mountain\n→ Ba Be',
+            summary: 'This will be the longest day of the journey, with many beautiful places to discover.\n- Explore Nguom Ngao Cave and admire its impressive rock formations.\n- Visit Angel Eye Mountain and enjoy its unique natural scenery.\n- Continue the journey to Ba Be and relax after a long day of exploration.',
+            highlights: ['Nguom Ngao Cave', 'Angel Eye Mountain', 'Ba Be Lake'],
+          },
+          {
+            day: 6,
+            title: 'Ba Be Lake → Hanoi',
+            summary: 'Enjoy a relaxing day exploring Ba Be Lake, one of the largest natural freshwater\nlakes in Vietnam.\n- Explore the lake and nearby caves by boat.\n- Have lunch on the lake and enjoy local specialties.\n- After the tour, board a sleeper bus and travel back to Hanoi.\nThis marks the end of our 6 day Ha Giang – Cao Bang – Ba Be adventure.',
+            highlights: ['Ba Be Lake boat tour', 'Cave exploration', 'Lunch on lake', 'Sleeper bus to Hanoi'],
+          },
+        ],
+      },
+    ],
+    itinerary: [
+      {
+        day: 1,
+        title: 'Ha Giang → Khau Lan Waterfall → Lung Tam Village → Du Gia',
+        summary: 'Depart Ha Giang City. Swim at Khau Lan Waterfall, local home lunch, explore Lung Tam traditional linen weaving, and arrive at Du Gia Waterfall. Overnight at Du Gia homestay.',
+        highlights: ['Khau Lan Waterfall', 'Lung Tam Linen Village', 'Du Gia Waterfall', 'Du Gia Homestay'],
+      },
+      {
+        day: 2,
+        title: 'Du Gia → Ngoc Long → Cave Boat Ride → Mountain Trails → Dong Van',
+        summary: 'Bamboo boat cruise on river, cave swimming, lunch on bamboo raft, and scenic trails to Dong Van. Night walk in Dong Van Ancient Town.',
+        highlights: ['Bamboo boat cruise', 'Cave swim', 'Lunch on boat', 'Scenic trails', 'Dong Van Ancient Town'],
+      },
+      {
+        day: 3,
+        title: 'Dong Van → Ma Pi Leng Pass → Bao Lac → 15 Tier Pass → Pac Bo',
+        summary: 'Conquer Ma Pi Leng Pass and Sky Walk. Ride exhilarating mountain roads through Bao Lac, 15 tier Me Pia Pass and Na Tenh Pass to Pac Bo.',
+        highlights: ['Ma Pi Leng Pass', 'Sky Walk hike', '15 Tier Me Pia Pass', 'Pac Bo Homestay'],
+      },
+      {
+        day: 4,
+        title: 'Pac Bo → Tra Linh Buffalo Market → Trung Khanh → Ban Gioc Waterfall',
+        summary: 'Visit Tra Linh ethnic buffalo market, explore Trung Khanh mountain landscapes, and marvel at Ban Gioc Waterfall. Overnight at Ban Gioc.',
+        highlights: ['Tra Linh Buffalo Market', 'Trung Khanh', 'Ban Gioc Waterfall', 'Ban Gioc Homestay'],
+      },
+      {
+        day: 5,
+        title: 'Ban Gioc → Nguom Ngao Cave → God\'s Eye Mountain → Cao Bang City',
+        summary: 'Discover subterranean stalactites at Nguom Ngao Cave and the mystical God\'s Eye Mountain (Nui Mat Than). Conclude the journey in Cao Bang City.',
+        highlights: ['Nguom Ngao Cave', 'God\'s Eye Mountain', 'Cao Bang City farewell'],
+      },
+    ],
+  },
+  luxuryTourCard,
+
   // ─── CAR TOUR ────────────────────────────────────────────────────────────────
   {
     slug: 'car-tour',
@@ -581,169 +744,6 @@ export const tours: Tour[] = [
       },
     ],
   },
-
-  // ─── HA GIANG - CAO BANG TOUR ────────────────────────────────────────────────
-  {
-    slug: 'ha-giang-cao-bang',
-    name: 'Ha Giang — Cao Bang Tour',
-    tagline: 'The ultimate northern grand loop from Dong Van karst plateau to Ban Gioc Waterfall',
-    image: images.tourCaoBang,
-    duration: '5–6 days',
-    groupSize: 'Private / Small group (2–3 guests)',
-    difficulty: 'Adventurous',
-    price: 11000000,
-    rating: 5,
-    reviews: 68,
-    style: 'Expedition',
-    partnerLabel: 'Ride with a Partner',
-    summary:
-      'Combine Vietnam\'s two most spectacular northern provinces in one unforgettable overland journey. From the towering karst peaks of the Ha Giang Loop to the thunderous cascades of Ban Gioc Waterfall and the subterranean wonder of Nguom Ngao Cave in Cao Bang.',
-    highlights: [
-      'Comprehensive grand loop: Ha Giang Karst Plateau + Cao Bang UNESCO Geopark',
-      'Visit Ban Gioc Waterfall, Southeast Asia\'s largest trans border waterfall',
-      'Explore Ma Pi Leng Pass, Tu San Canyon, Nguom Ngao Cave & Pac Bo historical site',
-      'Flexible options: Motorbike or Private Car with 100% private rooms',
-    ],
-    inclusions: [
-      'Motorbike with Easy Rider or private car transport & all fuel',
-      'Dedicated professional English speaking guide',
-      'Full accommodation (100% Private Ensuite rooms & boutique homestays)',
-      'All daily meals with regional culinary specialties',
-      'All sightseeing tickets, boat trips at Nho Que & Ban Gioc Waterfall',
-      'Free luggage storage and rest facilities before/after tour',
-    ],
-    exclusions: ['Tip for drivers & guide', 'Drinks & personal expenses', 'Border pass fee: 260,000 VND / person'],
-    priceNote: [
-      'Private car tour packages include 100% private ensuite rooms throughout the tour',
-      'Border pass fee: 260.000 VND / person (not included)',
-      'Includes all transport, boat tours and transfers between Ha Giang and Cao Bang',
-    ],
-    pricing: [
-      {
-        duration: '5D4N',
-        behindEasyrider: 11500000,
-        selfDrive: 11000000,
-        behindPartner: 14000000,
-        perPerson: [
-          { persons: 2, price: 40500000 },
-          { persons: 3, price: 48000000 },
-        ],
-        itinerary: [
-          {
-            day: 1,
-            title: 'Ha Giang → Khau Lan Waterfall → Lung Tam Weaving Village\n→ Du Gia',
-            summary: 'Start your day with breakfast at our homestay. After breakfast, you will complete the check out process, check your luggage, and prepare for the journey. If you choose the Easy Rider option, you will meet your driver and tour guide. They will introduce the itinerary and explain the places we will visit during the trip.\n- Explore Khau Lan Waterfall and enjoy the beautiful natural surroundings.\n- Have lunch at a local family’s house and enjoy traditional local food.\n- Visit the Lung Tam Weaving Village, a long standing village of the H’Mong people. Learn about their culture and how they create beautiful handmade products using traditional linen weaving techniques.\n- Visit Du Gia Waterfall, one of the famous natural attractions in Ha Giang.\nThat evening, we will stay at a beautiful homestay in Du Gia and relax after the first day of the journey.',
-            highlights: ['Khau Lan Waterfall', 'Local family lunch', 'Lung Tam Weaving Village', 'Du Gia Waterfall', 'Du Gia Homestay'],
-          },
-          {
-            day: 2,
-            title: 'Du Gia → Ngoc Long → Cave Boat Trip → Mountain Trails',
-            summary: 'The second day takes you through beautiful landscapes and interesting mountain roads that will leave a strong impression.\n- Enjoy a bamboo boat trip on the river and admire the surrounding scenery.\n- Continue into a natural cave, where you can explore and enjoy swimming.\n- Enjoy a special meal on the bamboo boat while surrounded by nature.\n- Experience local mountain trails built and used by local people, while enjoying the beautiful landscapes along the way.\n- Stop and relax in Dong Van Town and explore Dong Van Old Quarter in the evening.',
-            highlights: ['Bamboo boat trip', 'Cave swim & explore', 'Meal on bamboo boat', 'Local mountain trails', 'Dong Van Old Quarter'],
-          },
-          {
-            day: 3,
-            title: 'Dong Van → Ma Pi Leng Pass → Bao Lac → 15 Tier Pass\n→ Na Teanh Pass → Pac Bo',
-            summary: 'The third day takes you through spectacular mountain landscapes and challenging mountain passes.\n- Explore the majestic Ma Pi Leng Pass, one of the most impressive mountain passes in northern Vietnam.\n- If you want more adventure, take a challenging walk to the Sky Walk and enjoy breathtaking views.\n- Travel through the impressive mountain passes of Cao Bang and discover the beautiful landscapes of the region.\nStop and relax in Pac Bo after an exciting day on the road.',
-            highlights: ['Ma Pi Leng Pass', 'Sky Walk experience', '15 Tier Pass & Na Teanh Pass', 'Pac Bo Homestay'],
-          },
-          {
-            day: 4,
-            title: 'Pac Bo → Tra Linh Buffalo Market → Trung Khanh\n→ Ban Gioc Waterfall',
-            summary: 'On the fourth day, we will explore the natural beauty and local culture of Cao Bang.\n- Visit the Tra Linh Buffalo Market, where you can experience the unique culture and daily life of the local people in the highlands.\n- Explore Trung Khanh and admire its impressive mountains and natural landscapes.\n- Enjoy the beautiful scenery of Ban Gioc Waterfall, one of the most famous natural attractions in Cao Bang.\nStop and relax at a homestay near Ban Gioc Waterfall.',
-            highlights: ['Tra Linh Buffalo Market', 'Trung Khanh landscapes', 'Ban Gioc Waterfall', 'Ban Gioc Homestay'],
-          },
-          {
-            day: 5,
-            title: 'Ban Gioc → Nguom Ngao Cave → Angel Eye Mountain\n→ Cao Bang City',
-            summary: 'On the final day, let’s discover some of the most famous attractions in Cao Bang.\n- Explore Nguom Ngao Cave and admire its impressive rock formations.\n- Visit Angel Eye Mountain and enjoy its unique natural scenery.\nEnd the journey in Cao Bang City.',
-            highlights: ['Nguom Ngao Cave', 'Angel Eye Mountain', 'Cao Bang City farewell'],
-          },
-        ],
-      },
-      {
-        duration: '6D5N',
-        behindEasyrider: 13800000,
-        selfDrive: 13200000,
-        behindPartner: 16500000,
-        perPerson: [
-          { persons: 2, price: 47000000 },
-          { persons: 3, price: 55000000 },
-        ],
-        itinerary: [
-          {
-            day: 1,
-            title: 'Ha Giang → Khau Lan Waterfall → Lung Tam Weaving Village\n→ Du Gia',
-            summary: 'Start your day with breakfast at our homestay. After breakfast, you will complete the check out process, check your luggage, and prepare for the journey. If you choose the Easy Rider option, you will meet your driver and tour guide. They will introduce the itinerary and explain the places we will visit during the trip.\n- Explore Khau Lan Waterfall and enjoy the beautiful natural surroundings.\n- Have lunch at a local family’s house and enjoy traditional local food.\n- Visit Lung Tam Weaving Village, a long standing village of the H’Mong people. Learn about their culture and discover how they create beautiful handmade products using traditional linen weaving techniques.\n- Visit Du Gia Waterfall, one of the famous natural attractions in Ha Giang.\nThat evening, we will stay at a beautiful homestay in Du Gia and relax after the first day of the journey.',
-            highlights: ['Khau Lan Waterfall', 'Local family lunch', 'Lung Tam Weaving Village', 'Du Gia Waterfall', 'Du Gia Homestay'],
-          },
-          {
-            day: 2,
-            title: 'Du Gia → Ngoc Long → Cave Boat Trip → Mountain Trails',
-            summary: 'The second day takes you through beautiful landscapes and interesting mountain roads.\n- Enjoy a bamboo boat trip on the river and admire the surrounding scenery.\n- Continue into a natural cave, where you can explore and enjoy swimming.\n- Enjoy a special meal on the bamboo boat while surrounded by nature.\n- Experience local mountain trails and discover paths built and used by local people while enjoying the beautiful scenery.\n- Stop and relax in Dong Van Town and explore Dong Van Old Quarter in the evening.',
-            highlights: ['Bamboo boat trip', 'Cave swim & explore', 'Meal on bamboo boat', 'Local mountain trails', 'Dong Van Old Quarter'],
-          },
-          {
-            day: 3,
-            title: 'Dong Van → Ma Pi Leng Pass → Bao Lac → 15 Tier Pass\n→ Na Teanh Pass → Pac Bo',
-            summary: 'The third day takes you through spectacular mountain landscapes and challenging mountain passes.\n- Explore the majestic Ma Pi Leng Pass and enjoy breathtaking views of the mountains.\n- If you want more adventure, take a challenging walk to the Sky Walk.\n- Travel through the impressive mountain passes of Cao Bang and discover the beautiful landscapes of the region.\nStop and relax in Pac Bo after an exciting day on the road.',
-            highlights: ['Ma Pi Leng Pass', 'Sky Walk hike', '15 Tier Pass & Na Teanh Pass', 'Pac Bo Homestay'],
-          },
-          {
-            day: 4,
-            title: 'Pac Bo → Tra Linh Buffalo Market → Trung Khanh\n→ Ban Gioc Waterfall',
-            summary: 'On the fourth day, we will explore the natural beauty and local culture of Cao Bang.\n- Visit the Tra Linh Buffalo Market and experience the unique culture of the local highland communities.\n- Explore Trung Khanh and admire its impressive mountains and natural scenery.\n- Enjoy the beautiful landscape of Ban Gioc Waterfall, one of the most famous natural attractions in Cao Bang.\nStop and relax at a homestay near Ban Gioc Waterfall.',
-            highlights: ['Tra Linh Buffalo Market', 'Trung Khanh landscapes', 'Ban Gioc Waterfall', 'Ban Gioc Homestay'],
-          },
-          {
-            day: 5,
-            title: 'Ban Gioc → Nguom Ngao Cave → Angel Eye Mountain\n→ Ba Be',
-            summary: 'This will be the longest day of the journey, with many beautiful places to discover.\n- Explore Nguom Ngao Cave and admire its impressive rock formations.\n- Visit Angel Eye Mountain and enjoy its unique natural scenery.\n- Continue the journey to Ba Be and relax after a long day of exploration.',
-            highlights: ['Nguom Ngao Cave', 'Angel Eye Mountain', 'Ba Be Lake'],
-          },
-          {
-            day: 6,
-            title: 'Ba Be Lake → Hanoi',
-            summary: 'Enjoy a relaxing day exploring Ba Be Lake, one of the largest natural freshwater\nlakes in Vietnam.\n- Explore the lake and nearby caves by boat.\n- Have lunch on the lake and enjoy local specialties.\n- After the tour, board a sleeper bus and travel back to Hanoi.\nThis marks the end of our 6 day Ha Giang – Cao Bang – Ba Be adventure.',
-            highlights: ['Ba Be Lake boat tour', 'Cave exploration', 'Lunch on lake', 'Sleeper bus to Hanoi'],
-          },
-        ],
-      },
-    ],
-    itinerary: [
-      {
-        day: 1,
-        title: 'Ha Giang → Khau Lan Waterfall → Lung Tam Village → Du Gia',
-        summary: 'Depart Ha Giang City. Swim at Khau Lan Waterfall, local home lunch, explore Lung Tam traditional linen weaving, and arrive at Du Gia Waterfall. Overnight at Du Gia homestay.',
-        highlights: ['Khau Lan Waterfall', 'Lung Tam Linen Village', 'Du Gia Waterfall', 'Du Gia Homestay'],
-      },
-      {
-        day: 2,
-        title: 'Du Gia → Ngoc Long → Cave Boat Ride → Mountain Trails → Dong Van',
-        summary: 'Bamboo boat cruise on river, cave swimming, lunch on bamboo raft, and scenic trails to Dong Van. Night walk in Dong Van Ancient Town.',
-        highlights: ['Bamboo boat cruise', 'Cave swim', 'Lunch on boat', 'Scenic trails', 'Dong Van Ancient Town'],
-      },
-      {
-        day: 3,
-        title: 'Dong Van → Ma Pi Leng Pass → Bao Lac → 15 Tier Pass → Pac Bo',
-        summary: 'Conquer Ma Pi Leng Pass and Sky Walk. Ride exhilarating mountain roads through Bao Lac, 15 tier Me Pia Pass and Na Tenh Pass to Pac Bo.',
-        highlights: ['Ma Pi Leng Pass', 'Sky Walk hike', '15 Tier Me Pia Pass', 'Pac Bo Homestay'],
-      },
-      {
-        day: 4,
-        title: 'Pac Bo → Tra Linh Buffalo Market → Trung Khanh → Ban Gioc Waterfall',
-        summary: 'Visit Tra Linh ethnic buffalo market, explore Trung Khanh mountain landscapes, and marvel at Ban Gioc Waterfall. Overnight at Ban Gioc.',
-        highlights: ['Tra Linh Buffalo Market', 'Trung Khanh', 'Ban Gioc Waterfall', 'Ban Gioc Homestay'],
-      },
-      {
-        day: 5,
-        title: 'Ban Gioc → Nguom Ngao Cave → God\'s Eye Mountain → Cao Bang City',
-        summary: 'Discover subterranean stalactites at Nguom Ngao Cave and the mystical God\'s Eye Mountain (Nui Mat Than). Conclude the journey in Cao Bang City.',
-        highlights: ['Nguom Ngao Cave', 'God\'s Eye Mountain', 'Cao Bang City farewell'],
-      },
-    ],
-  },
-  luxuryTourCard,
 ];
 
 
