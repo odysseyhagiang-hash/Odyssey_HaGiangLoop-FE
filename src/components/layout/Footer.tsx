@@ -10,6 +10,7 @@ const columns = [
       { to: '/journeys/private-tour', label: 'Private tour' },
       { to: '/journeys/group-tour', label: 'Group tour' },
       { to: '/journeys/ha-giang-cao-bang', label: 'Ha Giang — Cao Bang' },
+      { to: '/journeys/luxury-tour', label: 'Luxury tour' },
       { to: '/journeys/car-tour', label: 'Car tour' },
       { to: '/journeys/jeep-tour', label: 'Jeep tour' },
       { to: '/rentalbikes', label: 'Rental bikes' }
