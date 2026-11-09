@@ -39,8 +39,10 @@ export const images = {
 
 /** Home hero background film. Swap this URL for your own MP4 — the hero falls back
  *  to the poster image automatically if the file is unavailable. */
+// Hosted on Cloudinary (cloud ize5h4fj, public_id "hero-video") so Vercel doesn't serve it.
+// q_auto,w_1280 → Cloudinary re-encodes the 2560×1440 / 15 MB original to ~1.5 MB.
 export const heroVideo =
-  '/videos/175358-853243447_medium.mp4';
+  'https://res.cloudinary.com/ize5h4fj/video/upload/q_auto,w_1280/v1794194620/hero-video.mp4';
 
 export const brand = {
   name: 'Odyssey Ha Giang Loop',
